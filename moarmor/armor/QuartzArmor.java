@@ -12,11 +12,10 @@ import net.minecraft.world.World;
 public class QuartzArmor extends ItemArmor {
 	
 	/**
-	 * @param id The item ID
 	 * @param renderindex Unknown
 	 * @param par4 The armor type
 	 */
-	public QuartzArmor(int id, int renderindex, int par4) {
+	public QuartzArmor(int renderindex, int par4) {
 		super(ArmorMaterial.IRON, renderindex, par4);
 	}
 	

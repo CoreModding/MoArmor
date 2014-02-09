@@ -12,11 +12,10 @@ import net.minecraft.world.World;
 public class FlintArmor extends ItemArmor {
 	
 	/**
-	 * @param id The item ID
 	 * @param renderindex Unknown
 	 * @param par4 The armor type
 	 */
-	public FlintArmor(int id, int renderindex, int par4) {
+	public FlintArmor(int renderindex, int par4) {
 		super(ArmorMaterial.IRON, renderindex, par4);
 	}
 	

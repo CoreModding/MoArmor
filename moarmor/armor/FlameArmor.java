@@ -15,11 +15,10 @@ import net.minecraft.world.World;
 public class FlameArmor extends ItemArmor {
 	
 	/**
-	 * @param id The item ID
 	 * @param renderindex Unknown
 	 * @param par4 The armor type
 	 */
-	public FlameArmor(int id, int renderindex, int par4) {
+	public FlameArmor(int renderindex, int par4) {
 		super(ArmorMaterial.IRON, renderindex, par4);
 	}
 	
