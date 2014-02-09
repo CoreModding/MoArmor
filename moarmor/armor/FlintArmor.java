@@ -2,7 +2,6 @@ package moarmor.armor;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -18,11 +17,11 @@ public class FlintArmor extends ItemArmor {
 	 * @param par4 The armor type
 	 */
 	public FlintArmor(int id, int renderindex, int par4) {
-		super(id, EnumArmorMaterial.IRON, renderindex, par4);
+		super(ArmorMaterial.IRON, renderindex, par4);
 	}
 	
 	@Override
-	public void onArmorTickUpdate(World world, EntityPlayer entity, ItemStack item){
+	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){
 		item.addEnchantment(Enchantment.thorns, 1);
 	}
 }
