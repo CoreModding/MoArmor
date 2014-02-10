@@ -1,4 +1,4 @@
-package moarmor.armor;
+package info.coremodding.moarmor.armor;
 
 import java.util.List;
 

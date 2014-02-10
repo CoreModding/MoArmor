@@ -4,4 +4,4 @@
 /**
  * The armor goes here
  */
-package moarmor.armor;
+package info.coremodding.moarmor.armor;

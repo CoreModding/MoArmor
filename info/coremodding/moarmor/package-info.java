@@ -4,4 +4,4 @@
 /**
  * The base package
  */
-package moarmor;
+package info.coremodding.moarmor;

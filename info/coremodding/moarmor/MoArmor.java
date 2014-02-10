@@ -1,4 +1,4 @@
-package moarmor;
+package info.coremodding.moarmor;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

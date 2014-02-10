@@ -1,4 +1,4 @@
-package moarmor.armor;
+package info.coremodding.moarmor.armor;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.EntityPlayer;
