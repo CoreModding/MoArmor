@@ -1,5 +1,6 @@
 package info.coremodding.moarmor.armor;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
@@ -17,6 +18,7 @@ public class FlintArmor extends ItemArmor {
 	 */
 	public FlintArmor(int renderindex, int par4) {
 		super(ArmorMaterial.IRON, renderindex, par4);
+		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
 	@Override
