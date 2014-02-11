@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The quartz armor
+ * The flint armor
  */
 public class FlintArmor extends ItemArmor {
 

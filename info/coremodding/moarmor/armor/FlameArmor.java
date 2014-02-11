@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The quartz armor
+ * The flame armor
  */
 public class FlameArmor extends ItemArmor {
 	
