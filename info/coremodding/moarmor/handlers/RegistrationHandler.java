@@ -1,6 +1,8 @@
 package info.coremodding.moarmor.handlers;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import info.coremodding.moarmor.armor.FlameArmor;
 import info.coremodding.moarmor.armor.ObsidianArmor;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -53,5 +55,15 @@ public class RegistrationHandler {
 		GameRegistry.registerItem(obsidianArmorChest, "MoArmor_" + obsidianArmorChest.getUnlocalizedName());
 		GameRegistry.registerItem(obsidianArmorLegs, "MoArmor_" + obsidianArmorLegs.getUnlocalizedName());
 		GameRegistry.registerItem(obsidianArmorBoots, "MoArmor_" + obsidianArmorBoots.getUnlocalizedName());
+	}
+	
+	/**
+	 * Registers the armor recipes
+	 */
+	public static void registerArmorRecipes(){
+		GameRegistry.addRecipe(new ItemStack(flintArmorHelmet, 1), "FFF","F F", 'F', Items.flint);
+		GameRegistry.addRecipe(new ItemStack(flintArmorChest, 1), "F F","FFF", "FFF", 'F', Items.flint);
+		GameRegistry.addRecipe(new ItemStack(flintArmorLegs, 1), "FFF","F F", "F F", 'F', Items.flint);
+		GameRegistry.addRecipe(new ItemStack(flintArmorBoots, 1), "   ","F F", "F F", 'F', Items.flint);
 	}
 }
