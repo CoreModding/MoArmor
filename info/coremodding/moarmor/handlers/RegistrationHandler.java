@@ -2,6 +2,7 @@ package info.coremodding.moarmor.handlers;
 
 import net.minecraft.item.Item;
 import info.coremodding.moarmor.armor.FlameArmor;
+import info.coremodding.moarmor.armor.ObsidianArmor;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
@@ -23,6 +24,11 @@ public class RegistrationHandler {
 	private static Item flintArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flintArmorChest");
 	private static Item flintArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flintArmorLegs");
 	private static Item flintArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flintArmorBoots");
+	
+	private static Item obsidianArmorHelmet = new ObsidianArmor(0, 0).setUnlocalizedName("obsidianArmorHelmet");
+	private static Item obsidianArmorChest = new ObsidianArmor(0, 1).setUnlocalizedName("obsidianArmorChest");
+	private static Item obsidianArmorLegs = new ObsidianArmor(0, 2).setUnlocalizedName("obsidianArmorLegs");
+	private static Item obsidianArmorBoots = new ObsidianArmor(0, 3).setUnlocalizedName("obsidianArmorBoots");
 
 	/**
 	 * Registers the armor items
@@ -42,5 +48,10 @@ public class RegistrationHandler {
 		GameRegistry.registerItem(flintArmorChest, "MoArmor_" + flintArmorChest.getUnlocalizedName());
 		GameRegistry.registerItem(flintArmorLegs, "MoArmor_" + flintArmorLegs.getUnlocalizedName());
 		GameRegistry.registerItem(flintArmorBoots, "MoArmor_" + flintArmorBoots.getUnlocalizedName());
+		
+		GameRegistry.registerItem(obsidianArmorHelmet, "MoArmor_" + obsidianArmorHelmet.getUnlocalizedName());
+		GameRegistry.registerItem(obsidianArmorChest, "MoArmor_" + obsidianArmorChest.getUnlocalizedName());
+		GameRegistry.registerItem(obsidianArmorLegs, "MoArmor_" + obsidianArmorLegs.getUnlocalizedName());
+		GameRegistry.registerItem(obsidianArmorBoots, "MoArmor_" + obsidianArmorBoots.getUnlocalizedName());
 	}
 }

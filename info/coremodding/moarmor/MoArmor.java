@@ -9,7 +9,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 /**
  * The main mod class
  */
-@Mod(modid = "zeus_MoArmor", name = "Mo' Armor", version = "1.0.0.0")
+@Mod(modid = "core_MoArmor", name = "Mo' Armor", version = "1.0.0.0")
 public class MoArmor {
 	
 	/**
