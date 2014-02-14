@@ -1,12 +1,7 @@
 package info.coremodding.moarmor.armor;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
