@@ -8,6 +8,8 @@ public class ItemHammer extends Item {
 		super();
 		this.setHasSubtypes(false);
 		this.setCreativeTab(CreativeTabs.tabCombat);
+		this.setMaxDamage(96);
+		this.setMaxStackSize(1);
 	}
 	
 	@Override

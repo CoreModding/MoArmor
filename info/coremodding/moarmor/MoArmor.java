@@ -1,10 +1,14 @@
 package info.coremodding.moarmor;
 
+import info.coremodding.moarmor.handlers.CraftingHandler;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * The main mod class
@@ -30,6 +34,14 @@ public class MoArmor {
 	}
 	
 	/**
+	 * @param evt The event that triggered the method
+	 */
+	@EventHandler
+	public void playerevent(PlayerEvent evt){
+		
+	}
+	
+	/**
 	 * Registers stuff
 	 */
 	public static void register(){
@@ -39,5 +51,7 @@ public class MoArmor {
 		RegistrationHandler.registerOtherRecipes();
 		RegistrationHandler.registerPlateItems();
 		RegistrationHandler.registerPlateRecipes();
+		
+		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 	}
 }

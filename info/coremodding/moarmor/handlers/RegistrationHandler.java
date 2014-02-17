@@ -35,11 +35,11 @@ public class RegistrationHandler {
 	private static Item obsidianArmorLegs = new ObsidianArmor(0, 2).setUnlocalizedName("obsidianArmorLegs");
 	private static Item obsidianArmorBoots = new ObsidianArmor(0, 3).setUnlocalizedName("obsidianArmorBoots");
 	
-	private static Item hammer = new ItemHammer().setUnlocalizedName("hammer");
-	private static Item diamondHammer = new ItemDiamondHammer().setUnlocalizedName("diamondHammer");
+	public static Item hammer = new ItemHammer().setUnlocalizedName("hammer");
+	public static Item diamondHammer = new ItemDiamondHammer().setUnlocalizedName("diamondHammer");
 	
-	private static Item flintPlate = new ItemPlate(0);
-	private static Item quartzPlate = new ItemPlate(1);
+	public static Item flintPlate = new ItemPlate(0);
+	public static Item quartzPlate = new ItemPlate(1);
 
 	/**
 	 * Registers the armor items
@@ -96,14 +96,14 @@ public class RegistrationHandler {
 	 * Registers plate recipes
 	 */
 	public static void registerPlateRecipes(){
-		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1, 0), new Object[] {
-			new ItemStack(Items.flint), new ItemStack(hammer)
+		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1), new Object[] {
+			new ItemStack(Items.flint), new ItemStack(hammer, 1, -1)
 		});
-		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1, 0), new Object[] {
+		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1), new Object[] {
 			new ItemStack(Items.flint), new ItemStack(diamondHammer)
 		});
 		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1, 1), new Object[] {
-			new ItemStack(Items.quartz), new ItemStack(hammer)
+			new ItemStack(Items.quartz), new ItemStack(hammer, 1, -1)
 		});
 		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1, 1), new Object[] {
 			new ItemStack(Items.quartz), new ItemStack(diamondHammer)
