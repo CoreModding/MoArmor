@@ -96,16 +96,16 @@ public class RegistrationHandler {
 	 * Registers plate recipes
 	 */
 	public static void registerPlateRecipes(){
-		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1), new Object[] {
+		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1, 0), new Object[] {
 			new ItemStack(Items.flint), new ItemStack(hammer)
 		});
-		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1), new Object[] {
+		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1, 0), new Object[] {
 			new ItemStack(Items.flint), new ItemStack(diamondHammer)
 		});
-		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1), new Object[] {
+		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1, 1), new Object[] {
 			new ItemStack(Items.quartz), new ItemStack(hammer)
 		});
-		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1), new Object[] {
+		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1, 1), new Object[] {
 			new ItemStack(Items.quartz), new ItemStack(diamondHammer)
 		});
 	}
