@@ -35,5 +35,9 @@ public class MoArmor {
 	public static void register(){
 		RegistrationHandler.registerArmorItems();
 		RegistrationHandler.registerArmorRecipes();
+		RegistrationHandler.registerOtherItems();
+		RegistrationHandler.registerOtherRecipes();
+		RegistrationHandler.registerPlateItems();
+		RegistrationHandler.registerPlateRecipes();
 	}
 }

@@ -5,6 +5,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import info.coremodding.moarmor.armor.FlameArmor;
 import info.coremodding.moarmor.armor.ObsidianArmor;
+import info.coremodding.moarmor.items.ItemDiamondHammer;
+import info.coremodding.moarmor.items.ItemHammer;
+import info.coremodding.moarmor.items.ItemPlate;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
@@ -31,6 +34,12 @@ public class RegistrationHandler {
 	private static Item obsidianArmorChest = new ObsidianArmor(0, 1).setUnlocalizedName("obsidianArmorChest");
 	private static Item obsidianArmorLegs = new ObsidianArmor(0, 2).setUnlocalizedName("obsidianArmorLegs");
 	private static Item obsidianArmorBoots = new ObsidianArmor(0, 3).setUnlocalizedName("obsidianArmorBoots");
+	
+	private static Item hammer = new ItemHammer().setUnlocalizedName("hammer");
+	private static Item diamondHammer = new ItemDiamondHammer().setUnlocalizedName("diamondHammer");
+	
+	private static Item flintPlate = new ItemPlate(0);
+	private static Item quartzPlate = new ItemPlate(1);
 
 	/**
 	 * Registers the armor items
@@ -58,6 +67,22 @@ public class RegistrationHandler {
 	}
 	
 	/**
+	 * Registers other items
+	 */
+	public static void registerOtherItems(){
+		GameRegistry.registerItem(hammer, "MoArmor_" + hammer.getUnlocalizedName());
+		GameRegistry.registerItem(diamondHammer, "MoArmor_" + diamondHammer.getUnlocalizedName());
+	}
+	
+	/**
+	 * Registers plates
+	 */
+	public static void registerPlateItems(){
+		GameRegistry.registerItem(flintPlate, "MoArmor_" + flintPlate.getUnlocalizedName());
+		GameRegistry.registerItem(quartzPlate, "MoArmor_" + quartzPlate.getUnlocalizedName());
+	}
+	
+	/**
 	 * Registers the armor recipes
 	 */
 	public static void registerArmorRecipes(){
@@ -65,5 +90,31 @@ public class RegistrationHandler {
 		GameRegistry.addRecipe(new ItemStack(flintArmorChest, 1), "F F","FFF", "FFF", 'F', Items.flint);
 		GameRegistry.addRecipe(new ItemStack(flintArmorLegs, 1), "FFF","F F", "F F", 'F', Items.flint);
 		GameRegistry.addRecipe(new ItemStack(flintArmorBoots, 1), "   ","F F", "F F", 'F', Items.flint);
+	}
+	
+	/**
+	 * Registers plate recipes
+	 */
+	public static void registerPlateRecipes(){
+		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1), new Object[] {
+			new ItemStack(Items.flint), new ItemStack(hammer)
+		});
+		GameRegistry.addShapelessRecipe(new ItemStack(flintPlate, 1), new Object[] {
+			new ItemStack(Items.flint), new ItemStack(diamondHammer)
+		});
+		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1), new Object[] {
+			new ItemStack(Items.quartz), new ItemStack(hammer)
+		});
+		GameRegistry.addShapelessRecipe(new ItemStack(quartzPlate, 1), new Object[] {
+			new ItemStack(Items.quartz), new ItemStack(diamondHammer)
+		});
+	}
+	
+	/**
+	 * Registers other item recipes
+	 */
+	public static void registerOtherRecipes(){
+		GameRegistry.addRecipe(new ItemStack(hammer, 1), "III","III", " S ", 'S', Items.stick, 'I', Items.iron_ingot);
+		GameRegistry.addRecipe(new ItemStack(diamondHammer, 1), "DDD","DDD", " S ", 'S', Items.stick, 'D', Items.diamond);
 	}
 }
