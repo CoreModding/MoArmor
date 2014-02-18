@@ -12,15 +12,11 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 
 public class ItemPlate extends Item {
-	/**
-	 * 
-	 * @param damage Damage value of this item
-	 */
-	public ItemPlate(int damage){
+	public ItemPlate(){
 		super();
 		this.setHasSubtypes(true);
-		this.setDamage(new ItemStack(this), damage);
 		this.setCreativeTab(CreativeTabs.tabMaterials);
+		
 	}
 	 
 	    public static final String[] names = new String[] { "flintPlate", "quartzPlate" };
