@@ -49,8 +49,7 @@ public class MoArmor {
 		RegistrationHandler.registerArmorRecipes();
 		RegistrationHandler.registerOtherItems();
 		RegistrationHandler.registerOtherRecipes();
-		RegistrationHandler.registerPlateItems();
-		RegistrationHandler.registerPlateRecipes();
+		RegistrationHandler.registerPlates();
 		
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 	}

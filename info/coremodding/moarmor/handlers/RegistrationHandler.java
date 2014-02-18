@@ -1,5 +1,6 @@
 package info.coremodding.moarmor.handlers;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -44,6 +45,7 @@ public class RegistrationHandler {
 	public static Item plate = new ItemPlate();
 	public static ItemStack flintPlate = new ItemStack(plate, 1, 0);
 	public static ItemStack quartzPlate = new ItemStack(plate, 1, 1);
+	public static ItemStack obsidianPlate = new ItemStack(plate, 1, 2);
 
 	/**
 	 * Registers the armor items
@@ -79,15 +81,6 @@ public class RegistrationHandler {
 	}
 	
 	/**
-	 * Registers plates
-	 */
-	public static void registerPlateItems(){
-		// GameRegistry.registerCustomItemStack("MoArmor_" + plate.getUnlocalizedName(flintPlate), flintPlate);
-		// GameRegistry.registerCustomItemStack("MoArmor_" + plate.getUnlocalizedName(quartzPlate), quartzPlate);
-		GameRegistry.registerItem(plate, "MoArmor_" + plate.getUnlocalizedName());
-	}
-	
-	/**
 	 * Registers the armor recipes
 	 */
 	public static void registerArmorRecipes(){
@@ -95,24 +88,41 @@ public class RegistrationHandler {
 		GameRegistry.addRecipe(new ItemStack(flintArmorChest, 1), "F F","FFF", "FFF", 'F', flintPlate);
 		GameRegistry.addRecipe(new ItemStack(flintArmorLegs, 1), "FFF","F F", "F F", 'F', flintPlate);
 		GameRegistry.addRecipe(new ItemStack(flintArmorBoots, 1), "   ","F F", "F F", 'F', flintPlate);
+		
+		GameRegistry.addRecipe(new ItemStack(quartzArmorHelmet, 1), "QQQ","Q Q", 'Q', quartzPlate);
+		GameRegistry.addRecipe(new ItemStack(quartzArmorChest, 1), "Q Q","QQQ", "QQQ", 'Q', quartzPlate);
+		GameRegistry.addRecipe(new ItemStack(quartzArmorLegs, 1), "QQQ","Q Q", "Q Q", 'Q', quartzPlate);
+		GameRegistry.addRecipe(new ItemStack(quartzArmorBoots, 1), "   ","Q Q", "Q Q", 'Q', quartzPlate);
+		
+		GameRegistry.addRecipe(new ItemStack(obsidianArmorHelmet, 1), "OOO","O O", 'O', obsidianPlate);
+		GameRegistry.addRecipe(new ItemStack(obsidianArmorChest, 1), "O O","OOO", "OOO", 'O', obsidianPlate);
+		GameRegistry.addRecipe(new ItemStack(obsidianArmorLegs, 1), "OOO","O O", "O O", 'O', obsidianPlate);
+		GameRegistry.addRecipe(new ItemStack(obsidianArmorBoots, 1), "   ","O O", "O O", 'O', obsidianPlate);
 	}
 	
 	/**
-	 * Registers plate recipes
+	 * Registers plates and their recipes
 	 */
-	public static void registerPlateRecipes(){
+	public static void registerPlates(){
+		GameRegistry.registerItem(plate, "MoArmor_" + plate.getUnlocalizedName());
+		
 		GameRegistry.addShapelessRecipe(flintPlate, new Object[] {
 			new ItemStack(Items.flint), hammerStack
 		});
 		GameRegistry.addShapelessRecipe(flintPlate, new Object[] {
 			new ItemStack(Items.flint), diamondHammerStack
 		});
+		
 		GameRegistry.addShapelessRecipe(quartzPlate, new Object[] {
 			new ItemStack(Items.quartz), hammerStack
 		});
 		GameRegistry.addShapelessRecipe(quartzPlate, new Object[] {
 			new ItemStack(Items.quartz), diamondHammerStack
 		});
+		
+		GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {
+				new ItemStack(Blocks.obsidian), diamondHammerStack
+			});
 	}
 	
 	/**
