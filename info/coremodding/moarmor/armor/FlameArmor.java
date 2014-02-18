@@ -35,11 +35,6 @@ public class FlameArmor extends ItemArmor {
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){
-		ItemStack[] armorSet = new ItemStack[4];
-		armorSet[3] = new ItemStack(RegistrationHandler.flameArmorHelmet, 1, 0);
-		armorSet[2] = new ItemStack(RegistrationHandler.flameArmorChest, 1, 0);
-		armorSet[1] = new ItemStack(RegistrationHandler.flameArmorLegs, 1, 0);
-		armorSet[0] = new ItemStack(RegistrationHandler.flameArmorBoots, 1, 0);
 		if(entity.inventory.armorInventory[0] != null && entity.inventory.armorInventory[1] != null && entity.inventory.armorInventory[2] != null && entity.inventory.armorInventory[3] != null){
 			if(entity.inventory.armorInventory[0].getItem() == RegistrationHandler.flameArmorBoots && entity.inventory.armorInventory[1].getItem() == RegistrationHandler.flameArmorLegs && entity.inventory.armorInventory[2].getItem() == RegistrationHandler.flameArmorChest && entity.inventory.armorInventory[3].getItem() == RegistrationHandler.flameArmorHelmet){
 				List<Object> entities = world.getEntitiesWithinAABB(EntityLivingBase.class, AxisAlignedBB.getBoundingBox(entity.posX - 1, entity.posY - 2, entity.posZ - 1, entity.posX + 1, entity.posY + 2, entity.posZ + 1));
