@@ -17,10 +17,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
  */
 public class RegistrationHandler {
 
-	private static Item flameArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("flameArmorHelmet");
-	private static Item flameArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flameArmorChest");
-	private static Item flameArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flameArmorLegs");
-	private static Item flameArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flameArmorBoots");
+	public static Item flameArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("flameArmorHelmet");
+	public static Item flameArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flameArmorChest");
+	public static Item flameArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flameArmorLegs");
+	public static Item flameArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flameArmorBoots");
 
 	private static Item quartzArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("quartzArmorHelmet");
 	private static Item quartzArmorChest = new FlameArmor(0, 1).setUnlocalizedName("quartzArmorChest");
@@ -46,6 +46,8 @@ public class RegistrationHandler {
 	public static ItemStack flintPlate = new ItemStack(plate, 1, 0);
 	public static ItemStack quartzPlate = new ItemStack(plate, 1, 1);
 	public static ItemStack obsidianPlate = new ItemStack(plate, 1, 2);
+	public static ItemStack flamePlate = new ItemStack(plate, 1, 3);
+	public static ItemStack enderPlate = new ItemStack(plate, 1, 4);
 
 	/**
 	 * Registers the armor items
@@ -61,10 +63,7 @@ public class RegistrationHandler {
 		GameRegistry.registerItem(quartzArmorLegs, "MoArmor_" + quartzArmorLegs.getUnlocalizedName());
 		GameRegistry.registerItem(quartzArmorBoots, "MoArmor_" + quartzArmorBoots.getUnlocalizedName());
 
-		GameRegistry.registerItem(flintArmorHelmet, "MoArmor_" + flintArmorHelmet.getUnlocalizedName());
-		GameRegistry.registerItem(flintArmorChest, "MoArmor_" + flintArmorChest.getUnlocalizedName());
-		GameRegistry.registerItem(flintArmorLegs, "MoArmor_" + flintArmorLegs.getUnlocalizedName());
-		GameRegistry.registerItem(flintArmorBoots, "MoArmor_" + flintArmorBoots.getUnlocalizedName());
+		registerArmorSet(flintArmorHelmet, flintArmorChest, flintArmorLegs, flintArmorBoots);
 		
 		GameRegistry.registerItem(obsidianArmorHelmet, "MoArmor_" + obsidianArmorHelmet.getUnlocalizedName());
 		GameRegistry.registerItem(obsidianArmorChest, "MoArmor_" + obsidianArmorChest.getUnlocalizedName());
@@ -98,6 +97,11 @@ public class RegistrationHandler {
 		GameRegistry.addRecipe(new ItemStack(obsidianArmorChest, 1), "O O","OOO", "OOO", 'O', obsidianPlate);
 		GameRegistry.addRecipe(new ItemStack(obsidianArmorLegs, 1), "OOO","O O", "O O", 'O', obsidianPlate);
 		GameRegistry.addRecipe(new ItemStack(obsidianArmorBoots, 1), "   ","O O", "O O", 'O', obsidianPlate);
+		
+		GameRegistry.addRecipe(new ItemStack(flameArmorHelmet, 1), "OOO","O O", 'O', flamePlate);
+		GameRegistry.addRecipe(new ItemStack(flameArmorChest, 1), "O O","OOO", "OOO", 'O', flamePlate);
+		GameRegistry.addRecipe(new ItemStack(flameArmorLegs, 1), "OOO","O O", "O O", 'O', flamePlate);
+		GameRegistry.addRecipe(new ItemStack(flameArmorBoots, 1), "   ","O O", "O O", 'O', flamePlate);
 	}
 	
 	/**
@@ -123,6 +127,14 @@ public class RegistrationHandler {
 		GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {
 				new ItemStack(Blocks.obsidian), diamondHammerStack
 			});
+		
+		GameRegistry.addShapelessRecipe(flamePlate, new Object[] {
+				new ItemStack(Items.blaze_rod), diamondHammerStack
+			});
+		
+		GameRegistry.addShapelessRecipe(enderPlate, new Object[] {
+				new ItemStack(Items.ender_pearl), new ItemStack(Blocks.end_stone), diamondHammerStack
+			});
 	}
 	
 	/**
@@ -131,5 +143,12 @@ public class RegistrationHandler {
 	public static void registerOtherRecipes(){
 		GameRegistry.addRecipe(new ItemStack(hammer, 1), "III","III", " S ", 'S', Items.stick, 'I', Items.iron_ingot);
 		GameRegistry.addRecipe(new ItemStack(diamondHammer, 1), "DDD","DDD", " S ", 'S', Items.stick, 'D', Items.diamond);
+	}
+	
+	private static void registerArmorSet(Item helmet, Item chestplate, Item leggings, Item boots){
+		GameRegistry.registerItem(helmet, "MoArmor_" + helmet.getUnlocalizedName());
+		GameRegistry.registerItem(chestplate, "MoArmor_" + chestplate.getUnlocalizedName());
+		GameRegistry.registerItem(leggings, "MoArmor_" + leggings.getUnlocalizedName());
+		GameRegistry.registerItem(boots, "MoArmor_" + boots.getUnlocalizedName());
 	}
 }

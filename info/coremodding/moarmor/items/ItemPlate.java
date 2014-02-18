@@ -19,7 +19,7 @@ public class ItemPlate extends Item {
 		
 	}
 	 
-	    public static final String[] names = new String[] { "flintPlate", "quartzPlate", "obsidianPlate" };
+	    public static final String[] names = new String[] { "flintPlate", "quartzPlate", "obsidianPlate", "flamePlate", "enderPlate" };
 	 
 	    @Override
 	    public String getUnlocalizedName(ItemStack par1ItemStack)
@@ -33,7 +33,7 @@ public class ItemPlate extends Item {
 	    @Override
 	    public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List)
 	    {
-	        for (int x = 0; x < 3; x++)
+	        for (int x = 0; x < 5; x++)
 	        {
 	            par3List.add(new ItemStack(this, 1, x));
 	        }
