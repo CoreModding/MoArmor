@@ -33,13 +33,6 @@ public class MoArmor {
 		register();
 	}
 	
-	/**
-	 * @param evt The event that triggered the method
-	 */
-	@EventHandler
-	public void playerevent(PlayerEvent evt){
-		
-	}
 	
 	/**
 	 * Registers stuff

@@ -4,8 +4,11 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 
 /**
  * Handler entity teleportation
@@ -24,6 +27,7 @@ public class TeleportationHandler {
 		this.locZ = e.posZ;
 		this.entity = e;
 		this.rand = new Random();
+		this.worldObj = e.worldObj;
 	}
     /**
      * Teleports entity to a random nearby position
@@ -33,17 +37,24 @@ public class TeleportationHandler {
         double d0 = this.locX + (this.rand.nextDouble() - 0.5D) * 64.0D;
         double d1 = this.locY + (double)(this.rand.nextInt(64) - 32);
         double d2 = this.locZ + (this.rand.nextDouble() - 0.5D) * 64.0D;
+
+		System.out.println("Preparing!");
         return this.teleportTo(d0, d1, d2);
     }
 
     /**
-     * Teleport the enderman
+     * Teleport the entity
      */
     protected boolean teleportTo(double par1, double par3, double par5)
     {
+
+		System.out.println("Teleporting!");
         double d3 = this.locX;
         double d4 = this.locY;
         double d5 = this.locZ;
+        this.locX = par1;
+        this.locY = par3;
+        this.locZ = par5;
         boolean flag = false;
         int i = MathHelper.floor_double(this.locX);
         int j = MathHelper.floor_double(this.locY);

@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import info.coremodding.moarmor.armor.EnderArmor;
 import info.coremodding.moarmor.armor.FlameArmor;
 import info.coremodding.moarmor.armor.ObsidianArmor;
 import info.coremodding.moarmor.items.ItemDiamondHammer;
@@ -27,15 +28,20 @@ public class RegistrationHandler {
 	private static Item quartzArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("quartzArmorLegs");
 	private static Item quartzArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("quartzArmorBoots");
 
-	private static Item flintArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("flintArmorHelmet");
-	private static Item flintArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flintArmorChest");
-	private static Item flintArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flintArmorLegs");
-	private static Item flintArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flintArmorBoots");
+	public static Item flintArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("flintArmorHelmet");
+	public static Item flintArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flintArmorChest");
+	public static Item flintArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flintArmorLegs");
+	public static Item flintArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flintArmorBoots");
 	
 	private static Item obsidianArmorHelmet = new ObsidianArmor(0, 0).setUnlocalizedName("obsidianArmorHelmet");
 	private static Item obsidianArmorChest = new ObsidianArmor(0, 1).setUnlocalizedName("obsidianArmorChest");
 	private static Item obsidianArmorLegs = new ObsidianArmor(0, 2).setUnlocalizedName("obsidianArmorLegs");
 	private static Item obsidianArmorBoots = new ObsidianArmor(0, 3).setUnlocalizedName("obsidianArmorBoots");
+	
+	public static Item enderArmorHelmet = new EnderArmor(0, 0).setUnlocalizedName("enderArmorHelmet");
+	public static Item enderArmorChest = new EnderArmor(0, 1).setUnlocalizedName("enderArmorChest");
+	public static Item enderArmorLegs = new EnderArmor(0, 2).setUnlocalizedName("enderArmorLegs");
+	public static Item enderArmorBoots = new EnderArmor(0, 3).setUnlocalizedName("enderArmorBoots");
 	
 	public static Item hammer = new ItemHammer().setUnlocalizedName("hammer");
 	public static ItemStack hammerStack = new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE);
@@ -53,22 +59,11 @@ public class RegistrationHandler {
 	 * Registers the armor items
 	 */
 	public static void registerArmorItems(){
-		GameRegistry.registerItem(flameArmorHelmet, "MoArmor_" + flameArmorHelmet.getUnlocalizedName());
-		GameRegistry.registerItem(flameArmorChest, "MoArmor_" + flameArmorChest.getUnlocalizedName());
-		GameRegistry.registerItem(flameArmorLegs, "MoArmor_" + flameArmorLegs.getUnlocalizedName());
-		GameRegistry.registerItem(flameArmorBoots, "MoArmor_" + flameArmorBoots.getUnlocalizedName());
-
-		GameRegistry.registerItem(quartzArmorHelmet, "MoArmor_" + quartzArmorHelmet.getUnlocalizedName());
-		GameRegistry.registerItem(quartzArmorChest, "MoArmor_" + quartzArmorChest.getUnlocalizedName());
-		GameRegistry.registerItem(quartzArmorLegs, "MoArmor_" + quartzArmorLegs.getUnlocalizedName());
-		GameRegistry.registerItem(quartzArmorBoots, "MoArmor_" + quartzArmorBoots.getUnlocalizedName());
-
+		registerArmorSet(flameArmorHelmet, flameArmorChest, flameArmorLegs, flameArmorBoots);
 		registerArmorSet(flintArmorHelmet, flintArmorChest, flintArmorLegs, flintArmorBoots);
-		
-		GameRegistry.registerItem(obsidianArmorHelmet, "MoArmor_" + obsidianArmorHelmet.getUnlocalizedName());
-		GameRegistry.registerItem(obsidianArmorChest, "MoArmor_" + obsidianArmorChest.getUnlocalizedName());
-		GameRegistry.registerItem(obsidianArmorLegs, "MoArmor_" + obsidianArmorLegs.getUnlocalizedName());
-		GameRegistry.registerItem(obsidianArmorBoots, "MoArmor_" + obsidianArmorBoots.getUnlocalizedName());
+		registerArmorSet(quartzArmorHelmet, quartzArmorChest, quartzArmorLegs, quartzArmorBoots);
+		registerArmorSet(obsidianArmorHelmet, obsidianArmorChest, obsidianArmorLegs, obsidianArmorBoots);
+		registerArmorSet(enderArmorHelmet, enderArmorChest, enderArmorLegs, enderArmorBoots);
 	}
 	
 	/**
@@ -146,9 +141,9 @@ public class RegistrationHandler {
 	}
 	
 	private static void registerArmorSet(Item helmet, Item chestplate, Item leggings, Item boots){
-		GameRegistry.registerItem(helmet, "MoArmor_" + helmet.getUnlocalizedName());
-		GameRegistry.registerItem(chestplate, "MoArmor_" + chestplate.getUnlocalizedName());
-		GameRegistry.registerItem(leggings, "MoArmor_" + leggings.getUnlocalizedName());
-		GameRegistry.registerItem(boots, "MoArmor_" + boots.getUnlocalizedName());
+		GameRegistry.registerItem(helmet, helmet.getUnlocalizedName());
+		GameRegistry.registerItem(chestplate, chestplate.getUnlocalizedName());
+		GameRegistry.registerItem(leggings, leggings.getUnlocalizedName());
+		GameRegistry.registerItem(boots, boots.getUnlocalizedName());
 	}
 }
