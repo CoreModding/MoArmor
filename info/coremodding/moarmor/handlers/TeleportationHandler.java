@@ -66,7 +66,7 @@ public class TeleportationHandler {
 
             while (!flag1 && j > 0)
             {
-                Block block = this.worldObj.getBlock(i, j - 1, k);
+                Block block = this.worldObj.getBlock(i, j - 2, k);
 
                 if (block.getMaterial().blocksMovement())
                 {
