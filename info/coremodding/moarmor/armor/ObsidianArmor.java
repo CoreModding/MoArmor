@@ -1,7 +1,9 @@
 package info.coremodding.moarmor.armor;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
@@ -22,4 +24,18 @@ public class ObsidianArmor extends ItemArmor {
 		super(material, renderindex, par4);
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
+	
+	
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
+		if(slot == 0 || slot == 1 || slot == 2){
+		return "core_moarmor:textures/models/armor/obsidian_layer_1.png";
+		}
+		if(slot == 3){
+		return "core_moarmor:textures/models/armor/obsidian_layer_2.png";
+		} else {
+			return null;
+		}
+
+	};
 }

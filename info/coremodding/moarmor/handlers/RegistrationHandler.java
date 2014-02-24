@@ -7,7 +7,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import info.coremodding.moarmor.armor.EnderArmor;
 import info.coremodding.moarmor.armor.FlameArmor;
+import info.coremodding.moarmor.armor.FlintArmor;
 import info.coremodding.moarmor.armor.ObsidianArmor;
+import info.coremodding.moarmor.armor.QuartzArmor;
 import info.coremodding.moarmor.items.ItemDiamondHammer;
 import info.coremodding.moarmor.items.ItemHammer;
 import info.coremodding.moarmor.items.ItemPlate;
@@ -23,15 +25,15 @@ public class RegistrationHandler {
 	public static Item flameArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flameArmorLegs");
 	public static Item flameArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flameArmorBoots");
 
-	private static Item quartzArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("quartzArmorHelmet");
-	private static Item quartzArmorChest = new FlameArmor(0, 1).setUnlocalizedName("quartzArmorChest");
-	private static Item quartzArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("quartzArmorLegs");
-	private static Item quartzArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("quartzArmorBoots");
+	private static Item quartzArmorHelmet = new QuartzArmor(0, 0).setUnlocalizedName("quartzArmorHelmet");
+	private static Item quartzArmorChest = new QuartzArmor(0, 1).setUnlocalizedName("quartzArmorChest");
+	private static Item quartzArmorLegs = new QuartzArmor(0, 2).setUnlocalizedName("quartzArmorLegs");
+	private static Item quartzArmorBoots = new QuartzArmor(0, 3).setUnlocalizedName("quartzArmorBoots");
 
-	public static Item flintArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("flintArmorHelmet");
-	public static Item flintArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flintArmorChest");
-	public static Item flintArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flintArmorLegs");
-	public static Item flintArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flintArmorBoots");
+	public static Item flintArmorHelmet = new FlintArmor(0, 0).setUnlocalizedName("flintArmorHelmet");
+	public static Item flintArmorChest = new FlintArmor(0, 1).setUnlocalizedName("flintArmorChest");
+	public static Item flintArmorLegs = new FlintArmor(0, 2).setUnlocalizedName("flintArmorLegs");
+	public static Item flintArmorBoots = new FlintArmor(0, 3).setUnlocalizedName("flintArmorBoots");
 	
 	private static Item obsidianArmorHelmet = new ObsidianArmor(0, 0).setUnlocalizedName("obsidianArmorHelmet");
 	private static Item obsidianArmorChest = new ObsidianArmor(0, 1).setUnlocalizedName("obsidianArmorChest");
@@ -70,8 +72,8 @@ public class RegistrationHandler {
 	 * Registers other items
 	 */
 	public static void registerOtherItems(){
-		GameRegistry.registerItem(hammer, "MoArmor_" + hammer.getUnlocalizedName());
-		GameRegistry.registerItem(diamondHammer, "MoArmor_" + diamondHammer.getUnlocalizedName());
+		GameRegistry.registerItem(hammer, "moarmor_" + hammer.getUnlocalizedName());
+		GameRegistry.registerItem(diamondHammer, "moarmor_" + diamondHammer.getUnlocalizedName());
 	}
 	
 	/**
@@ -103,7 +105,7 @@ public class RegistrationHandler {
 	 * Registers plates and their recipes
 	 */
 	public static void registerPlates(){
-		GameRegistry.registerItem(plate, "MoArmor_" + plate.getUnlocalizedName());
+		GameRegistry.registerItem(plate, "moarmor_" + plate.getUnlocalizedName());
 		
 		GameRegistry.addShapelessRecipe(flintPlate, new Object[] {
 			new ItemStack(Items.flint), hammerStack

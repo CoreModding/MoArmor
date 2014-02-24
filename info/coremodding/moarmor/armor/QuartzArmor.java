@@ -2,6 +2,7 @@ package info.coremodding.moarmor.armor;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -29,6 +30,20 @@ public class QuartzArmor extends ItemArmor {
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){
-		item.addEnchantment(Enchantment.thorns, 1);
+		// item.addEnchantment(Enchantment.thorns, 1);
 	}
+	
+	
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
+		if(slot == 0 || slot == 1 || slot == 2){
+		return "core_moarmor:textures/models/armor/netherquartz_layer_1.png";
+		}
+		if(slot == 3){
+		return "core_moarmor:textures/models/armor/netherquartz_layer_2.png";
+		} else {
+			return null;
+		}
+
+	};
 }

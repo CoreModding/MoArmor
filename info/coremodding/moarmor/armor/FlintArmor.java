@@ -32,22 +32,19 @@ public class FlintArmor extends ItemArmor {
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){
-		item.addEnchantment(Enchantment.thorns, 1);
+		// item.addEnchantment(Enchantment.thorns, 1);
 	}
 	
+	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
-		System.out.println("CALLED!");
 		if(slot == 0 || slot == 1 || slot == 2){
-			System.out.println("return 1!");
-		return "core_MoArmor:textures/models/armor/flint_layer_1.png";
+		return "core_moarmor:textures/models/armor/flint_layer_1.png";
 		}
 		if(slot == 3){
-			System.out.println("return 2!");
-		return "core_MoArmor:textures/models/armor/flint_layer_2.png";
+		return "core_moarmor:textures/models/armor/flint_layer_2.png";
 		} else {
-			System.out.println("Return null!");
 			return null;
 		}
 
-		};
+	};
 }

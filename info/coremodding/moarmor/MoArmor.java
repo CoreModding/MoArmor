@@ -13,7 +13,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 /**
  * The main mod class
  */
-@Mod(modid = "core_MoArmor", name = "Mo' Armor", version = "1.0.0.0")
+@Mod(modid = "core_moarmor", name = "Mo' Armor", version = "1.0.0.0")
 public class MoArmor {
 	
 	/**
