@@ -1,10 +1,13 @@
 package info.coremodding.moarmor.armor;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -32,7 +35,19 @@ public class FlintArmor extends ItemArmor {
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){
-		// item.addEnchantment(Enchantment.thorns, 1);
+		if(!item.isItemEnchanted())
+		 item.addEnchantment(Enchantment.thorns, 1);
+	}
+	
+	@Override
+	public boolean hasEffect(ItemStack par1ItemStack){
+		return false;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public EnumRarity getRarity(ItemStack par1ItemStack){
+		return EnumRarity.rare;
 	}
 	
 	@Override
