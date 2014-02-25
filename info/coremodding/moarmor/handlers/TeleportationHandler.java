@@ -39,7 +39,6 @@ public class TeleportationHandler {
         double d1 = this.locY + (double)(this.rand.nextInt(64) - 32);
         double d2 = this.locZ + (this.rand.nextDouble() - 0.5D) * 64.0D;
 
-		System.out.println("Preparing!");
         return this.teleportTo(d0, d1, d2);
     }
 
@@ -48,8 +47,6 @@ public class TeleportationHandler {
      */
     protected boolean teleportTo(double par1, double par3, double par5)
     {
-
-		System.out.println("Teleporting!");
         double d3 = this.locX;
         double d4 = this.locY;
         double d5 = this.locZ;

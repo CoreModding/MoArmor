@@ -37,8 +37,11 @@ public class EnderArmor extends ItemArmor {
 		        if (entity.isWet())
 		        {
 		            entity.attackEntityFrom(DamageSource.drown, 1.0F);
-					System.out.println("should teleport!");
-		            th.random();
+		        }
+		        
+		        if (entity.isWet() || entity.isBurning())
+		        {
+	                th.random();
 		        }
 			}
 		}
