@@ -28,10 +28,10 @@ public class ObsidianArmor extends ItemArmor {
 	
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
-		if(slot == 0 || slot == 1 || slot == 2){
+		if(slot == 0 || slot == 1 || slot == 3){
 		return "core_moarmor:textures/models/armor/obsidian_layer_1.png";
 		}
-		if(slot == 3){
+		if(slot == 2){
 		return "core_moarmor:textures/models/armor/obsidian_layer_2.png";
 		} else {
 			return null;
