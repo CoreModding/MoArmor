@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import info.coremodding.moarmor.armor.DirtArmor;
 import info.coremodding.moarmor.armor.EnderArmor;
 import info.coremodding.moarmor.armor.FlameArmor;
 import info.coremodding.moarmor.armor.FlintArmor;
@@ -45,6 +46,11 @@ public class RegistrationHandler {
 	public static Item enderArmorLegs = new EnderArmor(0, 2).setUnlocalizedName("enderArmorLegs");
 	public static Item enderArmorBoots = new EnderArmor(0, 3).setUnlocalizedName("enderArmorBoots");
 	
+	public static Item dirtArmorHelmet = new DirtArmor(0, 0).setUnlocalizedName("dirtArmorHelmet");
+	public static Item dirtArmorChest = new DirtArmor(0, 1).setUnlocalizedName("dirtArmorChest");
+	public static Item dirtArmorLegs = new DirtArmor(0, 2).setUnlocalizedName("dirtArmorLegs");
+	public static Item dirtArmorBoots = new DirtArmor(0, 3).setUnlocalizedName("dirtArmorBoots");
+	
 	public static Item hammer = new ItemHammer().setUnlocalizedName("hammer");
 	public static ItemStack hammerStack = new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE);
 	public static Item diamondHammer = new ItemDiamondHammer().setUnlocalizedName("diamondHammer");
@@ -66,6 +72,7 @@ public class RegistrationHandler {
 		registerArmorSet(quartzArmorHelmet, quartzArmorChest, quartzArmorLegs, quartzArmorBoots);
 		registerArmorSet(obsidianArmorHelmet, obsidianArmorChest, obsidianArmorLegs, obsidianArmorBoots);
 		registerArmorSet(enderArmorHelmet, enderArmorChest, enderArmorLegs, enderArmorBoots);
+		registerArmorSet(dirtArmorHelmet, dirtArmorChest, dirtArmorLegs, enderArmorBoots);
 	}
 	
 	/**
