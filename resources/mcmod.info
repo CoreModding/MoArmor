@@ -1,0 +1,16 @@
+[
+{
+  "modid": "core_MoArmor",
+  "name": "Mo' Armor",
+  "description": "Mod that adds lots of new armor.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "www.coremodding.info",
+  "updateUrl": "",
+  "authors": [""],
+  "credits": "CoreModding team",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
