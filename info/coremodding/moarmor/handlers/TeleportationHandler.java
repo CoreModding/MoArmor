@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,9 +20,9 @@ public class TeleportationHandler {
 	private double locZ;
 	private Random rand;
 	private World worldObj;
-	private Entity entity;
+	private EntityPlayer entity;
 	
-	public TeleportationHandler(Entity e){
+	public TeleportationHandler(EntityPlayer e){
 		this.locX = e.posX;
 		this.locY = e.posY;
 		this.locZ = e.posZ;
@@ -66,7 +67,7 @@ public class TeleportationHandler {
 
             while (!flag1 && j > 0)
             {
-                Block block = this.worldObj.getBlock(i, j - 2, k);
+                Block block = this.worldObj.getBlock(i, j, k);
 
                 if (block.getMaterial().blocksMovement())
                 {
@@ -74,14 +75,14 @@ public class TeleportationHandler {
                 }
                 else
                 {
-                    --this.locY;
+                	--this.locY;
                     --j;
                 }
             }
 
             if (flag1)
             {
-                entity.setPosition(this.locX, this.locY, this.locZ);
+                entity.setPositionAndUpdate(this.locX, this.locY + 3, this.locZ);
 
                 if (this.worldObj.getCollidingBoundingBoxes(entity, entity.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(entity.boundingBox))
                 {
@@ -92,7 +93,7 @@ public class TeleportationHandler {
 
         if (!flag)
         {
-            entity.setPosition(d3, d4, d5);
+            entity.setPositionAndUpdate(d3, d4, d5);
             return false;
         }
         else
