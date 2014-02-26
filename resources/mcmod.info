@@ -1,8 +1,8 @@
 [
 {
-  "modid": "core_MoArmor",
+  "modid": "core_moarmor",
   "name": "Mo' Armor",
-  "description": "Mod that adds lots of new armor.",
+  "description": "Mod that adds lots of new armor types.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "www.coremodding.info",
