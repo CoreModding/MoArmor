@@ -18,6 +18,8 @@ import net.minecraftforge.common.util.EnumHelper;
  */
 public class EnderArmor extends ItemArmor {
 	
+	
+	public static int tpdelay = 0;
 	/**
 	 * The ender armor material
 	 */
@@ -37,14 +39,17 @@ public class EnderArmor extends ItemArmor {
 		if(entity.inventory.armorInventory[0] != null && entity.inventory.armorInventory[1] != null && entity.inventory.armorInventory[2] != null && entity.inventory.armorInventory[3] != null){
 			if(entity.inventory.armorInventory[0].getItem() == RegistrationHandler.enderArmorBoots && entity.inventory.armorInventory[1].getItem() == RegistrationHandler.enderArmorLegs && entity.inventory.armorInventory[2].getItem() == RegistrationHandler.enderArmorChest && entity.inventory.armorInventory[3].getItem() == RegistrationHandler.enderArmorHelmet){
 				TeleportationHandler th = new TeleportationHandler(entity);
+				if(tpdelay > 0)
+					tpdelay--;
 		        if (entity.isWet())
 		        {
 		            entity.attackEntityFrom(DamageSource.drown, 1.0F);
 		        }
 		        
-		        if (entity.isWet() || entity.isBurning())
+		        if ((entity.isWet() || entity.isBurning()) && tpdelay == 0)
 		        {
 	                th.random();
+	                tpdelay = 80;
 		        }
 			}
 		}
