@@ -1,0 +1,68 @@
+item.dirtArmorHelmet.name=Dirt Helmet
+item.dirtArmorChest.name=Dirt Chestplate
+item.dirtArmorLegs.name=Dirt Leggings
+item.dirtArmorBoots.name=Dirt Boots
+
+item.enderArmorHelmet.name=Ender Fiber Helmet
+item.enderArmorChest.name=Ender Fiber Chestplate
+item.enderArmorLegs.name=Ender Fiber Leggings
+item.enderArmorBoots.name=Ender Fiber Boots
+
+item.flameArmorHelmet.name=Flame Helmet
+item.flameArmorChest.name=Flame Chestplate
+item.flameArmorLegs.name=Flame Leggings
+item.flameArmorBoots.name=Flame Boots
+
+item.flintArmorHelmet.name=Flint Helmet
+item.flintArmorChest.name=Flint Chestplate
+item.flintArmorLegs.name=Flint Leggings
+item.flintArmorBoots.name=Flint Boots
+
+item.foodArmorHelmet.name=Food Helmet
+item.foodArmorChest.name=Food Chestplate
+item.foodArmorLegs.name=Food Leggings
+item.foodArmorBoots.name=Food Boots
+
+item.grassArmorHelmet.name=Grass Helmet
+item.grassArmorChest.name=Grass Chestplate
+item.grassArmorLegs.name=Grass Leggings
+item.grassArmorBoots.name=Grass Boots
+
+item.netherArmorHelmet.name=Netherbrick Helmet
+item.netherArmorChest.name=Netherbrick Chestplate
+item.netherArmorLegs.name=Netherbrick Leggings
+item.netherArmorBoots.name=Netherbrick Boots
+
+item.obsidianArmorHelmet.name=Obsidian Helmet
+item.obsidianArmorChest.name=Obsidian Chestplate
+item.obsidianArmorLegs.name=Obsidian Leggings
+item.obsidianArmorBoots.name=Obsidian Boots
+
+item.quartzArmorHelmet.name=Netherquartz Helmet
+item.quartzArmorChest.name=Netherquartz Chestplate
+item.quartzArmorLegs.name=Netherquartz Leggings
+item.quartzArmorBoots.name=Netherquartz Boots
+
+item.tntArmorHelmet.name=TNT Helmet
+item.tntArmorChest.name=TNT Chestplate
+item.tntArmorLegs.name=TNT Leggings
+item.tntArmorBoots.name=TNT Boots
+
+item.wheatArmorHelmet.name=Wheat Helmet
+item.wheatArmorChest.name=Wheat Chestplate
+item.wheatArmorLegs.name=Wheat Leggings
+item.wheatArmorBoots.name=Wheat Boots
+
+item.woodArmorHelmet.name=Wooden Helmet
+item.woodArmorChest.name=Wooden Chestplate
+item.woodArmorLegs.name=Wooden Leggings
+item.woodArmorBoots.name=Wooden Boots
+
+flintPlate.name=Flint Plate
+quartzPlate.name=Netherquartz Plate
+obsidianPlate.name=Obsidian Plate
+flamePlate.name=Flame Plate
+enderPlate.name=Ender Fiber Plate
+
+item.hammer.name=Iron Hammer
+item.diamondHammer.name=Diamond Hammer

@@ -1,9 +1,12 @@
 package info.coremodding.moarmor.armor;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 import info.coremodding.moarmor.handlers.TeleportationHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -45,5 +48,11 @@ public class EnderArmor extends ItemArmor {
 		        }
 			}
 		}
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public EnumRarity getRarity(ItemStack par1ItemStack){
+		return EnumRarity.epic;
 	}
 }

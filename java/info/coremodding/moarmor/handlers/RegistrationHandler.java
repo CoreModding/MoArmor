@@ -26,25 +26,25 @@ public class RegistrationHandler {
 	public static Item flameArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flameArmorLegs");
 	public static Item flameArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flameArmorBoots");
 
-	private static Item quartzArmorHelmet = new QuartzArmor(0, 0).setUnlocalizedName("quartzArmorHelmet");
-	private static Item quartzArmorChest = new QuartzArmor(0, 1).setUnlocalizedName("quartzArmorChest");
-	private static Item quartzArmorLegs = new QuartzArmor(0, 2).setUnlocalizedName("quartzArmorLegs");
-	private static Item quartzArmorBoots = new QuartzArmor(0, 3).setUnlocalizedName("quartzArmorBoots");
+	private static Item quartzArmorHelmet = new QuartzArmor(0, 0).setUnlocalizedName("quartzArmorHelmet").setTextureName("core_moarmor:netherquartz_helmet");
+	private static Item quartzArmorChest = new QuartzArmor(0, 1).setUnlocalizedName("quartzArmorChest").setTextureName("core_moarmor:netherquartz_chestplate");
+	private static Item quartzArmorLegs = new QuartzArmor(0, 2).setUnlocalizedName("quartzArmorLegs").setTextureName("core_moarmor:netherquartz_leggings");
+	private static Item quartzArmorBoots = new QuartzArmor(0, 3).setUnlocalizedName("quartzArmorBoots").setTextureName("core_moarmor:netherquartz_boots");
 
-	public static Item flintArmorHelmet = new FlintArmor(0, 0).setUnlocalizedName("flintArmorHelmet");
-	public static Item flintArmorChest = new FlintArmor(0, 1).setUnlocalizedName("flintArmorChest");
-	public static Item flintArmorLegs = new FlintArmor(0, 2).setUnlocalizedName("flintArmorLegs");
-	public static Item flintArmorBoots = new FlintArmor(0, 3).setUnlocalizedName("flintArmorBoots");
+	public static Item flintArmorHelmet = new FlintArmor(0, 0).setUnlocalizedName("flintArmorHelmet").setTextureName("core_moarmor:flint_helmet");
+	public static Item flintArmorChest = new FlintArmor(0, 1).setUnlocalizedName("flintArmorChest").setTextureName("core_moarmor:flint_chestplate");
+	public static Item flintArmorLegs = new FlintArmor(0, 2).setUnlocalizedName("flintArmorLegs").setTextureName("core_moarmor:flint_leggings");
+	public static Item flintArmorBoots = new FlintArmor(0, 3).setUnlocalizedName("flintArmorBoots").setTextureName("core_moarmor:flint_boots");
 	
-	private static Item obsidianArmorHelmet = new ObsidianArmor(0, 0).setUnlocalizedName("obsidianArmorHelmet");
-	private static Item obsidianArmorChest = new ObsidianArmor(0, 1).setUnlocalizedName("obsidianArmorChest");
-	private static Item obsidianArmorLegs = new ObsidianArmor(0, 2).setUnlocalizedName("obsidianArmorLegs");
-	private static Item obsidianArmorBoots = new ObsidianArmor(0, 3).setUnlocalizedName("obsidianArmorBoots");
+	private static Item obsidianArmorHelmet = new ObsidianArmor(0, 0).setUnlocalizedName("obsidianArmorHelmet").setTextureName("core_moarmor:obsidian_helmet");
+	private static Item obsidianArmorChest = new ObsidianArmor(0, 1).setUnlocalizedName("obsidianArmorChest").setTextureName("core_moarmor:obsidian_chestplate");
+	private static Item obsidianArmorLegs = new ObsidianArmor(0, 2).setUnlocalizedName("obsidianArmorLegs").setTextureName("core_moarmor:obsidian_leggings");
+	private static Item obsidianArmorBoots = new ObsidianArmor(0, 3).setUnlocalizedName("obsidianArmorBoots").setTextureName("core_moarmor:obsidian_boots");
 	
-	public static Item enderArmorHelmet = new EnderArmor(0, 0).setUnlocalizedName("enderArmorHelmet");
-	public static Item enderArmorChest = new EnderArmor(0, 1).setUnlocalizedName("enderArmorChest");
-	public static Item enderArmorLegs = new EnderArmor(0, 2).setUnlocalizedName("enderArmorLegs");
-	public static Item enderArmorBoots = new EnderArmor(0, 3).setUnlocalizedName("enderArmorBoots");
+	public static Item enderArmorHelmet = new EnderArmor(0, 0).setUnlocalizedName("enderArmorHelmet").setTextureName("core_moarmor:ender_helmet");
+	public static Item enderArmorChest = new EnderArmor(0, 1).setUnlocalizedName("enderArmorChest").setTextureName("core_moarmor:ender_chestplate");
+	public static Item enderArmorLegs = new EnderArmor(0, 2).setUnlocalizedName("enderArmorLegs").setTextureName("core_moarmor:ender_leggings");
+	public static Item enderArmorBoots = new EnderArmor(0, 3).setUnlocalizedName("enderArmorBoots").setTextureName("core_moarmor:ender_boots");
 	
 	public static Item dirtArmorHelmet = new DirtArmor(0, 0).setUnlocalizedName("dirtArmorHelmet");
 	public static Item dirtArmorChest = new DirtArmor(0, 1).setUnlocalizedName("dirtArmorChest");
@@ -72,7 +72,7 @@ public class RegistrationHandler {
 		registerArmorSet(quartzArmorHelmet, quartzArmorChest, quartzArmorLegs, quartzArmorBoots);
 		registerArmorSet(obsidianArmorHelmet, obsidianArmorChest, obsidianArmorLegs, obsidianArmorBoots);
 		registerArmorSet(enderArmorHelmet, enderArmorChest, enderArmorLegs, enderArmorBoots);
-		registerArmorSet(dirtArmorHelmet, dirtArmorChest, dirtArmorLegs, enderArmorBoots);
+		registerArmorSet(dirtArmorHelmet, dirtArmorChest, dirtArmorLegs, dirtArmorBoots);
 	}
 	
 	/**

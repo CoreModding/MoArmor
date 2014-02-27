@@ -29,7 +29,6 @@ public class FlintArmor extends ItemArmor {
 	 */
 	public FlintArmor(int renderindex, int par4) {
 		super(material, renderindex, par4);
-		this.setTextureName("core_MoArmor:flintArmor");
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
