@@ -18,7 +18,9 @@ import net.minecraftforge.common.util.EnumHelper;
  */
 public class EnderArmor extends ItemArmor {
 	
-	
+	/**
+	 * Delay in ticks until the next teleportation can occur
+	 */
 	public static int tpdelay = 0;
 	/**
 	 * The ender armor material

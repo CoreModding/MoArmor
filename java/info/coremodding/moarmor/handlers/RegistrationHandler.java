@@ -21,10 +21,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
  */
 public class RegistrationHandler {
 
-	public static Item flameArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("flameArmorHelmet");
-	public static Item flameArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flameArmorChest");
-	public static Item flameArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flameArmorLegs");
-	public static Item flameArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flameArmorBoots");
+	public static Item flameArmorHelmet = new FlameArmor(0, 0).setUnlocalizedName("flameArmorHelmet").setTextureName("core_moarmor:flame_helmet");
+	public static Item flameArmorChest = new FlameArmor(0, 1).setUnlocalizedName("flameArmorChest").setTextureName("core_moarmor:flame_helmet");
+	public static Item flameArmorLegs = new FlameArmor(0, 2).setUnlocalizedName("flameArmorLegs").setTextureName("core_moarmor:flame_helmet");
+	public static Item flameArmorBoots = new FlameArmor(0, 3).setUnlocalizedName("flameArmorBoots").setTextureName("core_moarmor:flame_helmet");
 
 	private static Item quartzArmorHelmet = new QuartzArmor(0, 0).setUnlocalizedName("quartzArmorHelmet").setTextureName("core_moarmor:netherquartz_helmet");
 	private static Item quartzArmorChest = new QuartzArmor(0, 1).setUnlocalizedName("quartzArmorChest").setTextureName("core_moarmor:netherquartz_chestplate");
@@ -46,10 +46,10 @@ public class RegistrationHandler {
 	public static Item enderArmorLegs = new EnderArmor(0, 2).setUnlocalizedName("enderArmorLegs").setTextureName("core_moarmor:ender_leggings");
 	public static Item enderArmorBoots = new EnderArmor(0, 3).setUnlocalizedName("enderArmorBoots").setTextureName("core_moarmor:ender_boots");
 	
-	public static Item dirtArmorHelmet = new DirtArmor(0, 0).setUnlocalizedName("dirtArmorHelmet");
-	public static Item dirtArmorChest = new DirtArmor(0, 1).setUnlocalizedName("dirtArmorChest");
-	public static Item dirtArmorLegs = new DirtArmor(0, 2).setUnlocalizedName("dirtArmorLegs");
-	public static Item dirtArmorBoots = new DirtArmor(0, 3).setUnlocalizedName("dirtArmorBoots");
+	public static Item dirtArmorHelmet = new DirtArmor(0, 0).setUnlocalizedName("dirtArmorHelmet").setTextureName("core_moarmor:dirt_helmet");
+	public static Item dirtArmorChest = new DirtArmor(0, 1).setUnlocalizedName("dirtArmorChest").setTextureName("core_moarmor:dirt_helmet");
+	public static Item dirtArmorLegs = new DirtArmor(0, 2).setUnlocalizedName("dirtArmorLegs").setTextureName("core_moarmor:dirt_helmet");
+	public static Item dirtArmorBoots = new DirtArmor(0, 3).setUnlocalizedName("dirtArmorBoots").setTextureName("core_moarmor:dirt_helmet");
 	
 	public static Item hammer = new ItemHammer().setUnlocalizedName("hammer");
 	public static ItemStack hammerStack = new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE);
