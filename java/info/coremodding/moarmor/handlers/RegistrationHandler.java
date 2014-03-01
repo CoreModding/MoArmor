@@ -21,6 +21,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
  */
 public class RegistrationHandler {
 
+	public static Item plate = new ItemPlate();
+	
 	public static Item diamondHammer = new ItemDiamondHammer()
 			.setUnlocalizedName("diamondHammer");
 	public static ItemStack diamondHammerStack = new ItemStack(diamondHammer,
@@ -96,7 +98,6 @@ public class RegistrationHandler {
 					"core_moarmor:obsidian_leggings");
 	public static ItemStack obsidianPlate = new ItemStack(plate, 1, 2);
 
-	public static Item plate = new ItemPlate();
 	private static Item quartzArmorBoots = new QuartzArmor(0, 3)
 			.setUnlocalizedName("quartzArmorBoots").setTextureName(
 					"core_moarmor:netherquartz_boots");
