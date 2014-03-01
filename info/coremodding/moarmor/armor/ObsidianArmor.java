@@ -36,9 +36,8 @@ public class ObsidianArmor extends ItemArmor {
 		}
 		if (slot == 2) {
 			return "core_moarmor:textures/models/armor/obsidian_layer_2.png";
-		} else {
-			return null;
 		}
+		return null;
 
-	};
+	}
 }

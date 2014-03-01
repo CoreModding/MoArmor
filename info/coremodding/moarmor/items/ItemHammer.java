@@ -3,6 +3,7 @@ package info.coremodding.moarmor.items;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
+@SuppressWarnings("javadoc")
 public class ItemHammer extends Item {
 	public ItemHammer() {
 		super();

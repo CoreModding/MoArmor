@@ -9,6 +9,7 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
  * Handles crafting event
  */
 public class CraftingHandler {
+	@SuppressWarnings({ "static-method", "javadoc" })
 	@SubscribeEvent
 	public void onPlayerItemCrafted(PlayerEvent.ItemCraftedEvent event) {
 		IInventory craftMatrix = event.craftMatrix;

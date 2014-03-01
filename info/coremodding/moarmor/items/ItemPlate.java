@@ -9,6 +9,7 @@ import net.minecraft.util.MathHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("javadoc")
 public class ItemPlate extends Item {
 	public static final String[] names = new String[] { "flintPlate",
 			"quartzPlate", "obsidianPlate", "flamePlate", "enderPlate" };
@@ -20,7 +21,6 @@ public class ItemPlate extends Item {
 
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs,
