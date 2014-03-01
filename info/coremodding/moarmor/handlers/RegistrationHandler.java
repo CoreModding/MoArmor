@@ -19,8 +19,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 /**
  * Handles item and block registry
  */
+@SuppressWarnings("javadoc")
 public class RegistrationHandler {
-
+	
 	public static Item plate = new ItemPlate();
 	
 	public static Item diamondHammer = new ItemDiamondHammer()
