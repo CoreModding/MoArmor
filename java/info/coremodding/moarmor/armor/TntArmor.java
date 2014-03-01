@@ -2,24 +2,26 @@ package info.coremodding.moarmor.armor;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The TnT armor
+ * The obsidian armor
  */
-public class TntArmor extends ItemArmor {
-	
+public class ObsidianArmor extends ItemArmor {
+
 	/**
-	 * The TnT armor material
+	 * The obsidian armor material
 	 */
-	public static ArmorMaterial material = EnumHelper.addArmorMaterial("TNT", 18, new int[]{3, 7, 5, 3}, 9);
-	
+	public static ArmorMaterial material = EnumHelper.addArmorMaterial(
+			"OBSIDIAN", 50, new int[] { 8, 20, 15, 8 }, 3);
+
 	/**
-	 * @param renderindex Unknown
-	 * @param par4 The armor type
+	 * @param renderindex
+	 *            Unknown
+	 * @param par4
+	 *            The armor type
 	 */
-	public TntArmor(int renderindex, int par4) {
+	public ObsidianArmor(int renderindex, int par4) {
 		super(material, renderindex, par4);
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
