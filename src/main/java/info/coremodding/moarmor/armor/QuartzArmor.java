@@ -13,25 +13,23 @@ import net.minecraftforge.common.util.EnumHelper;
  */
 public class QuartzArmor extends ItemArmor {
 
-	/**
-	 * The quartz armor material
-	 */
-	public static ArmorMaterial material = EnumHelper.addArmorMaterial(
-			"QUARTZ", 10, new int[] { 1, 5, 3, 2 }, 5);
+    /**
+     * The quartz armor material
+     */
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial(
+            "QUARTZ", 10, new int[]{1, 5, 3, 2}, 5);
 
-	/**
-	 * @param renderindex
-	 *            Unknown
-	 * @param par4
-	 *            The armor type
-	 */
-	public QuartzArmor(int renderindex, int par4) {
-		super(material, renderindex, par4);
-		this.setCreativeTab(CreativeTabs.tabCombat);
-	}
+    /**
+     * @param renderindex Unknown
+     * @param par4        The armor type
+     */
+    public QuartzArmor(int renderindex, int par4) {
+        super(material, renderindex, par4);
+        this.setCreativeTab(CreativeTabs.tabCombat);
+    }
 
-	@Override
-	public void onArmorTick(World world, EntityPlayer entity, ItemStack item) {
-		item.addEnchantment(Enchantment.thorns, 1);
-	}
+    @Override
+    public void onArmorTick(World world, EntityPlayer entity, ItemStack item) {
+        item.addEnchantment(Enchantment.thorns, 1);
+    }
 }

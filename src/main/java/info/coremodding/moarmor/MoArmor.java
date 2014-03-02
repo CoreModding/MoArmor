@@ -1,10 +1,10 @@
 package info.coremodding.moarmor;
 
-import info.coremodding.moarmor.handlers.RegistrationHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import info.coremodding.moarmor.handlers.RegistrationHandler;
 
 /**
  * The main mod class
@@ -12,30 +12,28 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = "core_MoArmor", name = "Mo' Armor", version = "1.0.0.0")
 public class MoArmor {
 
-	/**
-	 * Registers stuff
-	 */
-	public static void register() {
-		RegistrationHandler.registerArmorItems();
-		RegistrationHandler.registerArmorRecipes();
-	}
+    /**
+     * Registers stuff
+     */
+    public static void register() {
+        RegistrationHandler.registerArmorItems();
+        RegistrationHandler.registerArmorRecipes();
+    }
 
-	/**
-	 * @param evt
-	 *            The event that triggered the method
-	 */
-	@EventHandler
-	public void init(FMLInitializationEvent evt) {
+    /**
+     * @param evt The event that triggered the method
+     */
+    @EventHandler
+    public void init(FMLInitializationEvent evt) {
 
-	}
+    }
 
-	/**
-	 * @param evt
-	 *            The event that triggered the method
-	 */
-	@SuppressWarnings("static-method")
-	@EventHandler
-	public void preinit(FMLPreInitializationEvent evt) {
-		register();
-	}
+    /**
+     * @param evt The event that triggered the method
+     */
+    @SuppressWarnings("static-method")
+    @EventHandler
+    public void preinit(FMLPreInitializationEvent evt) {
+        register();
+    }
 }
