@@ -202,24 +202,24 @@ public class RegistrationHandler {
         GameRegistry.registerItem(plate,
                 "moarmor_" + plate.getUnlocalizedName());
 
-        GameRegistry.addShapelessRecipe(flintPlate, new Object[]{
-                new ItemStack(Items.flint), hammerStack});
-        GameRegistry.addShapelessRecipe(flintPlate, new Object[]{
-                new ItemStack(Items.flint), diamondHammerStack});
+        GameRegistry.addShapelessRecipe(flintPlate,
+                new ItemStack(Items.flint), hammerStack);
+        GameRegistry.addShapelessRecipe(flintPlate,
+                new ItemStack(Items.flint), diamondHammerStack);
 
-        GameRegistry.addShapelessRecipe(quartzPlate, new Object[]{
-                new ItemStack(Items.quartz), hammerStack});
-        GameRegistry.addShapelessRecipe(quartzPlate, new Object[]{
-                new ItemStack(Items.quartz), diamondHammerStack});
+        GameRegistry.addShapelessRecipe(quartzPlate,
+                new ItemStack(Items.quartz), hammerStack);
+        GameRegistry.addShapelessRecipe(quartzPlate,
+                new ItemStack(Items.quartz), diamondHammerStack);
 
-        GameRegistry.addShapelessRecipe(obsidianPlate, new Object[]{
-                new ItemStack(Blocks.obsidian), diamondHammerStack});
+        GameRegistry.addShapelessRecipe(obsidianPlate,
+                new ItemStack(Blocks.obsidian), diamondHammerStack);
 
-        GameRegistry.addShapelessRecipe(flamePlate, new Object[]{
-                new ItemStack(Items.blaze_rod), diamondHammerStack});
+        GameRegistry.addShapelessRecipe(flamePlate,
+                new ItemStack(Items.blaze_rod), diamondHammerStack);
 
-        GameRegistry.addShapelessRecipe(enderPlate, new Object[]{
+        GameRegistry.addShapelessRecipe(enderPlate,
                 new ItemStack(Items.ender_pearl),
-                new ItemStack(Blocks.end_stone), diamondHammerStack});
+                new ItemStack(Blocks.end_stone), diamondHammerStack);
     }
 }
