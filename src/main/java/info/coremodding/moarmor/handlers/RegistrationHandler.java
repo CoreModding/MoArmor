@@ -23,6 +23,10 @@ public class RegistrationHandler {
             .setUnlocalizedName("diamondHammer");
     private static final ItemStack diamondHammerStack = new ItemStack(diamondHammer,
             1, OreDictionary.WILDCARD_VALUE);
+    public static final Item hammer = new ItemHammer().setUnlocalizedName("hammer");
+    public static final ItemStack hammerStack = new ItemStack(hammer, 1,
+            OreDictionary.WILDCARD_VALUE);
+    
     public static final Item dirtArmorBoots = new DirtArmor(3).setUnlocalizedName(
             "dirtArmorBoots").setTextureName("core_moarmor:dirt_helmet");
     public static final Item dirtArmorChest = new DirtArmor(1).setUnlocalizedName(
@@ -33,6 +37,7 @@ public class RegistrationHandler {
                     "core_moarmor:dirt_helmet");
     public static final Item dirtArmorLegs = new DirtArmor(2).setUnlocalizedName(
             "dirtArmorLegs").setTextureName("core_moarmor:dirt_helmet");
+    
     public static final Item enderArmorBoots = new EnderArmor(3)
             .setUnlocalizedName("enderArmorBoots").setTextureName(
                     "core_moarmor:ender_boots");
@@ -47,6 +52,7 @@ public class RegistrationHandler {
             .setUnlocalizedName("enderArmorLegs").setTextureName(
                     "core_moarmor:ender_leggings");
     public static final ItemStack enderPlate = new ItemStack(plate, 1, 4);
+    
     public static final Item flameArmorBoots = new FlameArmor(3)
             .setUnlocalizedName("flameArmorBoots").setTextureName(
                     "core_moarmor:flame_helmet");
@@ -74,11 +80,8 @@ public class RegistrationHandler {
     public static final Item flintArmorLegs = new FlintArmor(2)
             .setUnlocalizedName("flintArmorLegs").setTextureName(
                     "core_moarmor:flint_leggings");
-
     public static final ItemStack flintPlate = new ItemStack(plate, 1, 0);
-    public static final Item hammer = new ItemHammer().setUnlocalizedName("hammer");
-    public static final ItemStack hammerStack = new ItemStack(hammer, 1,
-            OreDictionary.WILDCARD_VALUE);
+    
     private static final Item obsidianArmorBoots = new ObsidianArmor(3)
             .setUnlocalizedName("obsidianArmorBoots").setTextureName(
                     "core_moarmor:obsidian_boots");
@@ -107,6 +110,19 @@ public class RegistrationHandler {
             .setUnlocalizedName("quartzArmorLegs").setTextureName(
                     "core_moarmor:netherquartz_leggings");
     public static final ItemStack quartzPlate = new ItemStack(plate, 1, 1);
+    
+    public static final Item tntArmorBoots = new TntArmor(3)
+    		.setUnlocalizedName("tntArmorBoots").setTextureName(
+    				"core_moarmor:tnt_boots");
+    public static final Item tntArmorChest = new TntArmor(1)
+    		.setUnlocalizedName("tntArmorChest").setTextureName(
+    				"core_moarmor:tntquartz_chestplate");
+    public static final Item tntArmorHelmet = new TntArmor(0)
+    		.setUnlocalizedName("tntArmorHelmet").setTextureName(
+    				"core_moarmor:tnt_helmet");
+    public static final Item tntArmorLegs = new TntArmor(2)
+            .setUnlocalizedName("tntArmorLegs").setTextureName(
+                    "core_moarmor:tnt_leggings");
 
     /**
      * Registers the armor items
