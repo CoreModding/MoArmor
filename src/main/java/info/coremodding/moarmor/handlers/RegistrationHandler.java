@@ -20,23 +20,24 @@ public class RegistrationHandler {
     private static final Item plate = new ItemPlate();
 
     public static final Item diamondHammer = new ItemDiamondHammer()
-            .setUnlocalizedName("diamondHammer");
+            .setUnlocalizedName("diamondHammer").setTextureName("core_moarmor:diamond_hammer");;
     private static final ItemStack diamondHammerStack = new ItemStack(diamondHammer,
             1, OreDictionary.WILDCARD_VALUE);
-    public static final Item hammer = new ItemHammer().setUnlocalizedName("hammer");
+    public static final Item hammer = new ItemHammer().setUnlocalizedName("hammer").setTextureName(
+    		"core_moarmor:hammer");
     public static final ItemStack hammerStack = new ItemStack(hammer, 1,
             OreDictionary.WILDCARD_VALUE);
     
     public static final Item dirtArmorBoots = new DirtArmor(3).setUnlocalizedName(
-            "dirtArmorBoots").setTextureName("core_moarmor:dirt_helmet");
+            "dirtArmorBoots").setTextureName("core_moarmor:dirt_boots");
     public static final Item dirtArmorChest = new DirtArmor(1).setUnlocalizedName(
-            "dirtArmorChest").setTextureName("core_moarmor:dirt_helmet");
+            "dirtArmorChest").setTextureName("core_moarmor:dirt_chestplate");
 
     public static final Item dirtArmorHelmet = new DirtArmor(0)
             .setUnlocalizedName("dirtArmorHelmet").setTextureName(
                     "core_moarmor:dirt_helmet");
     public static final Item dirtArmorLegs = new DirtArmor(2).setUnlocalizedName(
-            "dirtArmorLegs").setTextureName("core_moarmor:dirt_helmet");
+            "dirtArmorLegs").setTextureName("core_moarmor:dirt_leggings");
     
     public static final Item enderArmorBoots = new EnderArmor(3)
             .setUnlocalizedName("enderArmorBoots").setTextureName(
@@ -116,7 +117,7 @@ public class RegistrationHandler {
     				"core_moarmor:tnt_boots");
     public static final Item tntArmorChest = new TntArmor(1)
     		.setUnlocalizedName("tntArmorChest").setTextureName(
-    				"core_moarmor:tntquartz_chestplate");
+    				"core_moarmor:tnt_chestplate");
     public static final Item tntArmorHelmet = new TntArmor(0)
     		.setUnlocalizedName("tntArmorHelmet").setTextureName(
     				"core_moarmor:tnt_helmet");
@@ -140,6 +141,8 @@ public class RegistrationHandler {
                 enderArmorBoots);
         registerArmorSet(dirtArmorHelmet, dirtArmorChest, dirtArmorLegs,
                 dirtArmorBoots);
+        registerArmorSet(tntArmorHelmet, tntArmorChest, tntArmorLegs,
+                tntArmorBoots);
     }
 
     /**
@@ -210,32 +213,37 @@ public class RegistrationHandler {
         GameRegistry.addRecipe(new ItemStack(diamondHammer, 1), "DDD", "DDD",
                 " S ", 'S', Items.stick, 'D', Items.diamond);
     }
-
-    /**
-     * Registers plates and their recipes
-     */
-    public static void registerPlates() {
-        GameRegistry.registerItem(plate,
-                "moarmor_" + plate.getUnlocalizedName());
-
-        GameRegistry.addShapelessRecipe(flintPlate,
-                new ItemStack(Items.flint), hammerStack);
-        GameRegistry.addShapelessRecipe(flintPlate,
-                new ItemStack(Items.flint), diamondHammerStack);
-
-        GameRegistry.addShapelessRecipe(quartzPlate,
-                new ItemStack(Items.quartz), hammerStack);
-        GameRegistry.addShapelessRecipe(quartzPlate,
-                new ItemStack(Items.quartz), diamondHammerStack);
-
-        GameRegistry.addShapelessRecipe(obsidianPlate,
-                new ItemStack(Blocks.obsidian), diamondHammerStack);
-
-        GameRegistry.addShapelessRecipe(flamePlate,
-                new ItemStack(Items.blaze_rod), diamondHammerStack);
-
-        GameRegistry.addShapelessRecipe(enderPlate,
-                new ItemStack(Items.ender_pearl),
-                new ItemStack(Blocks.end_stone), diamondHammerStack);
-    }
+    
+	/**
+	 * Registers plates and their recipes
+	 */
+	public static void registerPlates(){
+		GameRegistry.registerItem(plate, plate.getUnlocalizedName());
+		
+		GameRegistry.addShapelessRecipe(flintPlate, new Object[] {
+			new ItemStack(Items.flint), hammerStack
+		});
+		GameRegistry.addShapelessRecipe(flintPlate, new Object[] {
+			new ItemStack(Items.flint), diamondHammerStack
+		});
+		
+		GameRegistry.addShapelessRecipe(quartzPlate, new Object[] {
+			new ItemStack(Items.quartz), hammerStack
+		});
+		GameRegistry.addShapelessRecipe(quartzPlate, new Object[] {
+			new ItemStack(Items.quartz), diamondHammerStack
+		});
+		
+		GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {
+				new ItemStack(Blocks.obsidian), diamondHammerStack
+			});
+		
+		GameRegistry.addShapelessRecipe(flamePlate, new Object[] {
+				new ItemStack(Items.blaze_rod), diamondHammerStack
+			});
+		
+		GameRegistry.addShapelessRecipe(enderPlate, new Object[] {
+				new ItemStack(Items.ender_pearl), new ItemStack(Blocks.end_stone), diamondHammerStack
+			});
+	}
 }

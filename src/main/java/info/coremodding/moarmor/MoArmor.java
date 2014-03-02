@@ -18,6 +18,9 @@ public class MoArmor {
     private static void register() {
         RegistrationHandler.registerArmorItems();
         RegistrationHandler.registerArmorRecipes();
+        RegistrationHandler.registerOtherItems();
+        RegistrationHandler.registerOtherRecipes();
+        RegistrationHandler.registerPlates();
     }
 
     /**
