@@ -12,7 +12,7 @@ public class NetherArmor extends ItemArmor {
     /**
      * The nether brick armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial(
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial(
             "NETHER_BRICK", 15, new int[]{2, 6, 5, 2}, 9);
 
     /**

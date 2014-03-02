@@ -11,7 +11,7 @@ public class GrassArmor extends ItemArmor {
     /**
      * The grass armor material
      */
-    public static ArmorMaterial material = DirtArmor.material;
+    public static final ArmorMaterial material = DirtArmor.material;
 
     /**
      * @param renderindex Unknown

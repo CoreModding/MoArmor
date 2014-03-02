@@ -12,7 +12,7 @@ public class WheatArmor extends ItemArmor {
     /**
      * The wheat armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
             5, new int[]{1, 3, 2, 1}, 15);
 
     /**

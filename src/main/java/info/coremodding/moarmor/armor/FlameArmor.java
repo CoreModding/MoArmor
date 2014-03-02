@@ -20,7 +20,7 @@ public class FlameArmor extends ItemArmor {
     /**
      * The flame armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME",
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME",
             21, new int[]{3, 11, 7, 3}, 5);
 
     /**

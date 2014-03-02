@@ -21,7 +21,7 @@ public class EnderArmor extends ItemArmor {
     /**
      * The ender armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
             50, new int[]{8, 20, 15, 8}, 3);
     /**
      * Delay in ticks until the next teleportation can occur

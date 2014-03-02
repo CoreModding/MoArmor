@@ -12,7 +12,7 @@ public class FoodArmor extends ItemArmor {
     /**
      * The food armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FOOD",
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("FOOD",
             10, new int[]{1, 5, 3, 1}, 1);
 
     /**

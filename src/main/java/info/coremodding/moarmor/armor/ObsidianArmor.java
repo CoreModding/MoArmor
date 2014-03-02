@@ -14,7 +14,7 @@ public class ObsidianArmor extends ItemArmor {
     /**
      * The obsidian armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial(
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial(
             "OBSIDIAN", 50, new int[]{8, 20, 15, 8}, 3);
 
     /**

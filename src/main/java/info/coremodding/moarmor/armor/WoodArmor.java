@@ -12,7 +12,7 @@ public class WoodArmor extends ItemArmor {
     /**
      * The wood armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("WOOD",
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("WOOD",
             7, new int[]{1, 4, 3, 1}, 2);
 
     /**

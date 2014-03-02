@@ -16,7 +16,7 @@ public class FlintArmor extends ItemArmor {
     /**
      * The flint armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLINT",
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("FLINT",
             7, new int[]{1, 5, 3, 2}, 5);
 
     /**

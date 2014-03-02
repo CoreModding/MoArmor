@@ -16,7 +16,7 @@ public class DirtArmor extends ItemArmor {
     /**
      * The dirt armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("DIRT",
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("DIRT",
             4, new int[]{1, 1, 1, 1}, 3);
 
     /**

@@ -16,7 +16,7 @@ public class QuartzArmor extends ItemArmor {
     /**
      * The quartz armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial(
+    public static final ArmorMaterial material = EnumHelper.addArmorMaterial(
             "QUARTZ", 10, new int[]{1, 5, 3, 2}, 5);
 
     /**
