@@ -32,12 +32,12 @@ public class RegistrationHandler {
             "dirtArmorBoots").setTextureName("core_moarmor:dirt_boots");
     public static final Item dirtArmorChest = new DirtArmor(1).setUnlocalizedName(
             "dirtArmorChest").setTextureName("core_moarmor:dirt_chestplate");
-
     public static final Item dirtArmorHelmet = new DirtArmor(0)
             .setUnlocalizedName("dirtArmorHelmet").setTextureName(
                     "core_moarmor:dirt_helmet");
     public static final Item dirtArmorLegs = new DirtArmor(2).setUnlocalizedName(
             "dirtArmorLegs").setTextureName("core_moarmor:dirt_leggings");
+    public static final ItemStack dirtPlate = new ItemStack(plate, 1, 5);
     
     public static final Item enderArmorBoots = new EnderArmor(3)
             .setUnlocalizedName("enderArmorBoots").setTextureName(
@@ -124,6 +124,7 @@ public class RegistrationHandler {
     public static final Item tntArmorLegs = new TntArmor(2)
             .setUnlocalizedName("tntArmorLegs").setTextureName(
                     "core_moarmor:tnt_leggings");
+    public static final ItemStack tntPlate = new ItemStack(plate, 1, 9);
 
     /**
      * Registers the armor items
@@ -184,6 +185,15 @@ public class RegistrationHandler {
                 "O O", 'O', flamePlate);
         GameRegistry.addRecipe(new ItemStack(flameArmorBoots, 1), "   ", "O O",
                 "O O", 'O', flamePlate);
+        
+        GameRegistry.addRecipe(new ItemStack(tntArmorHelmet, 1), "OOO",
+                "O O", 'O', tntPlate);
+        GameRegistry.addRecipe(new ItemStack(tntArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', tntPlate);
+        GameRegistry.addRecipe(new ItemStack(tntArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', tntPlate);
+        GameRegistry.addRecipe(new ItemStack(tntArmorBoots, 1), "   ", "O O",
+                "O O", 'O', tntPlate);
     }
 
     private static void registerArmorSet(Item helmet, Item chestplate,
@@ -234,16 +244,23 @@ public class RegistrationHandler {
 			new ItemStack(Items.quartz), diamondHammerStack
 		});
 		
+		GameRegistry.addShapelessRecipe(tntPlate, new Object[] {
+			new ItemStack(Blocks.tnt), hammerStack
+		});
+		GameRegistry.addShapelessRecipe(tntPlate, new Object[] {
+			new ItemStack(Blocks.tnt), diamondHammerStack
+		});
+		
 		GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {
-				new ItemStack(Blocks.obsidian), diamondHammerStack
-			});
+			new ItemStack(Blocks.obsidian), diamondHammerStack
+		});
 		
 		GameRegistry.addShapelessRecipe(flamePlate, new Object[] {
-				new ItemStack(Items.blaze_rod), diamondHammerStack
-			});
+			new ItemStack(Items.blaze_rod), diamondHammerStack
+		});
 		
 		GameRegistry.addShapelessRecipe(enderPlate, new Object[] {
-				new ItemStack(Items.ender_pearl), new ItemStack(Blocks.end_stone), diamondHammerStack
-			});
+			new ItemStack(Items.ender_pearl), new ItemStack(Blocks.end_stone), diamondHammerStack
+		});
 	}
 }
