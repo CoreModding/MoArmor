@@ -11,12 +11,12 @@ import java.util.Random;
  * Handler entity teleportation
  */
 public class TeleportationHandler {
-    private EntityPlayer entity;
+    private final EntityPlayer entity;
     private double locX;
     private double locY;
     private double locZ;
-    private Random rand;
-    private World worldObj;
+    private final Random rand;
+    private final World worldObj;
 
     @SuppressWarnings("javadoc")
     public TeleportationHandler(EntityPlayer e) {
@@ -43,7 +43,7 @@ public class TeleportationHandler {
     /**
      * Teleport the entity
      */
-    protected boolean teleportTo(double par1, double par3, double par5) {
+    boolean teleportTo(double par1, double par3, double par5) {
         double d3 = this.locX;
         double d4 = this.locY;
         double d5 = this.locZ;

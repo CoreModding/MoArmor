@@ -17,96 +17,96 @@ import net.minecraftforge.oredict.OreDictionary;
 @SuppressWarnings("javadoc")
 public class RegistrationHandler {
 
-    public static Item plate = new ItemPlate();
+    private static final Item plate = new ItemPlate();
 
-    public static Item diamondHammer = new ItemDiamondHammer()
+    public static final Item diamondHammer = new ItemDiamondHammer()
             .setUnlocalizedName("diamondHammer");
-    public static ItemStack diamondHammerStack = new ItemStack(diamondHammer,
+    private static final ItemStack diamondHammerStack = new ItemStack(diamondHammer,
             1, OreDictionary.WILDCARD_VALUE);
-    public static Item dirtArmorBoots = new DirtArmor(0, 3).setUnlocalizedName(
+    public static final Item dirtArmorBoots = new DirtArmor(3).setUnlocalizedName(
             "dirtArmorBoots").setTextureName("core_moarmor:dirt_helmet");
-    public static Item dirtArmorChest = new DirtArmor(0, 1).setUnlocalizedName(
+    public static final Item dirtArmorChest = new DirtArmor(1).setUnlocalizedName(
             "dirtArmorChest").setTextureName("core_moarmor:dirt_helmet");
 
-    public static Item dirtArmorHelmet = new DirtArmor(0, 0)
+    public static final Item dirtArmorHelmet = new DirtArmor(0)
             .setUnlocalizedName("dirtArmorHelmet").setTextureName(
                     "core_moarmor:dirt_helmet");
-    public static Item dirtArmorLegs = new DirtArmor(0, 2).setUnlocalizedName(
+    public static final Item dirtArmorLegs = new DirtArmor(2).setUnlocalizedName(
             "dirtArmorLegs").setTextureName("core_moarmor:dirt_helmet");
-    public static Item enderArmorBoots = new EnderArmor(0, 3)
+    public static final Item enderArmorBoots = new EnderArmor(3)
             .setUnlocalizedName("enderArmorBoots").setTextureName(
                     "core_moarmor:ender_boots");
-    public static Item enderArmorChest = new EnderArmor(0, 1)
+    public static final Item enderArmorChest = new EnderArmor(1)
             .setUnlocalizedName("enderArmorChest").setTextureName(
                     "core_moarmor:ender_chestplate");
 
-    public static Item enderArmorHelmet = new EnderArmor(0, 0)
+    public static final Item enderArmorHelmet = new EnderArmor(0)
             .setUnlocalizedName("enderArmorHelmet").setTextureName(
                     "core_moarmor:ender_helmet");
-    public static Item enderArmorLegs = new EnderArmor(0, 2)
+    public static final Item enderArmorLegs = new EnderArmor(2)
             .setUnlocalizedName("enderArmorLegs").setTextureName(
                     "core_moarmor:ender_leggings");
-    public static ItemStack enderPlate = new ItemStack(plate, 1, 4);
-    public static Item flameArmorBoots = new FlameArmor(0, 3)
+    public static final ItemStack enderPlate = new ItemStack(plate, 1, 4);
+    public static final Item flameArmorBoots = new FlameArmor(3)
             .setUnlocalizedName("flameArmorBoots").setTextureName(
                     "core_moarmor:flame_helmet");
 
-    public static Item flameArmorChest = new FlameArmor(0, 1)
+    public static final Item flameArmorChest = new FlameArmor(1)
             .setUnlocalizedName("flameArmorChest").setTextureName(
                     "core_moarmor:flame_helmet");
-    public static Item flameArmorHelmet = new FlameArmor(0, 0)
+    public static final Item flameArmorHelmet = new FlameArmor(0)
             .setUnlocalizedName("flameArmorHelmet").setTextureName(
                     "core_moarmor:flame_helmet");
-    public static Item flameArmorLegs = new FlameArmor(0, 2)
+    public static final Item flameArmorLegs = new FlameArmor(2)
             .setUnlocalizedName("flameArmorLegs").setTextureName(
                     "core_moarmor:flame_helmet");
-    public static ItemStack flamePlate = new ItemStack(plate, 1, 3);
+    public static final ItemStack flamePlate = new ItemStack(plate, 1, 3);
 
-    public static Item flintArmorBoots = new FlintArmor(0, 3)
+    public static final Item flintArmorBoots = new FlintArmor(3)
             .setUnlocalizedName("flintArmorBoots").setTextureName(
                     "core_moarmor:flint_boots");
-    public static Item flintArmorChest = new FlintArmor(0, 1)
+    public static final Item flintArmorChest = new FlintArmor(1)
             .setUnlocalizedName("flintArmorChest").setTextureName(
                     "core_moarmor:flint_chestplate");
-    public static Item flintArmorHelmet = new FlintArmor(0, 0)
+    public static final Item flintArmorHelmet = new FlintArmor(0)
             .setUnlocalizedName("flintArmorHelmet").setTextureName(
                     "core_moarmor:flint_helmet");
-    public static Item flintArmorLegs = new FlintArmor(0, 2)
+    public static final Item flintArmorLegs = new FlintArmor(2)
             .setUnlocalizedName("flintArmorLegs").setTextureName(
                     "core_moarmor:flint_leggings");
 
-    public static ItemStack flintPlate = new ItemStack(plate, 1, 0);
-    public static Item hammer = new ItemHammer().setUnlocalizedName("hammer");
-    public static ItemStack hammerStack = new ItemStack(hammer, 1,
+    public static final ItemStack flintPlate = new ItemStack(plate, 1, 0);
+    public static final Item hammer = new ItemHammer().setUnlocalizedName("hammer");
+    public static final ItemStack hammerStack = new ItemStack(hammer, 1,
             OreDictionary.WILDCARD_VALUE);
-    private static Item obsidianArmorBoots = new ObsidianArmor(0, 3)
+    private static final Item obsidianArmorBoots = new ObsidianArmor(3)
             .setUnlocalizedName("obsidianArmorBoots").setTextureName(
                     "core_moarmor:obsidian_boots");
 
-    private static Item obsidianArmorChest = new ObsidianArmor(0, 1)
+    private static final Item obsidianArmorChest = new ObsidianArmor(1)
             .setUnlocalizedName("obsidianArmorChest").setTextureName(
                     "core_moarmor:obsidian_chestplate");
-    private static Item obsidianArmorHelmet = new ObsidianArmor(0, 0)
+    private static final Item obsidianArmorHelmet = new ObsidianArmor(0)
             .setUnlocalizedName("obsidianArmorHelmet").setTextureName(
                     "core_moarmor:obsidian_helmet");
-    private static Item obsidianArmorLegs = new ObsidianArmor(0, 2)
+    private static final Item obsidianArmorLegs = new ObsidianArmor(2)
             .setUnlocalizedName("obsidianArmorLegs").setTextureName(
                     "core_moarmor:obsidian_leggings");
-    public static ItemStack obsidianPlate = new ItemStack(plate, 1, 2);
+    public static final ItemStack obsidianPlate = new ItemStack(plate, 1, 2);
 
-    private static Item quartzArmorBoots = new QuartzArmor(0, 3)
+    private static final Item quartzArmorBoots = new QuartzArmor(3)
             .setUnlocalizedName("quartzArmorBoots").setTextureName(
                     "core_moarmor:netherquartz_boots");
-    private static Item quartzArmorChest = new QuartzArmor(0, 1)
+    private static final Item quartzArmorChest = new QuartzArmor(1)
             .setUnlocalizedName("quartzArmorChest").setTextureName(
                     "core_moarmor:netherquartz_chestplate");
-    private static Item quartzArmorHelmet = new QuartzArmor(0, 0)
+    private static final Item quartzArmorHelmet = new QuartzArmor(0)
             .setUnlocalizedName("quartzArmorHelmet").setTextureName(
                     "core_moarmor:netherquartz_helmet");
-    private static Item quartzArmorLegs = new QuartzArmor(0, 2)
+    private static final Item quartzArmorLegs = new QuartzArmor(2)
             .setUnlocalizedName("quartzArmorLegs").setTextureName(
                     "core_moarmor:netherquartz_leggings");
-    public static ItemStack quartzPlate = new ItemStack(plate, 1, 1);
+    public static final ItemStack quartzPlate = new ItemStack(plate, 1, 1);
 
     /**
      * Registers the armor items

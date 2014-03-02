@@ -20,15 +20,14 @@ public class FlameArmor extends ItemArmor {
     /**
      * The flame armor material
      */
-    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME",
+    private static final ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME",
             21, new int[]{3, 11, 7, 3}, 5);
 
     /**
-     * @param renderindex Unknown
-     * @param par4        The armor type
+     * @param par4 The armor type
      */
-    public FlameArmor(int renderindex, int par4) {
-        super(material, renderindex, par4);
+    public FlameArmor(int par4) {
+        super(material, 0, par4);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
 
@@ -42,7 +41,7 @@ public class FlameArmor extends ItemArmor {
                     && entity.inventory.armorInventory[1].getItem() == RegistrationHandler.flameArmorLegs
                     && entity.inventory.armorInventory[2].getItem() == RegistrationHandler.flameArmorChest
                     && entity.inventory.armorInventory[3].getItem() == RegistrationHandler.flameArmorHelmet) {
-                List<Object> entities = world.getEntitiesWithinAABB(
+                @SuppressWarnings("unchecked") List<Object> entities = world.getEntitiesWithinAABB(
                         EntityLivingBase.class, AxisAlignedBB.getBoundingBox(
                         entity.posX - 1, entity.posY - 2,
                         entity.posZ - 1, entity.posX + 1,

@@ -16,15 +16,14 @@ public class FlintArmor extends ItemArmor {
     /**
      * The flint armor material
      */
-    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("FLINT",
+    private static final ArmorMaterial material = EnumHelper.addArmorMaterial("FLINT",
             7, new int[]{1, 5, 3, 2}, 5);
 
     /**
-     * @param renderindex Unknown
-     * @param par4        The armor type
+     * @param par4 The armor type
      */
-    public FlintArmor(int renderindex, int par4) {
-        super(material, renderindex, par4);
+    public FlintArmor(int par4) {
+        super(material, 0, par4);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
 

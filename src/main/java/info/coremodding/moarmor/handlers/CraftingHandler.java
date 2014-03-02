@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 /**
  * Handles crafting event
  */
-public class CraftingHandler {
+class CraftingHandler {
     @SuppressWarnings({"static-method", "javadoc"})
     @SubscribeEvent
     public void onPlayerItemCrafted(PlayerEvent.ItemCraftedEvent event) {

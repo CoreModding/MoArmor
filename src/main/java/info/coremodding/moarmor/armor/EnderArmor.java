@@ -21,19 +21,18 @@ public class EnderArmor extends ItemArmor {
     /**
      * The ender armor material
      */
-    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
+    private static final ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
             50, new int[]{8, 20, 15, 8}, 3);
     /**
      * Delay in ticks until the next teleportation can occur
      */
-    public static int tpdelay = 0;
+    private static int tpdelay = 0;
 
     /**
-     * @param renderindex Unknown
-     * @param par4        The armor type
+     * @param par4 The armor type
      */
-    public EnderArmor(int renderindex, int par4) {
-        super(material, renderindex, par4);
+    public EnderArmor(int par4) {
+        super(material, 0, par4);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
 

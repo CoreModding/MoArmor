@@ -10,12 +10,12 @@ import info.coremodding.moarmor.handlers.RegistrationHandler;
  * The main mod class
  */
 @Mod(modid = "core_MoArmor", name = "Mo' Armor", version = "1.0.0.0")
-public class MoArmor {
+class MoArmor {
 
     /**
      * Registers stuff
      */
-    public static void register() {
+    private static void register() {
         RegistrationHandler.registerArmorItems();
         RegistrationHandler.registerArmorRecipes();
     }

@@ -7,12 +7,12 @@ import net.minecraftforge.common.util.EnumHelper;
 /**
  * The wheat armor
  */
-public class WheatArmor extends ItemArmor {
+class WheatArmor extends ItemArmor {
 
     /**
      * The wheat armor material
      */
-    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
+    private static final ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
             5, new int[]{1, 3, 2, 1}, 15);
 
     /**

@@ -20,11 +20,10 @@ public class DirtArmor extends ItemArmor {
             4, new int[]{1, 1, 1, 1}, 3);
 
     /**
-     * @param renderindex Unknown
-     * @param par4        The armor type
+     * @param par4 The armor type
      */
-    public DirtArmor(int renderindex, int par4) {
-        super(material, renderindex, par4);
+    public DirtArmor(int par4) {
+        super(material, 0, par4);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
 

@@ -14,15 +14,14 @@ public class ObsidianArmor extends ItemArmor {
     /**
      * The obsidian armor material
      */
-    public static final ArmorMaterial material = EnumHelper.addArmorMaterial(
+    private static final ArmorMaterial material = EnumHelper.addArmorMaterial(
             "OBSIDIAN", 50, new int[]{8, 20, 15, 8}, 3);
 
     /**
-     * @param renderindex Unknown
-     * @param par4        The armor type
+     * @param par4 The armor type
      */
-    public ObsidianArmor(int renderindex, int par4) {
-        super(material, renderindex, par4);
+    public ObsidianArmor(int par4) {
+        super(material, 0, par4);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
 

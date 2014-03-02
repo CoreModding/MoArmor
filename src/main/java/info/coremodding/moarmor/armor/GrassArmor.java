@@ -6,12 +6,12 @@ import net.minecraft.item.ItemArmor;
 /**
  * The grass armor
  */
-public class GrassArmor extends ItemArmor {
+class GrassArmor extends ItemArmor {
 
     /**
      * The grass armor material
      */
-    public static final ArmorMaterial material = DirtArmor.material;
+    private static final ArmorMaterial material = DirtArmor.material;
 
     /**
      * @param renderindex Unknown

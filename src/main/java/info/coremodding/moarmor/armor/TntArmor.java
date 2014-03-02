@@ -7,12 +7,12 @@ import net.minecraftforge.common.util.EnumHelper;
 /**
  * The obsidian armor
  */
-public class TntArmor extends ItemArmor {
+class TntArmor extends ItemArmor {
 
     /**
      * The obsidian armor material
      */
-    public static final ArmorMaterial material = EnumHelper.addArmorMaterial(
+    private static final ArmorMaterial material = EnumHelper.addArmorMaterial(
             "OBSIDIAN", 50, new int[]{8, 20, 15, 8}, 3);
 
     /**

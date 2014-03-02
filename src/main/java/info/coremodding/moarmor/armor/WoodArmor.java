@@ -7,12 +7,12 @@ import net.minecraftforge.common.util.EnumHelper;
 /**
  * The wood armor
  */
-public class WoodArmor extends ItemArmor {
+class WoodArmor extends ItemArmor {
 
     /**
      * The wood armor material
      */
-    public static final ArmorMaterial material = EnumHelper.addArmorMaterial("WOOD",
+    private static final ArmorMaterial material = EnumHelper.addArmorMaterial("WOOD",
             7, new int[]{1, 4, 3, 1}, 2);
 
     /**
