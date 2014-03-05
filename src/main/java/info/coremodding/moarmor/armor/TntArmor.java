@@ -1,6 +1,8 @@
 package info.coremodding.moarmor.armor;
 
 import info.coremodding.moarmor.handlers.RegistrationHandler;
+import info.coremodding.moarmor.helpers.ArmorHelper;
+import info.coremodding.moarmor.helpers.PlayerHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -42,17 +44,20 @@ public class TntArmor extends ItemArmor {
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){
-		if(entity.inventory.armorInventory[0] != null && entity.inventory.armorInventory[1] != null && entity.inventory.armorInventory[2] != null && entity.inventory.armorInventory[3] != null){
-			if(entity.inventory.armorInventory[0].getItem() == RegistrationHandler.tntArmorBoots && entity.inventory.armorInventory[1].getItem() == RegistrationHandler.tntArmorLegs && entity.inventory.armorInventory[2].getItem() == RegistrationHandler.tntArmorChest && entity.inventory.armorInventory[3].getItem() == RegistrationHandler.tntArmorHelmet){
-				if(entity.isBurning()){
-					float f = 4.0F;
-					entity.inventory.armorInventory[0].stackSize--;
-					entity.inventory.armorInventory[1].stackSize--;
-					entity.inventory.armorInventory[2].stackSize--;
+		if(PlayerHelper.armorHasAbility(entity, PlayerHelper.AbilityExplosive)){
+			if(entity.isBurning()){
+				boolean[] armor = ArmorHelper.getArmorTypeSlots(entity.inventory.armorInventory, ArmorHelper.TntArmor);
+				if(armor[0])
 					entity.inventory.armorInventory[3].stackSize--;
-			        entity.worldObj.createExplosion(entity, entity.posX, entity.posY, entity.posZ, f, true);
-			    }
-			}
+				if(armor[1])
+					entity.inventory.armorInventory[2].stackSize--;
+				if(armor[2])
+					entity.inventory.armorInventory[1].stackSize--;
+				if(armor[3])
+					entity.inventory.armorInventory[0].stackSize--;
+				float f = 4.0F;
+				entity.worldObj.createExplosion(entity, entity.posX, entity.posY, entity.posZ, f, true);
+			}	
 		}
 	}
 }

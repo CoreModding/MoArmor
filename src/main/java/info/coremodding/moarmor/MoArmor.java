@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import info.coremodding.moarmor.handlers.CraftingHandler;
 import info.coremodding.moarmor.handlers.ForgeEventHandler;
+import info.coremodding.moarmor.handlers.PlayerHandler;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 
 /**
@@ -16,6 +17,8 @@ import info.coremodding.moarmor.handlers.RegistrationHandler;
 @Mod(modid = "core_moarmor", name = "Mo' Armor", version = "1.0.0.0")
 public class MoArmor {
 
+	public static PlayerHandler ph = new PlayerHandler();
+	
     /**
      * Registers stuff
      */
