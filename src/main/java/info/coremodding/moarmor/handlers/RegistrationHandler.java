@@ -39,6 +39,17 @@ public class RegistrationHandler {
             "dirtArmorLegs").setTextureName("core_moarmor:dirt_leggings");
     public static final ItemStack dirtPlate = new ItemStack(plate, 1, 5);
     
+    public static final Item grassArmorBoots = new GrassArmor(3).setUnlocalizedName(
+            "grassArmorBoots").setTextureName("core_moarmor:grass_boots");
+    public static final Item grassArmorChest = new GrassArmor(1).setUnlocalizedName(
+            "grassArmorChest").setTextureName("core_moarmor:grass_chestplate");
+    public static final Item grassArmorHelmet = new GrassArmor(0)
+            .setUnlocalizedName("grassArmorHelmet").setTextureName(
+                    "core_moarmor:grass_helmet");
+    public static final Item grassArmorLegs = new GrassArmor(2).setUnlocalizedName(
+            "grassArmorLegs").setTextureName("core_moarmor:grass_leggings");
+    public static final ItemStack grassPlate = new ItemStack(plate, 1, 7);
+    
     public static final Item enderArmorBoots = new EnderArmor(3)
             .setUnlocalizedName("enderArmorBoots").setTextureName(
                     "core_moarmor:ender_boots");
@@ -142,6 +153,8 @@ public class RegistrationHandler {
                 enderArmorBoots);
         registerArmorSet(dirtArmorHelmet, dirtArmorChest, dirtArmorLegs,
                 dirtArmorBoots);
+        registerArmorSet(grassArmorHelmet, grassArmorChest, grassArmorLegs,
+        		grassArmorBoots);
         registerArmorSet(tntArmorHelmet, tntArmorChest, tntArmorLegs,
                 tntArmorBoots);
     }
@@ -194,6 +207,24 @@ public class RegistrationHandler {
                 "O O", 'O', tntPlate);
         GameRegistry.addRecipe(new ItemStack(tntArmorBoots, 1), "   ", "O O",
                 "O O", 'O', tntPlate);
+        
+        GameRegistry.addRecipe(new ItemStack(grassArmorHelmet, 1), "OOO",
+                "O O", 'O', grassPlate);
+        GameRegistry.addRecipe(new ItemStack(grassArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', grassPlate);
+        GameRegistry.addRecipe(new ItemStack(grassArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', grassPlate);
+        GameRegistry.addRecipe(new ItemStack(grassArmorBoots, 1), "   ", "O O",
+                "O O", 'O', grassPlate); 
+        
+        GameRegistry.addRecipe(new ItemStack(dirtArmorHelmet, 1), "OOO",
+                "O O", 'O', dirtPlate);
+        GameRegistry.addRecipe(new ItemStack(dirtArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', dirtPlate);
+        GameRegistry.addRecipe(new ItemStack(dirtArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', dirtPlate);
+        GameRegistry.addRecipe(new ItemStack(dirtArmorBoots, 1), "   ", "O O",
+                "O O", 'O', dirtPlate);
     }
 
     private static void registerArmorSet(Item helmet, Item chestplate,
@@ -249,6 +280,20 @@ public class RegistrationHandler {
 		});
 		GameRegistry.addShapelessRecipe(tntPlate, new Object[] {
 			new ItemStack(Blocks.tnt), diamondHammerStack
+		});
+		
+		GameRegistry.addShapelessRecipe(dirtPlate, new Object[] {
+			new ItemStack(Blocks.dirt), hammerStack
+		});
+		GameRegistry.addShapelessRecipe(dirtPlate, new Object[] {
+			new ItemStack(Blocks.dirt), diamondHammerStack
+		});
+		
+		GameRegistry.addShapelessRecipe(grassPlate, new Object[] {
+			new ItemStack(Blocks.grass), hammerStack
+		});
+		GameRegistry.addShapelessRecipe(grassPlate, new Object[] {
+			new ItemStack(Blocks.grass), diamondHammerStack
 		});
 		
 		GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {

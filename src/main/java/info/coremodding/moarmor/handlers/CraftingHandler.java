@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 /**
  * Handles crafting event
  */
-class CraftingHandler {
+public class CraftingHandler {
     @SuppressWarnings({"static-method", "javadoc"})
     @SubscribeEvent
     public void onPlayerItemCrafted(PlayerEvent.ItemCraftedEvent event) {
@@ -20,8 +20,7 @@ class CraftingHandler {
             {
                 ItemStack j = craftMatrix.getStackInSlot(i); // Gets the item
                 if (j.getItem() != null
-                        && (j.getItem() == RegistrationHandler.hammer || j
-                        .getItem() == RegistrationHandler.diamondHammer)) { // If
+                        && (j.getItem() == RegistrationHandler.hammer || j.getItem() == RegistrationHandler.diamondHammer)) { // If
                     // it's
                     // a
                     // hammer

@@ -15,7 +15,7 @@ public class GrassArmor extends ItemArmor {
 	/**
 	 * The grass armor material
 	 */
-	public static ArmorMaterial material = DirtArmor.material;
+	public static ArmorMaterial material = EnumHelper.addArmorMaterial("GRASS", 8, new int[]{1, 3, 3, 1}, 5);;
 	
 	/**
 	 * @param renderindex Unknown

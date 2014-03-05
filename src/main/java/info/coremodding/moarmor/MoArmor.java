@@ -1,9 +1,13 @@
 package info.coremodding.moarmor;
 
+import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import info.coremodding.moarmor.handlers.CraftingHandler;
+import info.coremodding.moarmor.handlers.ForgeEventHandler;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 
 /**
@@ -21,6 +25,8 @@ public class MoArmor {
         RegistrationHandler.registerOtherItems();
         RegistrationHandler.registerOtherRecipes();
         RegistrationHandler.registerPlates();
+
+		FMLCommonHandler.instance().bus().register(new CraftingHandler());
     }
 
     /**
@@ -28,7 +34,7 @@ public class MoArmor {
      */
     @EventHandler
     public void init(FMLInitializationEvent evt) {
-
+    	MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
     }
 
     /**
