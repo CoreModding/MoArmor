@@ -13,48 +13,53 @@ import net.minecraftforge.common.util.EnumHelper;
 /**
  * The TnT armor
  */
-public class TntArmor extends ItemArmor {
-	/**
-	 * The TnT armor material
-	 */
-	public static ArmorMaterial material = EnumHelper.addArmorMaterial("TNT", 18, new int[]{3, 7, 5, 3}, 9);
-	
-	/**
-	 * @param renderindex Unknown
-	 * @param par4 The armor type
-	 */
-	public TntArmor(int par4) {
-		super(material, 0, par4);
-		this.setCreativeTab(CreativeTabs.tabCombat);
-	}	
-	
-	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
-		if(slot == 0 || slot == 1 || slot == 3){
-		return "core_moarmor:textures/models/armor/tnt_layer_1.png";
-		}
-		if(slot == 2){
-		return "core_moarmor:textures/models/armor/tnt_layer_2.png";
-		}
-		return null;
-	}	
-	
-	@Override
-	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){
-		if(PlayerHelper.armorHasAbility(entity, PlayerHelper.AbilityExplosive)){
-			if(entity.isBurning()){
-				boolean[] armor = ArmorHelper.getArmorTypeSlots(entity.inventory.armorInventory, ArmorHelper.TntArmor);
-				if(armor[0])
-					entity.inventory.armorInventory[3].stackSize--;
-				if(armor[1])
-					entity.inventory.armorInventory[2].stackSize--;
-				if(armor[2])
-					entity.inventory.armorInventory[1].stackSize--;
-				if(armor[3])
-					entity.inventory.armorInventory[0].stackSize--;
-				float f = 4.0F;
-				entity.worldObj.createExplosion(entity, entity.posX, entity.posY, entity.posZ, f, true);
-			}	
-		}
-	}
+public class TntArmor extends ItemArmor
+{
+    /**
+     * The TnT armor material
+     */
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("TNT",
+                                                 18, new int[] { 3, 7, 5, 3 },
+                                                 9);
+    
+    /**
+     * @param renderindex
+     *            Unknown
+     * @param par4
+     *            The armor type
+     */
+    public TntArmor(int par4)
+    {
+        super(material, 0, par4);
+        this.setCreativeTab(CreativeTabs.tabCombat);
+    }
+    
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
+            String type)
+    {
+        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/tnt_layer_1.png"; }
+        if (slot == 2) { return "core_moarmor:textures/models/armor/tnt_layer_2.png"; }
+        return null;
+    }
+    
+    @Override
+    public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
+    {
+        if (PlayerHelper.armorHasAbility(entity, PlayerHelper.AbilityExplosive))
+        {
+            if (entity.isBurning())
+            {
+                boolean[] armor = ArmorHelper.getArmorTypeSlots(
+                        entity.inventory.armorInventory, ArmorHelper.TntArmor);
+                if (armor[0]) entity.inventory.armorInventory[3].stackSize--;
+                if (armor[1]) entity.inventory.armorInventory[2].stackSize--;
+                if (armor[2]) entity.inventory.armorInventory[1].stackSize--;
+                if (armor[3]) entity.inventory.armorInventory[0].stackSize--;
+                float f = 4.0F;
+                entity.worldObj.createExplosion(entity, entity.posX,
+                        entity.posY, entity.posZ, f, true);
+            }
+        }
+    }
 }

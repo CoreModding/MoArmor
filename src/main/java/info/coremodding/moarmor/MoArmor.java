@@ -14,36 +14,42 @@ import info.coremodding.moarmor.handlers.RegistrationHandler;
  * The main mod class
  */
 @Mod(modid = "core_moarmor", name = "Mo' Armor", version = "1.0.0.0")
-public class MoArmor {
-
+public class MoArmor
+{
+    
     /**
      * Registers stuff
      */
-    private static void register() {
+    private static void register()
+    {
         RegistrationHandler.registerArmorItems();
         RegistrationHandler.registerArmorRecipes();
         RegistrationHandler.registerOtherItems();
         RegistrationHandler.registerOtherRecipes();
         RegistrationHandler.registerPlates();
-
-		FMLCommonHandler.instance().bus().register(new CraftingHandler());
+        
+        FMLCommonHandler.instance().bus().register(new CraftingHandler());
     }
-
+    
     /**
-     * @param evt The event that triggered the method
-     */
-    @SuppressWarnings("static-method")
-	@EventHandler
-    public void init(FMLInitializationEvent evt) {
-    	MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
-    }
-
-    /**
-     * @param evt The event that triggered the method
+     * @param evt
+     *            The event that triggered the method
      */
     @SuppressWarnings("static-method")
     @EventHandler
-    public void preinit(FMLPreInitializationEvent evt) {
+    public void init(FMLInitializationEvent evt)
+    {
+        MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
+    }
+    
+    /**
+     * @param evt
+     *            The event that triggered the method
+     */
+    @SuppressWarnings("static-method")
+    @EventHandler
+    public void preinit(FMLPreInitializationEvent evt)
+    {
         register();
     }
 }
