@@ -18,6 +18,7 @@ public class PlayerHelper
      * Does the player have the explosive ability
      */
     public static final int AbilityExplosive  = 1;
+    public static final int AbilityEatable  = 2;
     
     /**
      * @param p
@@ -40,6 +41,11 @@ public class PlayerHelper
                 boolean[] tntBool = ArmorHelper.getArmorTypeSlots(
                         p.inventory.armorInventory, ArmorHelper.TntArmor);
                 if (tntBool[0] || tntBool[1] || tntBool[2] || tntBool[3]) return true;
+                break;
+            case AbilityEatable:
+                boolean[] foodBool = ArmorHelper.getArmorTypeSlots(
+                        p.inventory.armorInventory, ArmorHelper.TntArmor);
+                if (foodBool[0]) return true;
                 break;
             default:
                 break;
