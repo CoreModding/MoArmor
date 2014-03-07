@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 /**
- * Handler entity teleportation
+ * Handles entity teleportation
  */
 public class TeleportationHandler
 {

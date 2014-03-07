@@ -15,7 +15,7 @@ public class ForgeEventHandler {
 	
 	@SubscribeEvent
 	public void onEntityConstructing(EntityConstructing event){
-		if (event.entity instanceof EntityPlayer && ExtendedPlayerHandler.get((EntityPlayer) event.entity) == null)
+		if (event.entity instanceof EntityPlayer && PlayerHelper.getProperties((EntityPlayer) event.entity) == null)
 			ExtendedPlayerHandler.register((EntityPlayer) event.entity);
 	}
 	
@@ -25,11 +25,11 @@ public class ForgeEventHandler {
 			EntityLiving el = (EntityLiving) event.entityLiving;
 			EntityPlayer e = (EntityPlayer) event.target;
 			
-			if(!ExtendedPlayerHandler.get(e).isPlayerTargetable()){
+			if(!PlayerHelper.getProperties(e).isPlayerTargetable()){
 				if(PlayerHelper.armorHasAbility(e, PlayerHelper.AbilityCamouflage))
 					el.setAttackTarget(null);
 			} else {
-	    		ExtendedPlayerHandler.get(e).setTimeUntilUnseen(100);
+				PlayerHelper.getProperties(e).setTimeUntilUnseen(100);
 			}
 		}
 	}
@@ -37,13 +37,13 @@ public class ForgeEventHandler {
     @SubscribeEvent
     public void onAttackEntityEvent(AttackEntityEvent event){
     	if(event.target instanceof EntityLiving && event.entityLiving instanceof EntityPlayer)
-    		ExtendedPlayerHandler.get((EntityPlayer) event.entityLiving).setTimeUntilUnseen(100);
+    		PlayerHelper.getProperties((EntityPlayer) event.entityLiving).setTimeUntilUnseen(100);
     }
     
     @SubscribeEvent
     public void onLivingUpdateEvent(LivingUpdateEvent event){
     	if(event.entityLiving instanceof EntityPlayer){
-    		ExtendedPlayerHandler properties = ExtendedPlayerHandler.get((EntityPlayer) event.entityLiving);
+    		ExtendedPlayerHandler properties = PlayerHelper.getProperties((EntityPlayer) event.entityLiving);
     		if(properties.getTimeUntilUnseen() > 0)
     			properties.setTimeUntilUnseen(properties.getTimeUntilUnseen() - 1);
     	}

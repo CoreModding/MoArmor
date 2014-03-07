@@ -42,15 +42,6 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties {
 		player.registerExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME, new ExtendedPlayerHandler(player));
 	}
 	
-	/**
-	 * Gets ExtendedPlayerHandler for specified player
-	 * @param player Player to get properties for
-	 * @return Extended player properties
-	 */
-	public static final ExtendedPlayerHandler get(EntityPlayer player){
-		return (ExtendedPlayerHandler) player.getExtendedProperties(EXT_PROP_NAME);
-	}
-	
 	@Override
 	public void saveNBTData(NBTTagCompound compound) {
 		NBTTagCompound properties = new NBTTagCompound();

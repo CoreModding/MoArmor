@@ -1,5 +1,6 @@
 package info.coremodding.moarmor.helpers;
 
+import info.coremodding.moarmor.handlers.ExtendedPlayerHandler;
 import net.minecraft.entity.player.EntityPlayer;
 
 public class PlayerHelper
@@ -27,4 +28,13 @@ public class PlayerHelper
         }
         return false;
     }
+	
+	/**
+	 * Gets ExtendedPlayerHandler for specified player
+	 * @param player Player to get properties for
+	 * @return Extended player properties
+	 */
+	public static final ExtendedPlayerHandler getProperties(EntityPlayer player){
+		return (ExtendedPlayerHandler) player.getExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME);
+	}
 }
