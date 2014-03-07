@@ -2,6 +2,7 @@ package info.coremodding.moarmor.handlers;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import info.coremodding.moarmor.armor.*;
+import info.coremodding.moarmor.helpers.ArmorHelper;
 import info.coremodding.moarmor.items.ItemDiamondHammer;
 import info.coremodding.moarmor.items.ItemHammer;
 import info.coremodding.moarmor.items.ItemPlate;
@@ -226,6 +227,27 @@ public class RegistrationHandler
     public static final ItemStack  tntPlate            = new ItemStack(plate,
                                                                1, 9);
     
+    public static final Item       foodArmorBoots     = new FoodArmor(3)
+                                                               .setUnlocalizedName(
+                                                                       "foodArmorBoots")
+                                                               .setTextureName(
+                                                                       "core_moarmor:food_boots");
+    public static final Item       foodArmorChest     = new FoodArmor(1)
+                                                               .setUnlocalizedName(
+                                                                       "foodArmorChest")
+                                                               .setTextureName(
+                                                                       "core_moarmor:food_chestplate");
+    public static final Item       foodArmorHelmet    = new FoodArmor(0)
+                                                               .setUnlocalizedName(
+                                                                       "foodArmorHelmet")
+                                                               .setTextureName(
+                                                                       "core_moarmor:food_helmet");
+    public static final Item       foodArmorLegs      = new FoodArmor(2)
+                                                               .setUnlocalizedName(
+                                                                       "foodArmorLegs")
+                                                               .setTextureName(
+                                                                       "core_moarmor:food_leggings");
+    
     /**
      * Registers the armor items
      */
@@ -247,6 +269,8 @@ public class RegistrationHandler
                 grassArmorBoots);
         registerArmorSet(tntArmorHelmet, tntArmorChest, tntArmorLegs,
                 tntArmorBoots);
+        registerArmorSet(foodArmorHelmet, foodArmorChest, foodArmorLegs,
+                foodArmorBoots);
     }
     
     /**
@@ -391,4 +415,20 @@ public class RegistrationHandler
                 new ItemStack(Items.ender_pearl),
                 new ItemStack(Blocks.end_stone), diamondHammerStack });
     }
+
+    /**
+     * Registers food armor recipes
+     */
+	public static void registerFoodArmorRecipes() {
+		ItemStack porkArmorHelmet = new ItemStack(foodArmorHelmet);
+		ItemStack porkArmorChest = new ItemStack(foodArmorChest);
+		ItemStack porkArmorLegs = new ItemStack(foodArmorLegs);
+		ItemStack porkArmorBoots = new ItemStack(foodArmorBoots);
+		
+		ArmorHelper.addStringToNBT(porkArmorHelmet, "feedlevel", "8");
+        GameRegistry.addRecipe(porkArmorHelmet, "OOO",
+                "O O", 'O', Items.cooked_porkchop);
+        GameRegistry.addRecipe(porkArmorHelmet, "OOO",
+                "O O", 'O', Items.cooked_beef);
+	}
 }

@@ -49,8 +49,13 @@ public class ForgeEventHandler {
     		if(properties.getTimeUntilUnseen() > 0)
     			properties.setTimeUntilUnseen(properties.getTimeUntilUnseen() - 1);
     		if(p.getFoodStats().needFood()){
-	    		if(PlayerHelper.armorHasAbility(p, PlayerHelper.AbilityEatable)){
-	    			int feedLevel = Integer.parseInt(ArmorHelper.getStringFromNBT(p.inventory.armorInventory[3], "feedlevel"));
+	    		if(PlayerHelper.armorHasAbility(p, PlayerHelper.AbilitySelfFoodReplenish)){
+	    			int feedLevel;
+	    			if(ArmorHelper.getStringFromNBT(p.inventory.armorInventory[3], "feedlevel") != null)
+		    			feedLevel = Integer.parseInt(ArmorHelper.getStringFromNBT(p.inventory.armorInventory[3], "feedlevel"));
+	    			else
+	    				feedLevel = 1;
+	    			
 	    			if(20-p.getFoodStats().getFoodLevel() >= feedLevel){
 	    				p.getFoodStats().setFoodLevel(p.getFoodStats().getFoodLevel() + feedLevel);
 	    				p.inventory.armorInventory[3].stackSize--;
