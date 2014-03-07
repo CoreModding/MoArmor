@@ -6,21 +6,29 @@ import info.coremodding.moarmor.helpers.PlayerHelper;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 
 public class ForgeEventHandler {
+	
+	@SubscribeEvent
+	public void onEntityConstructing(EntityConstructing event){
+		if (event.entity instanceof EntityPlayer && ExtendedPlayerHandler.get((EntityPlayer) event.entity) == null)
+			ExtendedPlayerHandler.register((EntityPlayer) event.entity);
+	}
+	
     @SubscribeEvent
 	public void onLivingSetAttackTarget(LivingSetAttackTargetEvent event){
 		if(event.target instanceof EntityPlayer && event.entityLiving instanceof EntityLiving){
 			EntityLiving el = (EntityLiving) event.entityLiving;
 			EntityPlayer e = (EntityPlayer) event.target;
 			
-			if((Integer) MoArmor.ph.getValueForPlayer(e, "revealed") == null){
+			if(!ExtendedPlayerHandler.get(e).isPlayerTargetable()){
 				if(PlayerHelper.armorHasAbility(e, PlayerHelper.AbilityCamouflage))
 					el.setAttackTarget(null);
 			} else {
-	    		MoArmor.ph.setValueForPlayer((EntityPlayer) event.entityLiving, "revealed", 100);
+	    		ExtendedPlayerHandler.get(e).setTimeUntilUnseen(100);
 			}
 		}
 	}
@@ -28,7 +36,7 @@ public class ForgeEventHandler {
     @SubscribeEvent
     public void onAttackEntityEvent(AttackEntityEvent event){
     	if(event.target instanceof EntityLiving && event.entityLiving instanceof EntityPlayer){
-    		MoArmor.ph.setValueForPlayer((EntityPlayer) event.entityLiving, "revealed", 100);
+    		ExtendedPlayerHandler.get((EntityPlayer) event.entityLiving).setTimeUntilUnseen(100);
     	}
     }
 }
