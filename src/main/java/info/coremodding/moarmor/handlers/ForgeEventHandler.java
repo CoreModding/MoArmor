@@ -46,7 +46,6 @@ public class ForgeEventHandler {
     		ExtendedPlayerHandler properties = ExtendedPlayerHandler.get((EntityPlayer) event.entityLiving);
     		if(properties.getTimeUntilUnseen() > 0)
     			properties.setTimeUntilUnseen(properties.getTimeUntilUnseen() - 1);
-    			
     	}
     }
 }

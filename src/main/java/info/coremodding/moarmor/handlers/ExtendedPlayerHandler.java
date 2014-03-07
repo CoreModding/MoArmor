@@ -51,9 +51,6 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties {
 		return (ExtendedPlayerHandler) player.getExtendedProperties(EXT_PROP_NAME);
 	}
 	
-	/**
-	 * Writes the NBT tag compound
-	 */
 	@Override
 	public void saveNBTData(NBTTagCompound compound) {
 		NBTTagCompound properties = new NBTTagCompound();
@@ -63,10 +60,7 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties {
 		
 		compound.setTag(EXT_PROP_NAME, properties);
 	}
-
-	/**
-	 * Loads the NBT tag compound
-	 */
+	
 	@Override
 	public void loadNBTData(NBTTagCompound compound) {
 		NBTTagCompound properties = (NBTTagCompound) compound.getTag(EXT_PROP_NAME);
