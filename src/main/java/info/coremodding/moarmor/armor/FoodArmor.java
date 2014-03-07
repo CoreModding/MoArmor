@@ -20,8 +20,6 @@ public class FoodArmor extends ItemArmor
                                                  1);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */

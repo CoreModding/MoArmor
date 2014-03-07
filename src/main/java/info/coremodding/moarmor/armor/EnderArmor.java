@@ -1,7 +1,5 @@
 package info.coremodding.moarmor.armor;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 import info.coremodding.moarmor.handlers.TeleportationHandler;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * The ender armor
@@ -31,8 +31,6 @@ public class EnderArmor extends ItemArmor
                                                  new int[] { 8, 20, 15, 8 }, 3);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */

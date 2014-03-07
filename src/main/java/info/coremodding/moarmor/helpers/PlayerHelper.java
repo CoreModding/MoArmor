@@ -3,11 +3,29 @@ package info.coremodding.moarmor.helpers;
 import info.coremodding.moarmor.handlers.ExtendedPlayerHandler;
 import net.minecraft.entity.player.EntityPlayer;
 
+/**
+ * Some player utilities
+ */
 public class PlayerHelper
 {
+    
+    /**
+     * Does the player have the camo ability
+     */
     public static final int AbilityCamouflage = 0;
+    
+    /**
+     * Does the player have the explosive ability
+     */
     public static final int AbilityExplosive  = 1;
     
+    /**
+     * @param p
+     *            The player to check
+     * @param ability
+     *            The ability to check for
+     * @return Does the player have the given armor ability
+     */
     public static boolean armorHasAbility(EntityPlayer p, int ability)
     {
         switch (ability)

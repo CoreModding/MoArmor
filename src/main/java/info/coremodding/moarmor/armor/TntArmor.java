@@ -23,8 +23,6 @@ public class TntArmor extends ItemArmor
                                                  9);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */

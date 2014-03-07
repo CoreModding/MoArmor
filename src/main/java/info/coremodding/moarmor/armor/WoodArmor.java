@@ -23,8 +23,6 @@ public class WoodArmor extends ItemArmor
                                                          2);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */

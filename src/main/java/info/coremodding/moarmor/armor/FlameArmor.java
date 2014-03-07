@@ -27,8 +27,6 @@ public class FlameArmor extends ItemArmor
                                                  5);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */

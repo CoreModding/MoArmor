@@ -20,8 +20,6 @@ public class NetherArmor extends ItemArmor
             2, 6, 5, 2                          }, 9);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */
@@ -38,6 +36,5 @@ public class NetherArmor extends ItemArmor
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/netherbrick_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/netherbrick_layer_2.png"; }
         return null;
-        
     }
 }

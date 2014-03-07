@@ -1,11 +1,11 @@
 package info.coremodding.moarmor.handlers;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-
-import java.util.Random;
 
 /**
  * Handles entity teleportation
@@ -19,7 +19,10 @@ public class TeleportationHandler
     private final Random       rand;
     private final World        worldObj;
     
-    @SuppressWarnings("javadoc")
+    /**
+     * @param e
+     *            The entityplayer to handle teleports for
+     */
     public TeleportationHandler(EntityPlayer e)
     {
         this.locX = e.posX;
@@ -32,8 +35,9 @@ public class TeleportationHandler
     
     /**
      * Teleports entity to a random nearby position
+     * 
+     * @return Did it work
      */
-    @SuppressWarnings("javadoc")
     public boolean random()
     {
         double d0 = this.locX + (this.rand.nextDouble() - 0.5D) * 64.0D;
@@ -120,5 +124,4 @@ public class TeleportationHandler
         this.entity.playSound("mob.endermen.portal", 1.0F, 1.0F);
         return true;
     }
-    
 }

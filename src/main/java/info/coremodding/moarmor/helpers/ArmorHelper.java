@@ -3,10 +3,25 @@ package info.coremodding.moarmor.helpers;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Some armor utilities
+ */
 public class ArmorHelper
 {
+    
+    /**
+     * The dirt armor int
+     */
     public static final int DirtArmor  = 0;
+    
+    /**
+     * The TNT armor int
+     */
     public static final int TntArmor   = 1;
+    
+    /**
+     * The grass armor int
+     */
     public static final int GrassArmor = 2;
     
     /**
@@ -84,6 +99,13 @@ public class ArmorHelper
         return returnBool;
     }
     
+    /**
+     * @param armorInventory
+     *            The armor
+     * @param armorType
+     *            The armor type expected
+     * @return Is it a full set of armor
+     */
     public static boolean isFullSet(ItemStack[] armorInventory, int armorType)
     {
         boolean[] armorBool = ArmorHelper.getArmorTypeSlots(armorInventory,

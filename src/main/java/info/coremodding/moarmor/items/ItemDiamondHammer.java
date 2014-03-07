@@ -1,8 +1,14 @@
 package info.coremodding.moarmor.items;
 
-@SuppressWarnings("javadoc")
+/**
+ * The diamond hammer item
+ */
 public class ItemDiamondHammer extends ItemHammer
 {
+    
+    /**
+     * The constructor
+     */
     public ItemDiamondHammer()
     {
         super();

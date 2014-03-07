@@ -20,8 +20,6 @@ public class ObsidianArmor extends ItemArmor
             20, 15, 8                           }, 3);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */
@@ -38,6 +36,5 @@ public class ObsidianArmor extends ItemArmor
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/obsidian_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/obsidian_layer_2.png"; }
         return null;
-        
     }
 }

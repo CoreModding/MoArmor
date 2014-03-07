@@ -3,9 +3,15 @@ package info.coremodding.moarmor.items;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-@SuppressWarnings("javadoc")
+/**
+ * The base hammer
+ */
 public class ItemHammer extends Item
 {
+    
+    /**
+     * The item constructor
+     */
     public ItemHammer()
     {
         super();

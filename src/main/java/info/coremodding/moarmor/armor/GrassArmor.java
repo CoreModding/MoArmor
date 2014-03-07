@@ -23,8 +23,6 @@ public class GrassArmor extends ItemArmor
                                                          5);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */
@@ -41,6 +39,5 @@ public class GrassArmor extends ItemArmor
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/grass_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/grass_layer_2.png"; }
         return null;
-        
     }
 }

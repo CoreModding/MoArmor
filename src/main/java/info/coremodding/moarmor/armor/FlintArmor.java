@@ -1,7 +1,5 @@
 package info.coremodding.moarmor.armor;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
@@ -11,6 +9,8 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * The flint armor
@@ -29,8 +29,6 @@ public class FlintArmor extends ItemArmor
                                                          5);
     
     /**
-     * @param renderindex
-     *            Unknown
      * @param par4
      *            The armor type
      */
@@ -67,6 +65,5 @@ public class FlintArmor extends ItemArmor
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/flint_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/flint_layer_2.png"; }
         return null;
-        
     }
 }
