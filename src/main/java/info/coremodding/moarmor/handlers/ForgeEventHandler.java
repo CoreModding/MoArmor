@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 
@@ -35,8 +36,17 @@ public class ForgeEventHandler {
     
     @SubscribeEvent
     public void onAttackEntityEvent(AttackEntityEvent event){
-    	if(event.target instanceof EntityLiving && event.entityLiving instanceof EntityPlayer){
+    	if(event.target instanceof EntityLiving && event.entityLiving instanceof EntityPlayer)
     		ExtendedPlayerHandler.get((EntityPlayer) event.entityLiving).setTimeUntilUnseen(100);
+    }
+    
+    @SubscribeEvent
+    public void onLivingUpdateEvent(LivingUpdateEvent event){
+    	if(event.entityLiving instanceof EntityPlayer){
+    		ExtendedPlayerHandler properties = ExtendedPlayerHandler.get((EntityPlayer) event.entityLiving);
+    		if(properties.getTimeUntilUnseen() > 0)
+    			properties.setTimeUntilUnseen(properties.getTimeUntilUnseen() - 1);
+    			
     	}
     }
 }

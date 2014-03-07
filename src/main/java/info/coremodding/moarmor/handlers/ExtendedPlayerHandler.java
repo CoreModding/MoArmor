@@ -93,6 +93,14 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties {
 	}
 	
 	/**
+	 * Gets the time until entity will be untargetable by mobs
+	 * @return Time in ticks until the player should be unseen
+	 */
+	public int getTimeUntilUnseen(){
+		return this.timeUntilUnseen;
+	}
+	
+	/**
 	 * Check if the player can be seen by other mobs
 	 * @return True if the player can be seen
 	 */
