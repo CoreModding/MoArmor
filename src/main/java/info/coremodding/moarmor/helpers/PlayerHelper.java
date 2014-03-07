@@ -17,6 +17,8 @@ public class PlayerHelper {
 			if(tntBool[0] || tntBool[1] || tntBool[2] || tntBool[3])
 				return true;
 			break;
+		default:
+			break;
 		}
 		return false;
 	}

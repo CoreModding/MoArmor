@@ -32,7 +32,8 @@ public class MoArmor {
     /**
      * @param evt The event that triggered the method
      */
-    @EventHandler
+    @SuppressWarnings("static-method")
+	@EventHandler
     public void init(FMLInitializationEvent evt) {
     	MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
     }

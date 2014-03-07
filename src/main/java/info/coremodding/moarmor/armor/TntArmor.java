@@ -1,13 +1,11 @@
 package info.coremodding.moarmor.armor;
 
-import info.coremodding.moarmor.handlers.RegistrationHandler;
 import info.coremodding.moarmor.helpers.ArmorHelper;
 import info.coremodding.moarmor.helpers.PlayerHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
@@ -37,10 +35,9 @@ public class TntArmor extends ItemArmor {
 		}
 		if(slot == 2){
 		return "core_moarmor:textures/models/armor/tnt_layer_2.png";
-		} else {
-			return null;
 		}
-	};	
+		return null;
+	}	
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer entity, ItemStack item){

@@ -4,7 +4,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
@@ -33,9 +32,8 @@ public class WheatArmor extends ItemArmor {
 		}
 		if(slot == 2){
 		return "core_moarmor:textures/models/armor/wheat_layer_2.png";
-		} else {
-			return null;
 		}
+		return null;
 
-	};
+	}
 }

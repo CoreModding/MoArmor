@@ -55,8 +55,8 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties {
 	public void saveNBTData(NBTTagCompound compound) {
 		NBTTagCompound properties = new NBTTagCompound();
 		
-		properties.setInteger("TimeUntilUnseen", timeUntilUnseen);
-		properties.setBoolean("IsSeenByMobs", isSeen);
+		properties.setInteger("TimeUntilUnseen", this.timeUntilUnseen);
+		properties.setBoolean("IsSeenByMobs", this.isSeen);
 		
 		compound.setTag(EXT_PROP_NAME, properties);
 	}

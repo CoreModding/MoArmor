@@ -4,7 +4,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
@@ -15,7 +14,7 @@ public class GrassArmor extends ItemArmor {
 	/**
 	 * The grass armor material
 	 */
-	public static ArmorMaterial material = EnumHelper.addArmorMaterial("GRASS", 8, new int[]{1, 3, 3, 1}, 5);;
+	public static ArmorMaterial material = EnumHelper.addArmorMaterial("GRASS", 8, new int[]{1, 3, 3, 1}, 5);
 	
 	/**
 	 * @param renderindex Unknown
@@ -33,9 +32,8 @@ public class GrassArmor extends ItemArmor {
 		}
 		if(slot == 2){
 		return "core_moarmor:textures/models/armor/grass_layer_2.png";
-		} else {
-			return null;
 		}
+		return null;
 
-	};
+	}
 }

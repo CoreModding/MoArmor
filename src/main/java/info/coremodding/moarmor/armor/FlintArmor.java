@@ -2,7 +2,6 @@ package info.coremodding.moarmor.armor;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import info.coremodding.moarmor.handlers.RegistrationHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
@@ -38,6 +37,7 @@ public class FlintArmor extends ItemArmor {
 		 item.addEnchantment(Enchantment.thorns, 1);
 	}
 	
+	@Deprecated
 	@Override
 	public boolean hasEffect(ItemStack par1ItemStack){
 		return false;
@@ -56,9 +56,8 @@ public class FlintArmor extends ItemArmor {
 		}
 		if(slot == 2){
 		return "core_moarmor:textures/models/armor/flint_layer_2.png";
-		} else {
-			return null;
 		}
+		return null;
 
-	};
+	}
 }

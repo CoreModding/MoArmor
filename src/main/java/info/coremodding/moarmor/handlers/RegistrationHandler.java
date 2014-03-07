@@ -20,7 +20,7 @@ public class RegistrationHandler {
     private static final Item plate = new ItemPlate();
 
     public static final Item diamondHammer = new ItemDiamondHammer()
-            .setUnlocalizedName("diamondHammer").setTextureName("core_moarmor:diamond_hammer");;
+            .setUnlocalizedName("diamondHammer").setTextureName("core_moarmor:diamond_hammer");
     private static final ItemStack diamondHammerStack = new ItemStack(diamondHammer,
             1, OreDictionary.WILDCARD_VALUE);
     public static final Item hammer = new ItemHammer().setUnlocalizedName("hammer").setTextureName(

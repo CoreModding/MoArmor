@@ -19,7 +19,8 @@ public class ItemPlate extends Item {
 		
 	}
 	 
-	    public static final String[] names = new String[] { "flintPlate", "quartzPlate", "obsidianPlate", "flamePlate", "enderPlate", "dirtPlate", "foodPlate", "grassPlate", "netherPlate", "tntPlate", "wheatPlate", "woodPlate" };
+	    @SuppressWarnings("javadoc")
+		public static final String[] names = new String[] { "flintPlate", "quartzPlate", "obsidianPlate", "flamePlate", "enderPlate", "dirtPlate", "foodPlate", "grassPlate", "netherPlate", "tntPlate", "wheatPlate", "woodPlate" };
 	 
 	    @Override
 	    public String getUnlocalizedName(ItemStack par1ItemStack)
@@ -28,7 +29,6 @@ public class ItemPlate extends Item {
 	        return names[i];
 	    }
 	 
-	    @SuppressWarnings({ "unchecked", "rawtypes" })
 	    @SideOnly(Side.CLIENT)
 	    @Override
 	    public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List)
@@ -42,20 +42,21 @@ public class ItemPlate extends Item {
 	    @SideOnly(Side.CLIENT)
 	    private IIcon[] icons;
 	 
-	    @SideOnly(Side.CLIENT)
+	    @Override
+		@SideOnly(Side.CLIENT)
 	    public void registerIcons(IIconRegister par1IconRegister)
 	    {
-	        icons = new IIcon[12];
+	        this.icons = new IIcon[12];
 	 
-	        for (int i = 0; i < icons.length; i++)
+	        for (int i = 0; i < this.icons.length; i++)
 	        {
-	            icons[i] = par1IconRegister.registerIcon("core_moarmor:" + names[i]);
+	            this.icons[i] = par1IconRegister.registerIcon("core_moarmor:" + names[i]);
 	        }
 	    }
 	    
 	    @Override
 	    public IIcon getIconFromDamage(int par1)
 	    {
-	        return icons[par1];
+	        return this.icons[par1];
 	    }
 }

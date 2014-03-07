@@ -37,6 +37,7 @@ public class QuartzArmor extends ItemArmor {
 			 item.addEnchantment(Enchantment.thorns, 1);
 	}
 	
+	@Deprecated
 	@Override
 	public boolean hasEffect(ItemStack par1ItemStack){
 		return false;
@@ -55,9 +56,8 @@ public class QuartzArmor extends ItemArmor {
 		}
 		if(slot == 2){
 		return "core_moarmor:textures/models/armor/netherquartz_layer_2.png";
-		} else {
-			return null;
 		}
+		return null;
 
-	};
+	}
 }
