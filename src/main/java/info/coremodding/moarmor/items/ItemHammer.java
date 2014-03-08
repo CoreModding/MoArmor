@@ -16,7 +16,7 @@ public class ItemHammer extends Item
     {
         super();
         this.setHasSubtypes(false);
-        this.setCreativeTab(CreativeTabs.tabCombat);
+        this.setCreativeTab(CreativeTabs.tabTools);
         this.setMaxDamage(96);
         this.setMaxStackSize(1);
     }
