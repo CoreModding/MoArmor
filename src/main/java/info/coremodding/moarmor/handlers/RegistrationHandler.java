@@ -263,6 +263,29 @@ public class RegistrationHandler
                                                                .setTextureName(
                                                                        "core_moarmor:food_leggings");
     
+    public static final Item       netherArmorBoots       = new NetherArmor(3)
+    .setUnlocalizedName(
+            "netherArmorBoots")
+    .setTextureName(
+            "core_moarmor:netherbrick_boots");
+public static final Item       netherArmorChest       = new NetherArmor(1)
+    .setUnlocalizedName(
+            "netherArmorChest")
+    .setTextureName(
+            "core_moarmor:netherbrick_chestplate");
+public static final Item       netherArmorHelmet      = new NetherArmor(0)
+    .setUnlocalizedName(
+            "netherArmorHelmet")
+    .setTextureName(
+            "core_moarmor:netherbrick_helmet");
+public static final Item       netherArmorLegs        = new NetherArmor(2)
+    .setUnlocalizedName(
+            "netherArmorLegs")
+    .setTextureName(
+            "core_moarmor:netherbrick_leggings");
+public static final ItemStack  netherPlate            = new ItemStack(plate,
+    1, 8);
+    
     /**
      * Registers the armor items
      */
@@ -284,6 +307,8 @@ public class RegistrationHandler
                 grassArmorBoots);
         registerArmorSet(tntArmorHelmet, tntArmorChest, tntArmorLegs,
                 tntArmorBoots);
+        registerArmorSet(netherArmorHelmet, netherArmorChest, netherArmorLegs,
+                netherArmorBoots);
     }
     
     /**
@@ -353,6 +378,15 @@ public class RegistrationHandler
                 "O O", 'O', dirtPlate);
         GameRegistry.addRecipe(new ItemStack(dirtArmorBoots, 1), "   ", "O O",
                 "O O", 'O', dirtPlate);
+        
+        GameRegistry.addRecipe(new ItemStack(netherArmorHelmet, 1), "OOO", "O O",
+                'O', netherPlate);
+        GameRegistry.addRecipe(new ItemStack(netherArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', netherPlate);
+        GameRegistry.addRecipe(new ItemStack(netherArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', netherPlate);
+        GameRegistry.addRecipe(new ItemStack(netherArmorBoots, 1), "   ", "O O",
+                "O O", 'O', netherPlate);
     }
     
     private static void registerArmorSet(Item helmet, Item chestplate,
@@ -417,6 +451,11 @@ public class RegistrationHandler
                 new ItemStack(Blocks.grass), hammerStack });
         GameRegistry.addShapelessRecipe(grassPlate, new Object[] {
                 new ItemStack(Blocks.grass), diamondHammerStack });
+        
+        GameRegistry.addShapelessRecipe(netherPlate, new Object[] {
+                new ItemStack(Blocks.nether_brick), hammerStack });
+        GameRegistry.addShapelessRecipe(netherPlate, new Object[] {
+                new ItemStack(Blocks.nether_brick), diamondHammerStack });
         
         GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {
                 new ItemStack(Blocks.obsidian), diamondHammerStack });

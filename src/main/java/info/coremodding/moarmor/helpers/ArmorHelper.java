@@ -16,22 +16,32 @@ public class ArmorHelper
     /**
      * The dirt armor int
      */
-    public static final int DirtArmor  = 0;
+    public static final int DirtArmor   = 0;
     
     /**
      * The TNT armor int
      */
-    public static final int TntArmor   = 1;
+    public static final int TntArmor    = 1;
     
     /**
      * The grass armor int
      */
-    public static final int GrassArmor = 2;
+    public static final int GrassArmor  = 2;
     
     /**
      * The food armor int
      */
-    public static final int FoodArmor  = 3;
+    public static final int FoodArmor   = 3;
+
+    /**
+     * The nether armor int
+     */
+	public static final int NetherArmor = 4;
+	
+    /**
+     * The flame armor int
+     */
+	public static final int FlameArmor  = 5;
     
     /**
      * 
@@ -118,6 +128,40 @@ public class ArmorHelper
                 	if (helmet == RegistrationHandler.foodArmorHelmetPorkchop || helmet == RegistrationHandler.foodArmorHelmetCookie || helmet == RegistrationHandler.foodArmorHelmetApple || helmet == RegistrationHandler.foodArmorHelmetBread) returnBool[0] = true;
                     else returnBool[0] = false;	
                 }
+                else returnBool[0] = false;
+                break;
+            case ArmorHelper.NetherArmor:
+                if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.netherArmorBoots) returnBool[3] = true;
+                else returnBool[3] = false;
+                else returnBool[3] = false;
+                
+                if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.netherArmorLegs) returnBool[2] = true;
+                else returnBool[2] = false;
+                else returnBool[2] = false;
+                
+                if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.netherArmorChest) returnBool[1] = true;
+                else returnBool[1] = false;
+                else returnBool[1] = false;
+                
+                if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.netherArmorHelmet) returnBool[0] = true;
+                else returnBool[0] = false;
+                else returnBool[0] = false;
+                break;
+            case ArmorHelper.FlameArmor:
+                if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.flameArmorBoots) returnBool[3] = true;
+                else returnBool[3] = false;
+                else returnBool[3] = false;
+                
+                if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.flameArmorLegs) returnBool[2] = true;
+                else returnBool[2] = false;
+                else returnBool[2] = false;
+                
+                if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.flameArmorChest) returnBool[1] = true;
+                else returnBool[1] = false;
+                else returnBool[1] = false;
+                
+                if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.flameArmorHelmet) returnBool[0] = true;
+                else returnBool[0] = false;
                 else returnBool[0] = false;
                 break;
             default:

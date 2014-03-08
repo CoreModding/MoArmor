@@ -8,7 +8,9 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
@@ -88,5 +90,19 @@ public class ForgeEventHandler
                 }
             }
         }
+    }
+    
+    @SubscribeEvent
+    public void onLivingAttackEvent(LivingAttackEvent event){
+    	if(event.source.isFireDamage())
+    	{
+    		if(event.entityLiving instanceof EntityPlayer)
+    		{
+    			EntityPlayer p = (EntityPlayer) event.entityLiving;
+    			if(PlayerHelper.armorHasAbility(p, PlayerHelper.AbilityNoFireDamage)){
+    				event.setCanceled(true);
+    			}
+    		}
+    	}
     }
 }

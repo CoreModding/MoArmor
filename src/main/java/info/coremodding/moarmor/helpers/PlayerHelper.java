@@ -23,6 +23,11 @@ public class PlayerHelper
      * Does the player have the self food replenish ability
      */
     public static final int AbilitySelfFoodReplenish = 2;
+
+    /**
+     * Does the player have the no fire damage ability
+     */
+	public static final int AbilityNoFireDamage      = 3;
     
     /**
      * @param p
@@ -50,6 +55,12 @@ public class PlayerHelper
                 boolean[] foodBool = ArmorHelper.getArmorTypeSlots(
                         p.inventory.armorInventory, ArmorHelper.FoodArmor);
                 if (foodBool[0]) return true;
+                break;
+            case AbilityNoFireDamage:
+                if (ArmorHelper.isFullSet(p.inventory.armorInventory,
+                        ArmorHelper.NetherArmor)
+                        || ArmorHelper.isFullSet(p.inventory.armorInventory,
+                                ArmorHelper.FlameArmor)) return true;
                 break;
             default:
                 break;
