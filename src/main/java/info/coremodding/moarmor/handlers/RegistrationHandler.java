@@ -464,5 +464,40 @@ public class RegistrationHandler
         ArmorHelper.addStringToNBT(appleArmorHelmet, "feedlevel", "4");
         GameRegistry.addRecipe(appleArmorHelmet, "OOO", "O O", 'O',
                 Items.apple);
+        
+        GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', Items.cooked_porkchop);
+        GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', Items.cooked_porkchop);
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+                "O O", 'O', Items.cooked_porkchop);
+
+        GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', Items.cooked_beef);
+        GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', Items.cooked_beef);
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+                "O O", 'O', Items.cooked_beef);
+        
+        GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', Items.cookie);
+        GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', Items.cookie);
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+                "O O", 'O', Items.cookie);
+        
+        GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', Items.bread);
+        GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', Items.bread);
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+                "O O", 'O', Items.bread);
+        
+        GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
+                "OOO", 'O', Items.apple);
+        GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', Items.apple);
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+                "O O", 'O', Items.apple);
     }
 }
