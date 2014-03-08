@@ -42,7 +42,12 @@ public class ArmorHelper
      * The flame armor int
      */
 	public static final int FlameArmor  = 5;
-    
+	
+    /**
+     * The ender armor int
+     */
+	public static final int EnderArmor  = 6;
+	
     /**
      * 
      * @param armorInventory
@@ -161,6 +166,23 @@ public class ArmorHelper
                 else returnBool[1] = false;
                 
                 if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.flameArmorHelmet) returnBool[0] = true;
+                else returnBool[0] = false;
+                else returnBool[0] = false;
+                break;
+            case ArmorHelper.EnderArmor:
+                if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.enderArmorBoots) returnBool[3] = true;
+                else returnBool[3] = false;
+                else returnBool[3] = false;
+                
+                if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.enderArmorLegs) returnBool[2] = true;
+                else returnBool[2] = false;
+                else returnBool[2] = false;
+                
+                if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.enderArmorChest) returnBool[1] = true;
+                else returnBool[1] = false;
+                else returnBool[1] = false;
+                
+                if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.enderArmorHelmet) returnBool[0] = true;
                 else returnBool[0] = false;
                 else returnBool[0] = false;
                 break;

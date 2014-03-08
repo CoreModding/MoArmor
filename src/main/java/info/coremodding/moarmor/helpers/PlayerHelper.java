@@ -30,6 +30,8 @@ public class PlayerHelper
 	public static final int AbilityNoFireDamage      = 3;
 
 	public static final int AbilityArmorSelfRepair   = 4;
+
+	public static final int AbilityTeleport          = 5;
     
     /**
      * @param p
@@ -67,6 +69,10 @@ public class PlayerHelper
             case AbilityArmorSelfRepair:
                 if (ArmorHelper.isFullSet(p.inventory.armorInventory,
                         ArmorHelper.GrassArmor)) return true;
+                break;
+            case AbilityTeleport:
+                if (ArmorHelper.isFullSet(p.inventory.armorInventory,
+                        ArmorHelper.EnderArmor)) return true;
                 break;
             default:
                 break;

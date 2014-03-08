@@ -2,6 +2,7 @@ package info.coremodding.moarmor.armor;
 
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 import info.coremodding.moarmor.handlers.TeleportationHandler;
+import info.coremodding.moarmor.helpers.ArmorHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -43,28 +44,19 @@ public class EnderArmor extends ItemArmor
     @Override
     public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
     {
-        if (entity.inventory.armorInventory[0] != null
-                && entity.inventory.armorInventory[1] != null
-                && entity.inventory.armorInventory[2] != null
-                && entity.inventory.armorInventory[3] != null)
+        if (ArmorHelper.isFullSet(entity.inventory.armorInventory, ArmorHelper.EnderArmor))
         {
-            if (entity.inventory.armorInventory[0].getItem() == RegistrationHandler.enderArmorBoots
-                    && entity.inventory.armorInventory[1].getItem() == RegistrationHandler.enderArmorLegs
-                    && entity.inventory.armorInventory[2].getItem() == RegistrationHandler.enderArmorChest
-                    && entity.inventory.armorInventory[3].getItem() == RegistrationHandler.enderArmorHelmet)
+            TeleportationHandler th = new TeleportationHandler(entity);
+            if (tpdelay > 0) tpdelay--;
+            if (entity.isWet())
             {
-                TeleportationHandler th = new TeleportationHandler(entity);
-                if (tpdelay > 0) tpdelay--;
-                if (entity.isWet())
-                {
-                    entity.attackEntityFrom(DamageSource.drown, 1.0F);
-                }
+                entity.attackEntityFrom(DamageSource.drown, 1.0F);
+            }
                 
-                if ((entity.isWet() || entity.isBurning()) && tpdelay == 0)
-                {
-                    th.random();
-                    tpdelay = 80;
-                }
+            if ((entity.isWet() || entity.isBurning()) && tpdelay == 0)
+            {
+                th.random();
+                tpdelay = 80;
             }
         }
     }

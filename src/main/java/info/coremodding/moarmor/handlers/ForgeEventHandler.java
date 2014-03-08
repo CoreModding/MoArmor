@@ -131,5 +131,14 @@ public class ForgeEventHandler
     			}
     		}
     	}
+    	if(event.source.getSourceOfDamage() instanceof EntityLiving)
+    	{
+        	EntityPlayer p = (EntityPlayer) event.entityLiving;
+        	
+        	if(PlayerHelper.armorHasAbility(p, PlayerHelper.AbilityTeleport)){
+        		TeleportationHandler th = new TeleportationHandler(p);
+        		th.random();
+        	}
+    	}
     }
 }
