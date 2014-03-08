@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
@@ -65,6 +66,7 @@ public class ForgeEventHandler
             ExtendedPlayerHandler properties = PlayerHelper.getProperties(p);
             if (properties.getTimeUntilUnseen() > 0) properties
                     .setTimeUntilUnseen(properties.getTimeUntilUnseen() - 1);
+           // this.worldObj.canLightningStrikeAt(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)) || this.worldObj.canLightningStrikeAt(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY + (double)this.height), MathHelper.floor_double(this.posZ));
             if (p.getFoodStats().needFood())
             {
                 if (PlayerHelper.armorHasAbility(p,
@@ -88,6 +90,31 @@ public class ForgeEventHandler
                         	p.inventory.armorInventory[3] = null;
                     }
                 }
+            }
+            if (PlayerHelper.armorHasAbility(p,
+                    PlayerHelper.AbilityArmorSelfRepair))
+            {
+            	if((p.worldObj.canBlockSeeTheSky(MathHelper.floor_double(p.posX), MathHelper.floor_double(p.posY), MathHelper.floor_double(p.posZ)) || p.worldObj.canBlockSeeTheSky(MathHelper.floor_double(p.posX), MathHelper.floor_double(p.posY + (double)p.height), MathHelper.floor_double(p.posZ))) && p.worldObj.isDaytime() && !p.worldObj.isRemote)
+            	{
+            		float f = p.getBrightness(1.0F);
+            		if(f > 0.5F)
+            		{
+            			if(properties.shouldPlayerRepair())
+            			{
+            				if(p.inventory.armorInventory[0].getItemDamage() > 0)
+            					p.inventory.armorInventory[0] = new ItemStack(p.inventory.armorInventory[0].getItem(), 1, (p.inventory.armorInventory[0].getItemDamage() - 1));
+            				if(p.inventory.armorInventory[1].getItemDamage() > 0)
+            					p.inventory.armorInventory[1] = new ItemStack(p.inventory.armorInventory[1].getItem(), 1, (p.inventory.armorInventory[1].getItemDamage() - 1));
+            				if(p.inventory.armorInventory[2].getItemDamage() > 0)
+            					p.inventory.armorInventory[2] = new ItemStack(p.inventory.armorInventory[2].getItem(), 1, (p.inventory.armorInventory[2].getItemDamage() - 1));
+            				if(p.inventory.armorInventory[3].getItemDamage() > 0)
+            					p.inventory.armorInventory[3] = new ItemStack(p.inventory.armorInventory[3].getItem(), 1, (p.inventory.armorInventory[3].getItemDamage() - 1));
+            				properties.setTimeUntilRepair(40);
+            			} else {
+            				properties.setTimeUntilRepair(properties.getTimeUntilRepair() - 1);
+            			}
+            		}
+            	}
             }
         }
     }

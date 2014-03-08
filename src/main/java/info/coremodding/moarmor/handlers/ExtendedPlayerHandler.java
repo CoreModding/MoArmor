@@ -12,7 +12,7 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     /**
      * Extended property name
      */
-    public final static String EXT_PROP_NAME = "PlayerMobTargetInfo";
+    public final static String EXT_PROP_NAME = "MoArmorAttributes";
     
     /**
      * Player for whom the extended properties are set
@@ -25,15 +25,26 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     private int                timeUntilUnseen;
     
     /**
+     * The delay in ticks until the armor will repair itself
+     */
+    private int                timeUntilRepair;
+    
+    /**
      * Tells if player can be seen by other mobs
      */
     private boolean            isSeen;
+    
+    /**
+     * Tells if player should repair his armor
+     */
+    private boolean            shouldRepair;
     
     public ExtendedPlayerHandler(EntityPlayer player)
     {
         this.player = player;
         this.isSeen = false;
         this.timeUntilUnseen = 0;
+        this.timeUntilRepair = 80;
     }
     
     /**
@@ -55,6 +66,8 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
         
         properties.setInteger("TimeUntilUnseen", this.timeUntilUnseen);
         properties.setBoolean("IsSeenByMobs", this.isSeen);
+        properties.setInteger("TimeUntilRepair", this.timeUntilRepair);
+        properties.setBoolean("ShouldRepairArmor", this.shouldRepair);
         
         compound.setTag(EXT_PROP_NAME, properties);
     }
@@ -67,6 +80,8 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
         
         this.timeUntilUnseen = properties.getInteger("TimeUntilUnseen");
         this.isSeen = properties.getBoolean("IsSeenByMobs");
+        this.timeUntilRepair = properties.getInteger("TimeUntilRepair");
+        this.shouldRepair = properties.getBoolean("ShouldRepairArmor");
     }
     
     @Override
@@ -90,13 +105,36 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     }
     
     /**
-     * Gets the time until entity will be untargetable by mobs
+     * Sets the time until player will repair his armor, set to 0 to repair armor
+     * 
+     * @param time
+     *            Time in ticks until the player should repair his armor
+     */
+    public void setTimeUntilRepair(int time)
+    {
+        this.timeUntilRepair = time;
+        if (time > 0) this.shouldRepair = true;
+        else this.shouldRepair = false;
+    }
+    
+    /**
+     * Gets the time until player will be untargetable by mobs
      * 
      * @return Time in ticks until the player should be unseen
      */
     public int getTimeUntilUnseen()
     {
         return this.timeUntilUnseen;
+    }
+    
+    /**
+     * Gets the time until player should repair his armor
+     * 
+     * @return Time in ticks until the player should repair his armor
+     */
+    public int getTimeUntilRepair()
+    {
+        return this.timeUntilRepair;
     }
     
     /**
@@ -107,5 +145,15 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     public boolean isPlayerTargetable()
     {
         return this.isSeen;
+    }
+    
+    /**
+     * Check should the player repair his armor
+     * 
+     * @return True if the player should repair his armor
+     */
+    public boolean shouldPlayerRepair()
+    {
+        return this.shouldRepair;
     }
 }

@@ -28,6 +28,8 @@ public class PlayerHelper
      * Does the player have the no fire damage ability
      */
 	public static final int AbilityNoFireDamage      = 3;
+
+	public static final int AbilityArmorSelfRepair   = 4;
     
     /**
      * @param p
@@ -61,6 +63,10 @@ public class PlayerHelper
                         ArmorHelper.NetherArmor)
                         || ArmorHelper.isFullSet(p.inventory.armorInventory,
                                 ArmorHelper.FlameArmor)) return true;
+                break;
+            case AbilityArmorSelfRepair:
+                if (ArmorHelper.isFullSet(p.inventory.armorInventory,
+                        ArmorHelper.GrassArmor)) return true;
                 break;
             default:
                 break;
