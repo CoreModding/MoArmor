@@ -45,6 +45,7 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
         this.isSeen = false;
         this.timeUntilUnseen = 0;
         this.timeUntilRepair = 80;
+        this.shouldRepair = false;
     }
     
     /**
@@ -113,8 +114,8 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     public void setTimeUntilRepair(int time)
     {
         this.timeUntilRepair = time;
-        if (time > 0) this.shouldRepair = true;
-        else this.shouldRepair = false;
+        if (time > 0) this.shouldRepair = false;
+        else this.shouldRepair = true;
     }
     
     /**

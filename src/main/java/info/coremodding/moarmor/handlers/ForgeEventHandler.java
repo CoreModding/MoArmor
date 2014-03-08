@@ -109,7 +109,7 @@ public class ForgeEventHandler
             					p.inventory.armorInventory[2] = new ItemStack(p.inventory.armorInventory[2].getItem(), 1, (p.inventory.armorInventory[2].getItemDamage() - 1));
             				if(p.inventory.armorInventory[3].getItemDamage() > 0)
             					p.inventory.armorInventory[3] = new ItemStack(p.inventory.armorInventory[3].getItem(), 1, (p.inventory.armorInventory[3].getItemDamage() - 1));
-            				properties.setTimeUntilRepair(40);
+            				properties.setTimeUntilRepair(80);
             			} else {
             				properties.setTimeUntilRepair(properties.getTimeUntilRepair() - 1);
             			}
