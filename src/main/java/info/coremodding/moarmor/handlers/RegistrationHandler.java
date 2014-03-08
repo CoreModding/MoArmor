@@ -227,22 +227,37 @@ public class RegistrationHandler
     public static final ItemStack  tntPlate            = new ItemStack(plate,
                                                                1, 9);
     
-    public static final Item       foodArmorBoots      = new FoodArmor(3)
+    public static final Item       foodArmorBoots      = new FoodArmor(3, "")
                                                                .setUnlocalizedName(
                                                                        "foodArmorBoots")
                                                                .setTextureName(
                                                                        "core_moarmor:food_boots");
-    public static final Item       foodArmorChest      = new FoodArmor(1)
+    public static final Item       foodArmorChest      = new FoodArmor(1, "")
                                                                .setUnlocalizedName(
                                                                        "foodArmorChest")
                                                                .setTextureName(
                                                                        "core_moarmor:food_chestplate");
-    public static final Item       foodArmorHelmet     = new FoodArmor(0)
+    public static final Item       foodArmorHelmetPorkchop     = new FoodArmor(0, "Automatically restores 4 hungerbars when hungry")
                                                                .setUnlocalizedName(
-                                                                       "foodArmorHelmet")
+                                                                       "foodArmorHelmetPork")
                                                                .setTextureName(
                                                                        "core_moarmor:food_helmet");
-    public static final Item       foodArmorLegs       = new FoodArmor(2)
+    public static final Item       foodArmorHelmetCookie     = new FoodArmor(0, "Automatically restores 1 hungerbar when hungry")
+    														   .setUnlocalizedName(
+    															        "foodArmorHelmetCookie")
+    														   .setTextureName(
+    														            "core_moarmor:food_helmet");
+    public static final Item       foodArmorHelmetBread     = new FoodArmor(0, "Automatically restores 2 and a half hungerbar when hungry")
+	   .setUnlocalizedName(
+		        "foodArmorHelmetBread")
+	   .setTextureName(
+	            "core_moarmor:food_helmet");
+    public static final Item       foodArmorHelmetApple     = new FoodArmor(0, "Automatically restores 2 hungerbars when hungry")
+	   .setUnlocalizedName(
+		        "foodArmorHelmetApple")
+	   .setTextureName(
+	            "core_moarmor:food_helmet");
+    public static final Item       foodArmorLegs       = new FoodArmor(2, "")
                                                                .setUnlocalizedName(
                                                                        "foodArmorLegs")
                                                                .setTextureName(
@@ -269,8 +284,6 @@ public class RegistrationHandler
                 grassArmorBoots);
         registerArmorSet(tntArmorHelmet, tntArmorChest, tntArmorLegs,
                 tntArmorBoots);
-        registerArmorSet(foodArmorHelmet, foodArmorChest, foodArmorLegs,
-                foodArmorBoots);
     }
     
     /**
@@ -417,19 +430,39 @@ public class RegistrationHandler
     }
     
     /**
-     * Registers food armor recipes
+     * Registers food armor and their recipes
      */
-    public static void registerFoodArmorRecipes()
+    public static void registerFoodArmor()
     {
-        ItemStack porkArmorHelmet = new ItemStack(foodArmorHelmet);
-        ItemStack porkArmorChest = new ItemStack(foodArmorChest);
-        ItemStack porkArmorLegs = new ItemStack(foodArmorLegs);
-        ItemStack porkArmorBoots = new ItemStack(foodArmorBoots);
+        GameRegistry.registerItem(foodArmorHelmetPorkchop, foodArmorHelmetPorkchop.getUnlocalizedName());
+        GameRegistry.registerItem(foodArmorHelmetCookie, foodArmorHelmetCookie.getUnlocalizedName());
+        GameRegistry.registerItem(foodArmorHelmetBread, foodArmorHelmetBread.getUnlocalizedName());
+        GameRegistry.registerItem(foodArmorHelmetApple, foodArmorHelmetApple.getUnlocalizedName());
+        GameRegistry.registerItem(foodArmorChest, foodArmorChest.getUnlocalizedName());
+        GameRegistry.registerItem(foodArmorLegs, foodArmorLegs.getUnlocalizedName());
+        GameRegistry.registerItem(foodArmorBoots, foodArmorBoots.getUnlocalizedName());
+        
+        ItemStack porkArmorHelmet = new ItemStack(foodArmorHelmetPorkchop);
+        ItemStack cookieArmorHelmet = new ItemStack(foodArmorHelmetCookie);
+        ItemStack breadArmorHelmet = new ItemStack(foodArmorHelmetBread);
+        ItemStack appleArmorHelmet = new ItemStack(foodArmorHelmetApple);
         
         ArmorHelper.addStringToNBT(porkArmorHelmet, "feedlevel", "8");
         GameRegistry.addRecipe(porkArmorHelmet, "OOO", "O O", 'O',
                 Items.cooked_porkchop);
         GameRegistry.addRecipe(porkArmorHelmet, "OOO", "O O", 'O',
                 Items.cooked_beef);
+        
+        ArmorHelper.addStringToNBT(cookieArmorHelmet, "feedlevel", "2");
+        GameRegistry.addRecipe(cookieArmorHelmet, "OOO", "O O", 'O',
+                Items.cookie);
+        
+        ArmorHelper.addStringToNBT(breadArmorHelmet, "feedlevel", "5");
+        GameRegistry.addRecipe(breadArmorHelmet, "OOO", "O O", 'O',
+                Items.bread);
+       
+        ArmorHelper.addStringToNBT(appleArmorHelmet, "feedlevel", "4");
+        GameRegistry.addRecipe(appleArmorHelmet, "OOO", "O O", 'O',
+                Items.apple);
     }
 }

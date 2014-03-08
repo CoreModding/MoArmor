@@ -50,10 +50,10 @@ public class TntArmor extends ItemArmor
             {
                 boolean[] armor = ArmorHelper.getArmorTypeSlots(
                         entity.inventory.armorInventory, ArmorHelper.TntArmor);
-                if (armor[0]) entity.inventory.armorInventory[3].stackSize--;
-                if (armor[1]) entity.inventory.armorInventory[2].stackSize--;
-                if (armor[2]) entity.inventory.armorInventory[1].stackSize--;
-                if (armor[3]) entity.inventory.armorInventory[0].stackSize--;
+                if (armor[0]) entity.inventory.armorInventory[3] = null;
+                if (armor[1]) entity.inventory.armorInventory[2] = null;
+                if (armor[2]) entity.inventory.armorInventory[1] = null;
+                if (armor[3]) entity.inventory.armorInventory[0] = null;
                 float f = 4.0F;
                 entity.worldObj.createExplosion(entity, entity.posX,
                         entity.posY, entity.posZ, f, true);

@@ -1,9 +1,11 @@
 package info.coremodding.moarmor.helpers;
 
 import info.coremodding.moarmor.handlers.RegistrationHandler;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.EnumChatFormatting;
 
 /**
  * Some armor utilities
@@ -25,6 +27,10 @@ public class ArmorHelper
      * The grass armor int
      */
     public static final int GrassArmor = 2;
+    
+    /**
+     * The food armor int
+     */
     public static final int FoodArmor  = 3;
     
     /**
@@ -49,15 +55,15 @@ public class ArmorHelper
                 
                 if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.dirtArmorLegs) returnBool[2] = true;
                 else returnBool[2] = false;
-                else returnBool[3] = false;
+                else returnBool[2] = false;
                 
                 if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.dirtArmorChest) returnBool[1] = true;
                 else returnBool[1] = false;
-                else returnBool[3] = false;
+                else returnBool[1] = false;
                 
                 if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.dirtArmorHelmet) returnBool[0] = true;
                 else returnBool[0] = false;
-                else returnBool[3] = false;
+                else returnBool[0] = false;
                 break;
             case ArmorHelper.TntArmor:
                 if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.tntArmorBoots) returnBool[3] = true;
@@ -66,15 +72,15 @@ public class ArmorHelper
                 
                 if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.tntArmorLegs) returnBool[2] = true;
                 else returnBool[2] = false;
-                else returnBool[3] = false;
+                else returnBool[2] = false;
                 
                 if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.tntArmorChest) returnBool[1] = true;
                 else returnBool[1] = false;
-                else returnBool[3] = false;
+                else returnBool[1] = false;
                 
                 if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.tntArmorHelmet) returnBool[0] = true;
                 else returnBool[0] = false;
-                else returnBool[3] = false;
+                else returnBool[0] = false;
                 break;
             case ArmorHelper.GrassArmor:
                 if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.grassArmorBoots) returnBool[3] = true;
@@ -83,32 +89,36 @@ public class ArmorHelper
                 
                 if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.grassArmorLegs) returnBool[2] = true;
                 else returnBool[2] = false;
-                else returnBool[3] = false;
+                else returnBool[2] = false;
                 
                 if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.grassArmorChest) returnBool[1] = true;
                 else returnBool[1] = false;
-                else returnBool[3] = false;
+                else returnBool[1] = false;
                 
                 if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.grassArmorHelmet) returnBool[0] = true;
                 else returnBool[0] = false;
-                else returnBool[3] = false;
+                else returnBool[0] = false;
                 break;
             case ArmorHelper.FoodArmor:
-                if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.grassArmorBoots) returnBool[3] = true;
+                if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.foodArmorBoots) returnBool[3] = true;
                 else returnBool[3] = false;
                 else returnBool[3] = false;
                 
-                if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.grassArmorLegs) returnBool[2] = true;
+                if (armorInventory[1] != null) if (armorInventory[1].getItem() == RegistrationHandler.foodArmorLegs) returnBool[2] = true;
                 else returnBool[2] = false;
-                else returnBool[3] = false;
+                else returnBool[2] = false;
                 
-                if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.grassArmorChest) returnBool[1] = true;
+                if (armorInventory[2] != null) if (armorInventory[2].getItem() == RegistrationHandler.foodArmorChest) returnBool[1] = true;
                 else returnBool[1] = false;
-                else returnBool[3] = false;
+                else returnBool[1] = false;
                 
-                if (armorInventory[3] != null) if (armorInventory[3].getItem() == RegistrationHandler.grassArmorHelmet) returnBool[0] = true;
+                if (armorInventory[3] != null)
+                {
+                	Item helmet = armorInventory[3].getItem();
+                	if (helmet == RegistrationHandler.foodArmorHelmetPorkchop || helmet == RegistrationHandler.foodArmorHelmetCookie || helmet == RegistrationHandler.foodArmorHelmetApple || helmet == RegistrationHandler.foodArmorHelmetBread) returnBool[0] = true;
+                    else returnBool[0] = false;	
+                }
                 else returnBool[0] = false;
-                else returnBool[3] = false;
                 break;
             default:
                 returnBool[0] = false;

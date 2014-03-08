@@ -7,6 +7,7 @@ import info.coremodding.moarmor.helpers.PlayerHelper;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
@@ -69,7 +70,8 @@ public class ForgeEventHandler
                 {
                     int feedLevel;
                     if (ArmorHelper.getStringFromNBT(
-                            p.inventory.armorInventory[3], "feedlevel") != null) feedLevel = Integer
+                            p.inventory.armorInventory[3], "feedlevel") != null && ArmorHelper.getStringFromNBT(
+                                    p.inventory.armorInventory[3], "feedlevel") != "") feedLevel = Integer
                             .parseInt(ArmorHelper.getStringFromNBT(
                                     p.inventory.armorInventory[3], "feedlevel"));
                     else feedLevel = 1;
@@ -78,7 +80,10 @@ public class ForgeEventHandler
                     {
                         p.getFoodStats().setFoodLevel(
                                 p.getFoodStats().getFoodLevel() + feedLevel);
-                        p.inventory.armorInventory[3].stackSize--;
+                        p.inventory.armorInventory[3] = new ItemStack(p.inventory.armorInventory[3].getItem(), 1, (p.inventory.armorInventory[3].getItemDamage() + 22));
+                        ArmorHelper.addStringToNBT(p.inventory.armorInventory[3], "feedlevel", String.valueOf(feedLevel));
+                        if(p.inventory.armorInventory[3].getItemDamage() >= p.inventory.armorInventory[3].getMaxDamage())
+                        	p.inventory.armorInventory[3] = null;
                     }
                 }
             }

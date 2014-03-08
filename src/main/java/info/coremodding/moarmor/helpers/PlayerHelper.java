@@ -48,7 +48,7 @@ public class PlayerHelper
                 break;
             case AbilitySelfFoodReplenish:
                 boolean[] foodBool = ArmorHelper.getArmorTypeSlots(
-                        p.inventory.armorInventory, ArmorHelper.TntArmor);
+                        p.inventory.armorInventory, ArmorHelper.FoodArmor);
                 if (foodBool[0]) return true;
                 break;
             default:

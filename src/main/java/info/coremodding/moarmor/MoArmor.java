@@ -24,6 +24,7 @@ public class MoArmor
     {
         RegistrationHandler.registerArmorItems();
         RegistrationHandler.registerArmorRecipes();
+        RegistrationHandler.registerFoodArmor();
         RegistrationHandler.registerOtherItems();
         RegistrationHandler.registerOtherRecipes();
         RegistrationHandler.registerPlates();
