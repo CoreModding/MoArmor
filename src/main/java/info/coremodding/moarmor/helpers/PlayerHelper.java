@@ -12,17 +12,17 @@ public class PlayerHelper
     /**
      * Does the player have the camo ability
      */
-    public static final int AbilityCamouflage = 0;
+    public static final int AbilityCamouflage        = 0;
     
     /**
      * Does the player have the explosive ability
      */
-    public static final int AbilityExplosive  = 1;
+    public static final int AbilityExplosive         = 1;
     
     /**
      * Does the player have the self food replenish ability
      */
-    public static final int AbilitySelfFoodReplenish  = 2;
+    public static final int AbilitySelfFoodReplenish = 2;
     
     /**
      * @param p
@@ -56,13 +56,17 @@ public class PlayerHelper
         }
         return false;
     }
-	
-	/**
-	 * Gets ExtendedPlayerHandler for specified player
-	 * @param player Player to get properties for
-	 * @return Extended player properties
-	 */
-	public static final ExtendedPlayerHandler getProperties(EntityPlayer player){
-		return (ExtendedPlayerHandler) player.getExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME);
-	}
+    
+    /**
+     * Gets ExtendedPlayerHandler for specified player
+     * 
+     * @param player
+     *            Player to get properties for
+     * @return Extended player properties
+     */
+    public static final ExtendedPlayerHandler getProperties(EntityPlayer player)
+    {
+        return (ExtendedPlayerHandler) player
+                .getExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME);
+    }
 }
