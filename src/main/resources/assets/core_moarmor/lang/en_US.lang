@@ -18,7 +18,10 @@ item.flintArmorChest.name=Flint Chestplate
 item.flintArmorLegs.name=Flint Leggings
 item.flintArmorBoots.name=Flint Boots
 
-item.foodArmorHelmet.name=Food Helmet
+item.foodArmorHelmetPorkchop.name=Food Helmet
+item.foodArmorHelmetCookie.name=Food Helmet
+item.foodArmorHelmetApple.name=Food Helmet
+item.foodArmorHelmetBread.name=Food Helmet
 item.foodArmorChest.name=Food Chestplate
 item.foodArmorLegs.name=Food Leggings
 item.foodArmorBoots.name=Food Boots
@@ -63,6 +66,12 @@ quartzPlate.name=Netherquartz Plate
 obsidianPlate.name=Obsidian Plate
 flamePlate.name=Flame Plate
 enderPlate.name=Ender Fiber Plate
+dirtPlate.name=Dirt Plate
+grassPlate.name=Grass Plate
+netherPlate.name=Nether Plate
+tntPlate.name=TNT Plate
+wheatPlate.name=Wheat Plate
+woodPlate.name=Wooden Plate
 
 item.hammer.name=Iron Hammer
 item.diamondHammer.name=Diamond Hammer
