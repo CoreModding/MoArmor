@@ -27,8 +27,8 @@ public class EnderArmor extends ItemArmor
      * The ender armor material
      */
     public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
-                                                 50,
-                                                 new int[] { 8, 20, 15, 8 }, 3);
+                                                 20,
+                                                 new int[] { 2, 9, 7, 2 }, 15);
     
     /**
      * @param par4
