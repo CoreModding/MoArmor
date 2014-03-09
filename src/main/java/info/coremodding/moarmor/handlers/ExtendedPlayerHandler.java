@@ -20,7 +20,6 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     /**
      * Player for whom the extended properties are set
      */
-    @SuppressWarnings("unused")
     private final EntityPlayer player;
     
     /**
