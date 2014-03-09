@@ -24,9 +24,8 @@ public class FlameArmor extends ItemArmor
     /**
      * The flame armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME",
-                                                 21, new int[] { 3, 11, 7, 3 },
-                                                 5);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME", 15, new int[] {
+            2, 6, 5, 2                          }, 9);
     /**
      * Used to determine when to spawn particles around the player
      */
