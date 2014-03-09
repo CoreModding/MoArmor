@@ -3,6 +3,7 @@ package info.coremodding.moarmor.armor;
 import info.coremodding.moarmor.handlers.RegistrationHandler;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -26,6 +27,12 @@ public class FlameArmor extends ItemArmor
     public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME",
                                                  21, new int[] { 3, 11, 7, 3 },
                                                  5);
+    /**
+     * Used to determine when to spawn particles around the player
+     */
+    private int tickId = 0;
+    
+    private Random rand = new Random();
     
     /**
      * @param par4
@@ -62,6 +69,20 @@ public class FlameArmor extends ItemArmor
                         ((EntityLivingBase) e).setFire(10);
                     }
                 }
+                if(tickId == 15)
+                {
+	                entity.worldObj.spawnParticle("flame", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                entity.worldObj.spawnParticle("flame", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                entity.worldObj.spawnParticle("flame", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                entity.worldObj.spawnParticle("flame", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                
+	                entity.worldObj.spawnParticle("smoke", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                entity.worldObj.spawnParticle("smoke", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                entity.worldObj.spawnParticle("smoke", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                entity.worldObj.spawnParticle("smoke", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
+	                tickId = 0;
+	            } else
+	            	tickId++;
             }
         }
     }
