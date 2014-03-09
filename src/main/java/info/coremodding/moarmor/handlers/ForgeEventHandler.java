@@ -3,6 +3,7 @@ package info.coremodding.moarmor.handlers;
 import info.coremodding.moarmor.helpers.ArmorHelper;
 import info.coremodding.moarmor.helpers.PlayerHelper;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
@@ -157,7 +158,7 @@ public class ForgeEventHandler
                 }
             }
         }
-        if (event.source.getSourceOfDamage() instanceof EntityLiving)
+        if (event.source.getSourceOfDamage() instanceof EntityLivingBase)
         {
             EntityPlayer p = (EntityPlayer) event.entityLiving;
             
