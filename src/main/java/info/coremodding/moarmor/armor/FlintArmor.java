@@ -43,7 +43,8 @@ public class FlintArmor extends ItemArmor
     {
         if (!item.isItemEnchanted()) item.addEnchantment(Enchantment.thorns, 1);
     }
-
+    
+    @Deprecated
     @Override
     public boolean hasEffect(ItemStack par1ItemStack)
     {
