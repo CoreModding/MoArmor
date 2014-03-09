@@ -21,9 +21,10 @@ public class FoodArmor extends ItemArmor
     public static ArmorMaterial material = EnumHelper.addArmorMaterial("FOOD",
                                                  10, new int[] { 1, 5, 3, 1 },
                                                  1);
-	private String lore;
-	
-	private int armorType;
+    private final String        lore;
+    
+    @SuppressWarnings("hiding")
+    private final int           armorType;
     
     /**
      * @param par4
@@ -49,13 +50,13 @@ public class FoodArmor extends ItemArmor
     }
     
     @Override
-    @SuppressWarnings({ "rawtypes", "unchecked" })
     public void addInformation(ItemStack par1ItemStack, EntityPlayer player,
-            List par3List, boolean par4) {
-    	if(this.armorType == 0)
-    	{
-        par3List.add(lore);
-        par3List.add("Will be used 5 times at most");
-    	}
+            List par3List, boolean par4)
+    {
+        if (this.armorType == 0)
+        {
+            par3List.add(this.lore);
+            par3List.add("Will be used 5 times at most");
+        }
     }
 }

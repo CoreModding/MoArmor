@@ -23,15 +23,21 @@ public class PlayerHelper
      * Does the player have the self food replenish ability
      */
     public static final int AbilitySelfFoodReplenish = 2;
-
+    
     /**
      * Does the player have the no fire damage ability
      */
-	public static final int AbilityNoFireDamage      = 3;
-
-	public static final int AbilityArmorSelfRepair   = 4;
-
-	public static final int AbilityTeleport          = 5;
+    public static final int AbilityNoFireDamage      = 3;
+    
+    /**
+     * Can the player's armor self repair
+     */
+    public static final int AbilityArmorSelfRepair   = 4;
+    
+    /**
+     * Can the player teleport
+     */
+    public static final int AbilityTeleport          = 5;
     
     /**
      * @param p

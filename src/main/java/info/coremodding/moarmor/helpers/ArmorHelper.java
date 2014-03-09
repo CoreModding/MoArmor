@@ -4,8 +4,6 @@ import info.coremodding.moarmor.handlers.RegistrationHandler;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraft.util.EnumChatFormatting;
 
 /**
  * Some armor utilities
@@ -32,22 +30,22 @@ public class ArmorHelper
      * The food armor int
      */
     public static final int FoodArmor   = 3;
-
+    
     /**
      * The nether armor int
      */
-	public static final int NetherArmor = 4;
-	
+    public static final int NetherArmor = 4;
+    
     /**
      * The flame armor int
      */
-	public static final int FlameArmor  = 5;
-	
+    public static final int FlameArmor  = 5;
+    
     /**
      * The ender armor int
      */
-	public static final int EnderArmor  = 6;
-	
+    public static final int EnderArmor  = 6;
+    
     /**
      * 
      * @param armorInventory
@@ -129,11 +127,13 @@ public class ArmorHelper
                 
                 if (armorInventory[3] != null)
                 {
-                	Item helmet = armorInventory[3].getItem();
-                	if (helmet == RegistrationHandler.foodArmorHelmetPorkchop || helmet == RegistrationHandler.foodArmorHelmetCookie || helmet == RegistrationHandler.foodArmorHelmetApple || helmet == RegistrationHandler.foodArmorHelmetBread) returnBool[0] = true;
-                    else returnBool[0] = false;	
-                }
-                else returnBool[0] = false;
+                    Item helmet = armorInventory[3].getItem();
+                    if (helmet == RegistrationHandler.foodArmorHelmetPorkchop
+                            || helmet == RegistrationHandler.foodArmorHelmetCookie
+                            || helmet == RegistrationHandler.foodArmorHelmetApple
+                            || helmet == RegistrationHandler.foodArmorHelmetBread) returnBool[0] = true;
+                    else returnBool[0] = false;
+                } else returnBool[0] = false;
                 break;
             case ArmorHelper.NetherArmor:
                 if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.netherArmorBoots) returnBool[3] = true;

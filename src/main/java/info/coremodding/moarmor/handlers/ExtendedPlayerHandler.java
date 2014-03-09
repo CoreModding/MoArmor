@@ -6,6 +6,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
 
+/**
+ * Handles advanced player stuff
+ */
 public class ExtendedPlayerHandler implements IExtendedEntityProperties
 {
     
@@ -17,6 +20,7 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     /**
      * Player for whom the extended properties are set
      */
+    @SuppressWarnings("unused")
     private final EntityPlayer player;
     
     /**
@@ -39,6 +43,12 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
      */
     private boolean            shouldRepair;
     
+    /**
+     * The constructor
+     * 
+     * @param player
+     *            The player to handle for
+     */
     public ExtendedPlayerHandler(EntityPlayer player)
     {
         this.player = player;
@@ -106,7 +116,8 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     }
     
     /**
-     * Sets the time until player will repair his armor, set to 0 to repair armor
+     * Sets the time until player will repair his armor, set to 0 to repair
+     * armor
      * 
      * @param time
      *            Time in ticks until the player should repair his armor

@@ -1,6 +1,5 @@
 package info.coremodding.moarmor.armor;
 
-import info.coremodding.moarmor.handlers.RegistrationHandler;
 import info.coremodding.moarmor.handlers.TeleportationHandler;
 import info.coremodding.moarmor.helpers.ArmorHelper;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,8 +27,8 @@ public class EnderArmor extends ItemArmor
      * The ender armor material
      */
     public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
-                                                 20,
-                                                 new int[] { 2, 9, 7, 2 }, 15);
+                                                 20, new int[] { 2, 9, 7, 2 },
+                                                 15);
     
     /**
      * @param par4
@@ -44,7 +43,8 @@ public class EnderArmor extends ItemArmor
     @Override
     public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
     {
-        if (ArmorHelper.isFullSet(entity.inventory.armorInventory, ArmorHelper.EnderArmor))
+        if (ArmorHelper.isFullSet(entity.inventory.armorInventory,
+                ArmorHelper.EnderArmor))
         {
             TeleportationHandler th = new TeleportationHandler(entity);
             if (tpdelay > 0) tpdelay--;
@@ -52,7 +52,7 @@ public class EnderArmor extends ItemArmor
             {
                 entity.attackEntityFrom(DamageSource.drown, 1.0F);
             }
-                
+            
             if ((entity.isWet() || entity.isBurning()) && tpdelay == 0)
             {
                 th.random();
