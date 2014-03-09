@@ -503,9 +503,14 @@ public class RegistrationHandler
                 new ItemStack(Blocks.nether_brick), diamondHammerStack });
         
         GameRegistry.addShapelessRecipe(woodPlate, new Object[] {
-                new ItemStack(Blocks.log), hammerStack });
+                new ItemStack(Blocks.log, 1, OreDictionary.WILDCARD_VALUE), hammerStack });
         GameRegistry.addShapelessRecipe(woodPlate, new Object[] {
-                new ItemStack(Blocks.log), diamondHammerStack });
+                new ItemStack(Blocks.log, 1, OreDictionary.WILDCARD_VALUE), diamondHammerStack });
+        
+        GameRegistry.addShapelessRecipe(woodPlate, new Object[] {
+                new ItemStack(Blocks.log2, 1, OreDictionary.WILDCARD_VALUE), hammerStack });
+        GameRegistry.addShapelessRecipe(woodPlate, new Object[] {
+                new ItemStack(Blocks.log2, 1, OreDictionary.WILDCARD_VALUE), diamondHammerStack });
         
         GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {
                 new ItemStack(Blocks.obsidian), diamondHammerStack });
