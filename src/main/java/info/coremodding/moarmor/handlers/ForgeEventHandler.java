@@ -158,7 +158,7 @@ public class ForgeEventHandler
                 }
             }
         }
-        if (event.source.getSourceOfDamage() instanceof EntityLivingBase)
+        if (event.source.getSourceOfDamage() instanceof EntityLivingBase && event.entityLiving instanceof EntityPlayer)
         {
             EntityPlayer p = (EntityPlayer) event.entityLiving;
             
