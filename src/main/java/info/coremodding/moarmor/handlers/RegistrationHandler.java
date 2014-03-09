@@ -297,6 +297,29 @@ public class RegistrationHandler
     public static final ItemStack  netherPlate             = new ItemStack(
                                                                    plate, 1, 8);
     
+    public static final Item       woodArmorBoots        = new WoodArmor(3)
+                                                                   .setUnlocalizedName(
+                                                                           "woodArmorBoots")
+                                                                   .setTextureName(
+                                                                           "core_moarmor:wood_boots");
+    public static final Item       woodArmorChest        = new WoodArmor(1)
+                                                                   .setUnlocalizedName(
+                                                                           "woodArmorChest")
+                                                                   .setTextureName(
+                                                                           "core_moarmor:wood_chestplate");
+    public static final Item       woodArmorHelmet       = new WoodArmor(0)
+                                                                   .setUnlocalizedName(
+                                                                           "woodArmorHelmet")
+                                                                   .setTextureName(
+                                                                           "core_moarmor:wood_helmet");
+    public static final Item       woodArmorLegs         = new WoodArmor(2)
+                                                                   .setUnlocalizedName(
+                                                                           "woodArmorLegs")
+                                                                   .setTextureName(
+                                                                           "core_moarmor:wood_leggings");
+    public static final ItemStack  woodPlate             = new ItemStack(
+                                                                   plate, 1, 11);
+    
     /**
      * Registers the armor items
      */
@@ -320,6 +343,8 @@ public class RegistrationHandler
                 tntArmorBoots);
         registerArmorSet(netherArmorHelmet, netherArmorChest, netherArmorLegs,
                 netherArmorBoots);
+        registerArmorSet(woodArmorHelmet, woodArmorChest, woodArmorLegs,
+                woodArmorBoots);
     }
     
     /**
@@ -398,6 +423,15 @@ public class RegistrationHandler
                 "O O", 'O', netherPlate);
         GameRegistry.addRecipe(new ItemStack(netherArmorBoots, 1), "   ",
                 "O O", "O O", 'O', netherPlate);
+        
+        GameRegistry.addRecipe(new ItemStack(woodArmorHelmet, 1), "OOO",
+                "O O", 'O', woodPlate);
+        GameRegistry.addRecipe(new ItemStack(woodArmorChest, 1), "O O",
+                "OOO", "OOO", 'O', woodPlate);
+        GameRegistry.addRecipe(new ItemStack(woodArmorLegs, 1), "OOO", "O O",
+                "O O", 'O', woodPlate);
+        GameRegistry.addRecipe(new ItemStack(woodArmorBoots, 1), "   ",
+                "O O", "O O", 'O', woodPlate);
     }
     
     private static void registerArmorSet(Item helmet, Item chestplate,
@@ -467,6 +501,11 @@ public class RegistrationHandler
                 new ItemStack(Blocks.nether_brick), hammerStack });
         GameRegistry.addShapelessRecipe(netherPlate, new Object[] {
                 new ItemStack(Blocks.nether_brick), diamondHammerStack });
+        
+        GameRegistry.addShapelessRecipe(woodPlate, new Object[] {
+                new ItemStack(Blocks.log), hammerStack });
+        GameRegistry.addShapelessRecipe(woodPlate, new Object[] {
+                new ItemStack(Blocks.log), diamondHammerStack });
         
         GameRegistry.addShapelessRecipe(obsidianPlate, new Object[] {
                 new ItemStack(Blocks.obsidian), diamondHammerStack });
