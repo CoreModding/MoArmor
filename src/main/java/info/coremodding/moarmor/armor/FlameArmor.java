@@ -30,9 +30,9 @@ public class FlameArmor extends ItemArmor
     /**
      * Used to determine when to spawn particles around the player
      */
-    private int tickId = 0;
+    private int                 tickId   = 0;
     
-    private Random rand = new Random();
+    private final Random        rand     = new Random();
     
     /**
      * @param par4
@@ -59,9 +59,9 @@ public class FlameArmor extends ItemArmor
             {
                 List<Object> entities = world.getEntitiesWithinAABB(
                         EntityLivingBase.class, AxisAlignedBB.getBoundingBox(
-                                entity.posX - 1, entity.posY - 2,
-                                entity.posZ - 1, entity.posX + 1,
-                                entity.posY + 2, entity.posZ + 1));
+                                entity.posX - 2, entity.posY - 2,
+                                entity.posZ - 2, entity.posX + 2,
+                                entity.posY + 2, entity.posZ + 2));
                 for (Object e : entities)
                 {
                     if (e instanceof EntityLivingBase && e != entity)
@@ -69,20 +69,51 @@ public class FlameArmor extends ItemArmor
                         ((EntityLivingBase) e).setFire(10);
                     }
                 }
-                if(tickId == 15)
+                if (this.tickId == 15)
                 {
-	                entity.worldObj.spawnParticle("flame", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                entity.worldObj.spawnParticle("flame", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                entity.worldObj.spawnParticle("flame", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                entity.worldObj.spawnParticle("flame", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                
-	                entity.worldObj.spawnParticle("smoke", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                entity.worldObj.spawnParticle("smoke", entity.posX-rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                entity.worldObj.spawnParticle("smoke", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ-rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                entity.worldObj.spawnParticle("smoke", entity.posX+rand.nextDouble()/2, entity.posY-1, entity.posZ+rand.nextDouble()/2, entity.motionX, rand.nextDouble()/10, entity.motionZ);
-	                tickId = 0;
-	            } else
-	            	tickId++;
+                    entity.worldObj.spawnParticle("flame", entity.posX
+                            - this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ - this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    entity.worldObj.spawnParticle("flame", entity.posX
+                            - this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ + this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    entity.worldObj.spawnParticle("flame", entity.posX
+                            + this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ - this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    entity.worldObj.spawnParticle("flame", entity.posX
+                            + this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ + this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    
+                    entity.worldObj.spawnParticle("smoke", entity.posX
+                            - this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ - this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    entity.worldObj.spawnParticle("smoke", entity.posX
+                            - this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ + this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    entity.worldObj.spawnParticle("smoke", entity.posX
+                            + this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ - this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    entity.worldObj.spawnParticle("smoke", entity.posX
+                            + this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ + this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    this.tickId = 0;
+                } else this.tickId++;
             }
         }
     }
