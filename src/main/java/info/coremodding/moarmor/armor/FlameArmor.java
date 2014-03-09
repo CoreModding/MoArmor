@@ -5,6 +5,7 @@ import info.coremodding.moarmor.handlers.RegistrationHandler;
 import java.util.List;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
@@ -63,5 +64,14 @@ public class FlameArmor extends ItemArmor
                 }
             }
         }
+    }
+    
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
+            String type)
+    {
+        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/flame_layer_1.png"; }
+        if (slot == 2) { return "core_moarmor:textures/models/armor/flame_layer_2.png"; }
+        return null;
     }
 }

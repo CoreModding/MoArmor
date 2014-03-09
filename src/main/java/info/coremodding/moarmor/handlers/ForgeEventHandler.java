@@ -67,12 +67,6 @@ public class ForgeEventHandler
             ExtendedPlayerHandler properties = PlayerHelper.getProperties(p);
             if (properties.getTimeUntilUnseen() > 0) properties
                     .setTimeUntilUnseen(properties.getTimeUntilUnseen() - 1);
-            // this.worldObj.canLightningStrikeAt(MathHelper.floor_double(this.posX),
-            // MathHelper.floor_double(this.posY),
-            // MathHelper.floor_double(this.posZ)) ||
-            // this.worldObj.canLightningStrikeAt(MathHelper.floor_double(this.posX),
-            // MathHelper.floor_double(this.posY + (double)this.height),
-            // MathHelper.floor_double(this.posZ));
             if (p.getFoodStats().needFood())
             {
                 if (PlayerHelper.armorHasAbility(p,

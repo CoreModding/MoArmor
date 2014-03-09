@@ -3,6 +3,7 @@ package info.coremodding.moarmor.armor;
 import info.coremodding.moarmor.handlers.TeleportationHandler;
 import info.coremodding.moarmor.helpers.ArmorHelper;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemArmor;
@@ -66,5 +67,15 @@ public class EnderArmor extends ItemArmor
     public EnumRarity getRarity(ItemStack par1ItemStack)
     {
         return EnumRarity.epic;
+    }
+    
+    
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
+            String type)
+    {
+        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/ender_layer_1.png"; }
+        if (slot == 2) { return "core_moarmor:textures/models/armor/ender_layer_2.png"; }
+        return null;
     }
 }
