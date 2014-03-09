@@ -358,7 +358,7 @@ public class RegistrationHandler
                 "FFF", 'F', flintPlate);
         GameRegistry.addRecipe(new ItemStack(flintArmorLegs, 1), "FFF", "F F",
                 "F F", 'F', flintPlate);
-        GameRegistry.addRecipe(new ItemStack(flintArmorBoots, 1), "   ", "F F",
+        GameRegistry.addRecipe(new ItemStack(flintArmorBoots, 1), "F F",
                 "F F", 'F', flintPlate);
         
         GameRegistry.addRecipe(new ItemStack(quartzArmorHelmet, 1), "QQQ",
@@ -367,7 +367,7 @@ public class RegistrationHandler
                 "QQQ", "QQQ", 'Q', quartzPlate);
         GameRegistry.addRecipe(new ItemStack(quartzArmorLegs, 1), "QQQ", "Q Q",
                 "Q Q", 'Q', quartzPlate);
-        GameRegistry.addRecipe(new ItemStack(quartzArmorBoots, 1), "   ",
+        GameRegistry.addRecipe(new ItemStack(quartzArmorBoots, 1),
                 "Q Q", "Q Q", 'Q', quartzPlate);
         
         GameRegistry.addRecipe(new ItemStack(obsidianArmorHelmet, 1), "OOO",
@@ -376,8 +376,8 @@ public class RegistrationHandler
                 "OOO", "OOO", 'O', obsidianPlate);
         GameRegistry.addRecipe(new ItemStack(obsidianArmorLegs, 1), "OOO",
                 "O O", "O O", 'O', obsidianPlate);
-        GameRegistry.addRecipe(new ItemStack(obsidianArmorBoots, 1), "   ",
-                "O O", "O O", 'O', obsidianPlate);
+        GameRegistry.addRecipe(new ItemStack(obsidianArmorBoots, 1), "O O",
+        		"O O", 'O', obsidianPlate);
         
         GameRegistry.addRecipe(new ItemStack(flameArmorHelmet, 1), "OOO",
                 "O O", 'O', flamePlate);
@@ -385,7 +385,7 @@ public class RegistrationHandler
                 "OOO", 'O', flamePlate);
         GameRegistry.addRecipe(new ItemStack(flameArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', flamePlate);
-        GameRegistry.addRecipe(new ItemStack(flameArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(flameArmorBoots, 1), "O O",
                 "O O", 'O', flamePlate);
         
         GameRegistry.addRecipe(new ItemStack(tntArmorHelmet, 1), "OOO", "O O",
@@ -394,7 +394,7 @@ public class RegistrationHandler
                 "OOO", 'O', tntPlate);
         GameRegistry.addRecipe(new ItemStack(tntArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', tntPlate);
-        GameRegistry.addRecipe(new ItemStack(tntArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(tntArmorBoots, 1), "O O",
                 "O O", 'O', tntPlate);
         
         GameRegistry.addRecipe(new ItemStack(grassArmorHelmet, 1), "OOO",
@@ -403,7 +403,7 @@ public class RegistrationHandler
                 "OOO", 'O', grassPlate);
         GameRegistry.addRecipe(new ItemStack(grassArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', grassPlate);
-        GameRegistry.addRecipe(new ItemStack(grassArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(grassArmorBoots, 1), "O O",
                 "O O", 'O', grassPlate);
         
         GameRegistry.addRecipe(new ItemStack(dirtArmorHelmet, 1), "OOO", "O O",
@@ -412,7 +412,7 @@ public class RegistrationHandler
                 "OOO", 'O', dirtPlate);
         GameRegistry.addRecipe(new ItemStack(dirtArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', dirtPlate);
-        GameRegistry.addRecipe(new ItemStack(dirtArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(dirtArmorBoots, 1), "O O",
                 "O O", 'O', dirtPlate);
         
         GameRegistry.addRecipe(new ItemStack(netherArmorHelmet, 1), "OOO",
@@ -421,7 +421,7 @@ public class RegistrationHandler
                 "OOO", "OOO", 'O', netherPlate);
         GameRegistry.addRecipe(new ItemStack(netherArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', netherPlate);
-        GameRegistry.addRecipe(new ItemStack(netherArmorBoots, 1), "   ",
+        GameRegistry.addRecipe(new ItemStack(netherArmorBoots, 1),
                 "O O", "O O", 'O', netherPlate);
         
         GameRegistry.addRecipe(new ItemStack(woodArmorHelmet, 1), "OOO",
@@ -430,7 +430,7 @@ public class RegistrationHandler
                 "OOO", "OOO", 'O', woodPlate);
         GameRegistry.addRecipe(new ItemStack(woodArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', woodPlate);
-        GameRegistry.addRecipe(new ItemStack(woodArmorBoots, 1), "   ",
+        GameRegistry.addRecipe(new ItemStack(woodArmorBoots, 1), 
                 "O O", "O O", 'O', woodPlate);
     }
     
@@ -565,35 +565,35 @@ public class RegistrationHandler
                 "OOO", 'O', Items.cooked_porkchop);
         GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', Items.cooked_porkchop);
-        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "O O",
                 "O O", 'O', Items.cooked_porkchop);
         
         GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
                 "OOO", 'O', Items.cooked_beef);
         GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', Items.cooked_beef);
-        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "O O",
                 "O O", 'O', Items.cooked_beef);
         
         GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
                 "OOO", 'O', Items.cookie);
         GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', Items.cookie);
-        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "O O",
                 "O O", 'O', Items.cookie);
         
         GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
                 "OOO", 'O', Items.bread);
         GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', Items.bread);
-        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "O O",
                 "O O", 'O', Items.bread);
         
         GameRegistry.addRecipe(new ItemStack(foodArmorChest, 1), "O O", "OOO",
                 "OOO", 'O', Items.apple);
         GameRegistry.addRecipe(new ItemStack(foodArmorLegs, 1), "OOO", "O O",
                 "O O", 'O', Items.apple);
-        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "   ", "O O",
+        GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "O O",
                 "O O", 'O', Items.apple);
     }
 }
