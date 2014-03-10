@@ -10,6 +10,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
 import net.minecraftforge.oredict.OreDictionary;
 
 /**
@@ -320,6 +322,12 @@ public class RegistrationHandler
     public static final ItemStack  woodPlate             = new ItemStack(
                                                                    plate, 1, 11);
     
+    public static final Achievement hammerAchievement = new Achievement("achievement.hammerCrafted", "hammerCrafted", 1, 6, hammer, AchievementList.acquireIron);
+    public static final Achievement diamondHammerAchievement = new Achievement("achievement.diamondHammerCrafted", "diamondHammerCrafted", -2, 3, diamondHammer, AchievementList.diamonds);
+    public static final Achievement suicideAchievement = new Achievement("achievement.suicideBomber", "suicideBomber", 2, 7, Blocks.tnt, hammerAchievement).setSpecial();
+    public static final Achievement ecoAchievement = new Achievement("achievement.ecoFriendly", "ecoFriendly", 0, 7, grassArmorChest, hammerAchievement);
+    public static final Achievement betterAchievement = new Achievement("achievement.betterDiamond", "betterDiamond", -2, 1, obsidianArmorChest, diamondHammerAchievement);
+    
     /**
      * Registers the armor items
      */
@@ -600,5 +608,16 @@ public class RegistrationHandler
                 "O O", 'O', Items.apple);
         GameRegistry.addRecipe(new ItemStack(foodArmorBoots, 1), "O O",
                 "O O", 'O', Items.apple);
+    }
+    
+    /**
+     * Registers the mod added achievements
+     */
+    public static void registerAchievements(){
+    	hammerAchievement.registerStat();
+    	diamondHammerAchievement.registerStat();
+    	ecoAchievement.registerStat();
+    	suicideAchievement.registerStat();
+    	betterAchievement.registerStat();
     }
 }
