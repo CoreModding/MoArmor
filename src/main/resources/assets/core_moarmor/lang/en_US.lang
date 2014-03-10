@@ -83,7 +83,7 @@ achievement.diamondHammerCrafted=Diamond Hammer Time!
 achievement.diamondHammerCrafted.desc=Craft a diamond hammer
 
 achievement.ecoFriendly=Eco-Friendly!
-achievement.ecoFriendly=Hammer a grass plate
+achievement.ecoFriendly.desc=Hammer a grass plate
 achievement.suicideBomber=Suicide Bomber!
 achievement.suicideBomber.desc=Hit a bomb with a hammer
 achievement.betterDiamond=Better Than Diamond!
