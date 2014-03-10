@@ -1,6 +1,7 @@
 package info.coremodding.moarmor.armor;
 
 import info.coremodding.moarmor.handlers.RegistrationHandler;
+import info.coremodding.moarmor.helpers.ArmorHelper;
 
 import java.util.List;
 import java.util.Random;
@@ -46,16 +47,7 @@ public class FlameArmor extends ItemArmor
     @Override
     public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
     {
-        if (entity.inventory.armorInventory[0] != null
-                && entity.inventory.armorInventory[1] != null
-                && entity.inventory.armorInventory[2] != null
-                && entity.inventory.armorInventory[3] != null)
-        {
-            if (entity.inventory.armorInventory[0].getItem() == RegistrationHandler.flameArmorBoots
-                    && entity.inventory.armorInventory[1].getItem() == RegistrationHandler.flameArmorLegs
-                    && entity.inventory.armorInventory[2].getItem() == RegistrationHandler.flameArmorChest
-                    && entity.inventory.armorInventory[3].getItem() == RegistrationHandler.flameArmorHelmet)
-            {
+    	if(ArmorHelper.isFullSet(entity.inventory.armorInventory, ArmorHelper.FlameArmor) && !entity.isWet()){
                 List<Object> entities = world.getEntitiesWithinAABB(
                         EntityLivingBase.class, AxisAlignedBB.getBoundingBox(
                                 entity.posX - 2, entity.posY - 2,
@@ -113,8 +105,7 @@ public class FlameArmor extends ItemArmor
                             entity.motionZ);
                     this.tickId = 0;
                 } else this.tickId++;
-            }
-        }
+    	}
     }
     
     @Override
