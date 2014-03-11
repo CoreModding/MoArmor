@@ -38,7 +38,7 @@ public class ForgeEventHandler
             EntityLiving el = (EntityLiving) event.entityLiving;
             EntityPlayer e = (EntityPlayer) event.target;
             
-            if (!PlayerHelper.getProperties(e).isPlayerTargetable())
+            if (!PlayerHelper.getProperties(e).isPlayerTargetable() && el.getDistanceSqToEntity(e) > 4)
             {
                 if (PlayerHelper.armorHasAbility(e,
                         PlayerHelper.AbilityCamouflage)) el
