@@ -25,7 +25,7 @@ public class FlintArmor extends ItemArmor
                                                  .addArmorMaterial(
                                                          "FLINT",
                                                          7,
-                                                         new int[] { 1, 5, 3, 2 },
+                                                         new int[] { 1, 3, 2, 1 },
                                                          5);
     
     /**
