@@ -38,7 +38,8 @@ public class ForgeEventHandler
             EntityLiving el = (EntityLiving) event.entityLiving;
             EntityPlayer e = (EntityPlayer) event.target;
             
-            if (!PlayerHelper.getProperties(e).isPlayerTargetable() && el.getDistanceSqToEntity(e) > 4)
+            if (!PlayerHelper.getProperties(e).isPlayerTargetable()
+                    && el.getDistanceSqToEntity(e) > 4)
             {
                 if (PlayerHelper.armorHasAbility(e,
                         PlayerHelper.AbilityCamouflage)) el
@@ -158,7 +159,8 @@ public class ForgeEventHandler
                 }
             }
         }
-        if (event.source.getSourceOfDamage() instanceof EntityLivingBase && event.entityLiving instanceof EntityPlayer)
+        if (event.source.getSourceOfDamage() instanceof EntityLivingBase
+                && event.entityLiving instanceof EntityPlayer)
         {
             EntityPlayer p = (EntityPlayer) event.entityLiving;
             

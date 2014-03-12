@@ -69,7 +69,6 @@ public class EnderArmor extends ItemArmor
         return EnumRarity.epic;
     }
     
-    
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot,
             String type)

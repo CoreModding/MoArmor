@@ -40,15 +40,15 @@ public class CraftingHandler
             }
         }
         
-        if(event.crafting.getItem() == RegistrationHandler.hammer)
-        	event.player.triggerAchievement(RegistrationHandler.hammerAchievement);
-        if(event.crafting.getItem() == RegistrationHandler.diamondHammer)
-        	event.player.triggerAchievement(RegistrationHandler.diamondHammerAchievement);
-        if(event.crafting.isItemEqual(RegistrationHandler.grassPlate))
-        	event.player.triggerAchievement(RegistrationHandler.ecoAchievement);
-        if(event.crafting.isItemEqual(RegistrationHandler.tntPlate))
-        	event.player.triggerAchievement(RegistrationHandler.suicideAchievement);
-        if(event.crafting.isItemEqual(RegistrationHandler.obsidianPlate))
-        	event.player.triggerAchievement(RegistrationHandler.betterAchievement);
+        if (event.crafting.getItem() == RegistrationHandler.hammer) event.player
+                .triggerAchievement(RegistrationHandler.hammerAchievement);
+        if (event.crafting.getItem() == RegistrationHandler.diamondHammer) event.player
+                .triggerAchievement(RegistrationHandler.diamondHammerAchievement);
+        if (event.crafting.isItemEqual(RegistrationHandler.grassPlate)) event.player
+                .triggerAchievement(RegistrationHandler.ecoAchievement);
+        if (event.crafting.isItemEqual(RegistrationHandler.tntPlate)) event.player
+                .triggerAchievement(RegistrationHandler.suicideAchievement);
+        if (event.crafting.isItemEqual(RegistrationHandler.obsidianPlate)) event.player
+                .triggerAchievement(RegistrationHandler.betterAchievement);
     }
 }
