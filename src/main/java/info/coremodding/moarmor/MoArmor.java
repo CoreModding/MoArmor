@@ -13,7 +13,7 @@ import info.coremodding.moarmor.handlers.RegistrationHandler;
 /**
  * The main mod class
  */
-@Mod(modid = "core_moarmor", name = "Mo' Armor", version = "0.1-ALPHA")
+@Mod(modid = "core_moarmor", name = "Mo' Armor", version = "1.0-ALPHA")
 public class MoArmor
 {
     

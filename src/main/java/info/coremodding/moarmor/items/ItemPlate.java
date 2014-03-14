@@ -33,8 +33,7 @@ public class ItemPlate extends Item
      */
     public static final String[] names = new String[] { "flintPlate",
             "quartzPlate", "obsidianPlate", "flamePlate", "enderPlate",
-            "dirtPlate", "foodPlate", "grassPlate", "netherPlate", "tntPlate",
-            "wheatPlate", "woodPlate" };
+            "dirtPlate", "grassPlate", "netherPlate", "tntPlate", "woodPlate" };
     
     @Override
     public String getUnlocalizedName(ItemStack par1ItemStack)
@@ -61,7 +60,7 @@ public class ItemPlate extends Item
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister par1IconRegister)
     {
-        this.icons = new IIcon[12];
+        this.icons = new IIcon[names.length];
         
         for (int i = 0; i < this.icons.length; i++)
         {
