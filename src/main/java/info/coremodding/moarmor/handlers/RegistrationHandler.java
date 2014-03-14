@@ -88,7 +88,7 @@ public class RegistrationHandler
                                                                              "core_moarmor:grass_leggings");
     public static final ItemStack   grassPlate               = new ItemStack(
                                                                      plate, 1,
-                                                                     7);
+                                                                     6);
     
     public static final Item        enderArmorBoots          = new EnderArmor(3)
                                                                      .setUnlocalizedName(
@@ -243,7 +243,7 @@ public class RegistrationHandler
                                                                              "core_moarmor:tnt_leggings");
     public static final ItemStack   tntPlate                 = new ItemStack(
                                                                      plate, 1,
-                                                                     9);
+                                                                     8);
     
     public static final Item        foodArmorBoots           = new FoodArmor(3,
                                                                      "")
@@ -314,7 +314,7 @@ public class RegistrationHandler
                                                                              "core_moarmor:netherbrick_leggings");
     public static final ItemStack   netherPlate              = new ItemStack(
                                                                      plate, 1,
-                                                                     8);
+                                                                     7);
     
     public static final Item        woodArmorBoots           = new WoodArmor(3)
                                                                      .setUnlocalizedName(
@@ -338,7 +338,7 @@ public class RegistrationHandler
                                                                              "core_moarmor:wood_leggings");
     public static final ItemStack   woodPlate                = new ItemStack(
                                                                      plate, 1,
-                                                                     11);
+                                                                     9);
     
     public static final Achievement hammerAchievement        = new Achievement(
                                                                      "achievement.hammerCrafted",
