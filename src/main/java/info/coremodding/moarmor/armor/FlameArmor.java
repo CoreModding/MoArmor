@@ -1,6 +1,5 @@
 package info.coremodding.moarmor.armor;
 
-import info.coremodding.moarmor.handlers.RegistrationHandler;
 import info.coremodding.moarmor.helpers.ArmorHelper;
 
 import java.util.List;
