@@ -23,6 +23,7 @@ public class FoodArmor extends ItemArmor
                                                  1);
     private final String        lore;
     
+    @SuppressWarnings("hiding")
     private final int           armorType;
     
     /**
