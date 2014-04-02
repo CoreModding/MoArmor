@@ -1,14 +1,13 @@
 package info.coremodding.moarmor;
 
+import info.coremodding.moarmor.handlers.CraftingHandler;
+import info.coremodding.moarmor.handlers.ForgeEventHandler;
+import info.coremodding.moarmor.handlers.RegistrationHandler;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import info.coremodding.moarmor.handlers.CraftingHandler;
-import info.coremodding.moarmor.handlers.ForgeEventHandler;
-import info.coremodding.moarmor.handlers.RegistrationHandler;
 
 /**
  * The main mod class
@@ -34,6 +33,8 @@ public class MoArmor
     }
     
     /**
+     * The forge init call for doing whatever.
+     * 
      * @param evt
      *            The event that triggered the method
      */
@@ -41,17 +42,7 @@ public class MoArmor
     @EventHandler
     public void init(FMLInitializationEvent evt)
     {
-        MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
-    }
-    
-    /**
-     * @param evt
-     *            The event that triggered the method
-     */
-    @SuppressWarnings("static-method")
-    @EventHandler
-    public void preinit(FMLPreInitializationEvent evt)
-    {
         register();
+        MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
     }
 }
