@@ -12,6 +12,7 @@ import net.minecraft.world.World;
  */
 public class TeleportationHandler
 {
+    
     private final EntityPlayer entity;
     private double             locX;
     private double             locY;
