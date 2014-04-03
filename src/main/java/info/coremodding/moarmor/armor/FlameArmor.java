@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The flame armor
+ * The flame armor class
  */
 public class FlameArmor extends ItemArmor
 {
@@ -35,12 +35,12 @@ public class FlameArmor extends ItemArmor
     private final Random        rand     = new Random();
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public FlameArmor(int par4)
+    public FlameArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     
@@ -63,47 +63,19 @@ public class FlameArmor extends ItemArmor
             }
             if (this.tickId == 15)
             {
-                entity.worldObj.spawnParticle("flame",
-                        entity.posX - this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ - this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
-                entity.worldObj.spawnParticle("flame",
-                        entity.posX - this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ + this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
-                entity.worldObj.spawnParticle("flame",
-                        entity.posX + this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ - this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
-                entity.worldObj.spawnParticle("flame",
-                        entity.posX + this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ + this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
-                
-                entity.worldObj.spawnParticle("smoke",
-                        entity.posX - this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ - this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
-                entity.worldObj.spawnParticle("smoke",
-                        entity.posX - this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ + this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
-                entity.worldObj.spawnParticle("smoke",
-                        entity.posX + this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ - this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
-                entity.worldObj.spawnParticle("smoke",
-                        entity.posX + this.rand.nextDouble() / 2,
-                        entity.posY - 1, entity.posZ + this.rand.nextDouble()
-                                / 2, entity.motionX,
-                        this.rand.nextDouble() / 10, entity.motionZ);
+                for (int i = 0; i < 5; i++)
+                {
+                    entity.worldObj.spawnParticle("flame", entity.posX
+                            - this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ - this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                    entity.worldObj.spawnParticle("smoke", entity.posX
+                            - this.rand.nextDouble() / 2, entity.posY - 1,
+                            entity.posZ - this.rand.nextDouble() / 2,
+                            entity.motionX, this.rand.nextDouble() / 10,
+                            entity.motionZ);
+                }
                 this.tickId = 0;
             } else this.tickId++;
         }
