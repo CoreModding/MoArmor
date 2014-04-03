@@ -24,7 +24,7 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     private final EntityPlayer player;
     
     /**
-     * The delay in ticks until the player is targetable by mobs again
+     * The delay in ticks until the player is tractable by mobs again
      */
     private int                timeUntilUnseen;
     
@@ -102,7 +102,7 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     }
     
     /**
-     * Sets the time for the player, set to 0 to make player untargetable by
+     * Sets the time for the player, set to 0 to make player intractable by
      * mobs
      * 
      * @param time
@@ -130,7 +130,7 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     }
     
     /**
-     * Gets the time until player will be untargetable by mobs
+     * Gets the time until player will be intractable by mobs
      * 
      * @return Time in ticks until the player should be unseen
      */
