@@ -11,24 +11,24 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The TnT armor
+ * The TNT armor class
  */
 public class TntArmor extends ItemArmor
 {
     /**
-     * The TnT armor material
+     * The TNT armor material
      */
     public static ArmorMaterial material = EnumHelper.addArmorMaterial("TNT",
                                                  18, new int[] { 3, 7, 5, 3 },
                                                  9);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public TntArmor(int par4)
+    public TntArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The wood armor
+ * The wood armor class
  */
 public class WoodArmor extends ItemArmor
 {
@@ -23,12 +23,12 @@ public class WoodArmor extends ItemArmor
                                                          2);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public WoodArmor(int par4)
+    public WoodArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

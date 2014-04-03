@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The wheat armor
+ * The wheat armor class
  */
 public class WheatArmor extends ItemArmor
 {
@@ -20,12 +20,12 @@ public class WheatArmor extends ItemArmor
                                                  15);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public WheatArmor(int par4)
+    public WheatArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

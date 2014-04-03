@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The grass armor
+ * The grass armor class
  */
 public class GrassArmor extends ItemArmor
 {
@@ -23,12 +23,12 @@ public class GrassArmor extends ItemArmor
                                                          5);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public GrassArmor(int par4)
+    public GrassArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

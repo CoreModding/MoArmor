@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The nether brick armor
+ * The nether brick armor class
  */
 public class NetherArmor extends ItemArmor
 {
@@ -20,12 +20,12 @@ public class NetherArmor extends ItemArmor
             2, 5, 4, 2                          }, 5);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public NetherArmor(int par4)
+    public NetherArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

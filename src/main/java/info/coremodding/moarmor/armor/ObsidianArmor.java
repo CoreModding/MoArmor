@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The obsidian armor
+ * The obsidian armor class
  */
 public class ObsidianArmor extends ItemArmor
 {
@@ -20,12 +20,12 @@ public class ObsidianArmor extends ItemArmor
             10, 8, 4                            }, 3);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public ObsidianArmor(int par4)
+    public ObsidianArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

@@ -13,7 +13,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 /**
- * The flint armor
+ * The flint armor class
  */
 public class FlintArmor extends ItemArmor
 {
@@ -29,12 +29,12 @@ public class FlintArmor extends ItemArmor
                                                          5);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public FlintArmor(int par4)
+    public FlintArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

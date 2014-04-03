@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The food armor
+ * The food armor class
  */
 public class FoodArmor extends ItemArmor
 {
@@ -27,17 +27,17 @@ public class FoodArmor extends ItemArmor
     private final int           armorType;
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      * @param lore
      *            The items lore
      */
-    public FoodArmor(int par4, String lore)
+    public FoodArmor(int type, String lore)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.lore = lore;
-        this.armorType = par4;
+        this.armorType = type;
     }
     
     @Override
