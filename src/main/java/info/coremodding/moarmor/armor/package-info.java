@@ -1,7 +1,7 @@
 /**
- * The armor goes here
+ * The different classes for armor
  */
 /**
- * The armor goes here
+ * The different classes for armor
  */
 package info.coremodding.moarmor.armor;

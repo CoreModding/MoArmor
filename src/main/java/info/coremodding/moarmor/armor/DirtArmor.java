@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
- * The dirt armor
+ * The dirt armor class
  */
 public class DirtArmor extends ItemArmor
 {
@@ -23,12 +23,12 @@ public class DirtArmor extends ItemArmor
                                                          3);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public DirtArmor(int par4)
+    public DirtArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     
