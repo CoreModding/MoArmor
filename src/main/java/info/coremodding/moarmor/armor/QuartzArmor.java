@@ -13,7 +13,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 /**
- * The quartz armor
+ * The quartz armor class
  */
 public class QuartzArmor extends ItemArmor
 {
@@ -26,12 +26,12 @@ public class QuartzArmor extends ItemArmor
             5, 3, 2                             }, 5);
     
     /**
-     * @param par4
+     * @param type
      *            The armor type
      */
-    public QuartzArmor(int par4)
+    public QuartzArmor(int type)
     {
-        super(material, 0, par4);
+        super(material, 0, type);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     
@@ -39,13 +39,6 @@ public class QuartzArmor extends ItemArmor
     public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
     {
         if (!item.isItemEnchanted()) item.addEnchantment(Enchantment.thorns, 1);
-    }
-    
-    @Deprecated
-    @Override
-    public boolean hasEffect(ItemStack par1ItemStack)
-    {
-        return false;
     }
     
     @Override
