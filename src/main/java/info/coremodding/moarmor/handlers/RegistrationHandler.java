@@ -1,7 +1,16 @@
 package info.coremodding.moarmor.handlers;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import info.coremodding.moarmor.armor.*;
+import info.coremodding.moarmor.armor.DirtArmor;
+import info.coremodding.moarmor.armor.EnderArmor;
+import info.coremodding.moarmor.armor.FlameArmor;
+import info.coremodding.moarmor.armor.FlintArmor;
+import info.coremodding.moarmor.armor.FoodArmor;
+import info.coremodding.moarmor.armor.GrassArmor;
+import info.coremodding.moarmor.armor.NetherArmor;
+import info.coremodding.moarmor.armor.ObsidianArmor;
+import info.coremodding.moarmor.armor.QuartzArmor;
+import info.coremodding.moarmor.armor.TntArmor;
+import info.coremodding.moarmor.armor.WoodArmor;
 import info.coremodding.moarmor.helpers.ArmorHelper;
 import info.coremodding.moarmor.items.ItemDiamondHammer;
 import info.coremodding.moarmor.items.ItemHammer;
@@ -13,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 import net.minecraftforge.oredict.OreDictionary;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * Handles item and block registry
