@@ -24,9 +24,7 @@ public class FlameArmor extends ItemArmor
     /**
      * The flame armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME",
-                                                 15, new int[] { 2, 6, 5, 2 },
-                                                 9);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLAME", 15, new int[] { 2, 6, 5, 2 }, 9);
     /**
      * Used to determine when to spawn particles around the player
      */
@@ -45,15 +43,19 @@ public class FlameArmor extends ItemArmor
     }
     
     @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
+    {
+        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/flame_layer_1.png"; }
+        if (slot == 2) { return "core_moarmor:textures/models/armor/flame_layer_2.png"; }
+        return null;
+    }
+    
+    @Override
     public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
     {
-        if (ArmorHelper.isFullSet(entity.inventory.armorInventory,
-                ArmorHelper.FlameArmor) && !entity.isWet())
+        if (ArmorHelper.isFullSet(entity.inventory.armorInventory, ArmorHelper.FlameArmor) && !entity.isWet())
         {
-            List<Object> entities = world.getEntitiesWithinAABB(
-                    EntityLivingBase.class, AxisAlignedBB.getBoundingBox(
-                            entity.posX - 2, entity.posY - 2, entity.posZ - 2,
-                            entity.posX + 2, entity.posY + 2, entity.posZ + 2));
+            List<Object> entities = world.getEntitiesWithinAABB(EntityLivingBase.class, AxisAlignedBB.getBoundingBox(entity.posX - 2, entity.posY - 2, entity.posZ - 2, entity.posX + 2, entity.posY + 2, entity.posZ + 2));
             for (Object e : entities)
             {
                 if (e instanceof EntityLivingBase && e != entity)
@@ -65,28 +67,12 @@ public class FlameArmor extends ItemArmor
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    entity.worldObj.spawnParticle("flame", entity.posX
-                            - this.rand.nextDouble() / 2, entity.posY - 1,
-                            entity.posZ - this.rand.nextDouble() / 2,
-                            entity.motionX, this.rand.nextDouble() / 10,
-                            entity.motionZ);
-                    entity.worldObj.spawnParticle("smoke", entity.posX
-                            - this.rand.nextDouble() / 2, entity.posY - 1,
-                            entity.posZ - this.rand.nextDouble() / 2,
-                            entity.motionX, this.rand.nextDouble() / 10,
-                            entity.motionZ);
+                    entity.worldObj.spawnParticle("flame", entity.posX - this.rand.nextDouble() / 2, entity.posY - 1, entity.posZ - this.rand.nextDouble() / 2, entity.motionX, this.rand.nextDouble() / 10, entity.motionZ);
+                    entity.worldObj.spawnParticle("smoke", entity.posX - this.rand.nextDouble() / 2, entity.posY - 1, entity.posZ - this.rand.nextDouble() / 2, entity.motionX, this.rand.nextDouble() / 10, entity.motionZ);
                 }
                 this.tickId = 0;
-            } else this.tickId++;
+            }
+            else this.tickId++;
         }
-    }
-    
-    @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
-    {
-        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/flame_layer_1.png"; }
-        if (slot == 2) { return "core_moarmor:textures/models/armor/flame_layer_2.png"; }
-        return null;
     }
 }

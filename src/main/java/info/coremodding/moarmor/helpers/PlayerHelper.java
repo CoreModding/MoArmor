@@ -51,34 +51,24 @@ public class PlayerHelper
         switch (ability)
         {
             case AbilityCamouflage:
-                if (ArmorHelper.isFullSet(p.inventory.armorInventory,
-                        ArmorHelper.GrassArmor)
-                        || ArmorHelper.isFullSet(p.inventory.armorInventory,
-                                ArmorHelper.DirtArmor)) return true;
+                if (ArmorHelper.isFullSet(p.inventory.armorInventory, ArmorHelper.GrassArmor) || ArmorHelper.isFullSet(p.inventory.armorInventory, ArmorHelper.DirtArmor)) return true;
                 break;
             case AbilityExplosive:
-                boolean[] tntBool = ArmorHelper.getArmorTypeSlots(
-                        p.inventory.armorInventory, ArmorHelper.TntArmor);
+                boolean[] tntBool = ArmorHelper.getArmorTypeSlots(p.inventory.armorInventory, ArmorHelper.TntArmor);
                 if (tntBool[0] || tntBool[1] || tntBool[2] || tntBool[3]) return true;
                 break;
             case AbilitySelfFoodReplenish:
-                boolean[] foodBool = ArmorHelper.getArmorTypeSlots(
-                        p.inventory.armorInventory, ArmorHelper.FoodArmor);
+                boolean[] foodBool = ArmorHelper.getArmorTypeSlots(p.inventory.armorInventory, ArmorHelper.FoodArmor);
                 if (foodBool[0]) return true;
                 break;
             case AbilityNoFireDamage:
-                if (ArmorHelper.isFullSet(p.inventory.armorInventory,
-                        ArmorHelper.NetherArmor)
-                        || ArmorHelper.isFullSet(p.inventory.armorInventory,
-                                ArmorHelper.FlameArmor)) return true;
+                if (ArmorHelper.isFullSet(p.inventory.armorInventory, ArmorHelper.NetherArmor) || ArmorHelper.isFullSet(p.inventory.armorInventory, ArmorHelper.FlameArmor)) return true;
                 break;
             case AbilityArmorSelfRepair:
-                if (ArmorHelper.isFullSet(p.inventory.armorInventory,
-                        ArmorHelper.GrassArmor)) return true;
+                if (ArmorHelper.isFullSet(p.inventory.armorInventory, ArmorHelper.GrassArmor)) return true;
                 break;
             case AbilityTeleport:
-                if (ArmorHelper.isFullSet(p.inventory.armorInventory,
-                        ArmorHelper.EnderArmor)) return true;
+                if (ArmorHelper.isFullSet(p.inventory.armorInventory, ArmorHelper.EnderArmor)) return true;
                 break;
             default:
                 break;
@@ -95,7 +85,6 @@ public class PlayerHelper
      */
     public static final ExtendedPlayerHandler getProperties(EntityPlayer player)
     {
-        return (ExtendedPlayerHandler) player
-                .getExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME);
+        return (ExtendedPlayerHandler) player.getExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME);
     }
 }

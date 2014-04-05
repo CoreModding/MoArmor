@@ -21,12 +21,7 @@ public class FlintArmor extends ItemArmor
     /**
      * The flint armor material
      */
-    public static ArmorMaterial material = EnumHelper
-                                                 .addArmorMaterial(
-                                                         "FLINT",
-                                                         7,
-                                                         new int[] { 1, 3, 2, 1 },
-                                                         5);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("FLINT", 7, new int[] { 1, 3, 2, 1 }, 5);
     
     /**
      * @param type
@@ -39,9 +34,18 @@ public class FlintArmor extends ItemArmor
     }
     
     @Override
-    public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
-        if (!item.isItemEnchanted()) item.addEnchantment(Enchantment.thorns, 1);
+        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/flint_layer_1.png"; }
+        if (slot == 2) { return "core_moarmor:textures/models/armor/flint_layer_2.png"; }
+        return null;
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public EnumRarity getRarity(ItemStack par1ItemStack)
+    {
+        return EnumRarity.rare;
     }
     
     @Deprecated
@@ -52,18 +56,8 @@ public class FlintArmor extends ItemArmor
     }
     
     @Override
-    @SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack par1ItemStack)
+    public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
     {
-        return EnumRarity.rare;
-    }
-    
-    @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
-    {
-        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/flint_layer_1.png"; }
-        if (slot == 2) { return "core_moarmor:textures/models/armor/flint_layer_2.png"; }
-        return null;
+        if (!item.isItemEnchanted()) item.addEnchantment(Enchantment.thorns, 1);
     }
 }

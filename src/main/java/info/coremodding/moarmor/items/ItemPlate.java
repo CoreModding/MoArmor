@@ -18,6 +18,14 @@ public class ItemPlate extends Item
 {
     
     /**
+     * The names of plates
+     */
+    public static final String[] names = new String[] { "flintPlate", "quartzPlate", "obsidianPlate", "flamePlate", "enderPlate", "dirtPlate", "grassPlate", "netherPlate", "tntPlate", "woodPlate" };
+    
+    @SideOnly(Side.CLIENT)
+    private IIcon[] icons;
+    
+    /**
      * The item constructor
      */
     public ItemPlate()
@@ -28,24 +36,15 @@ public class ItemPlate extends Item
         
     }
     
-    /**
-     * The names of plates
-     */
-    public static final String[] names = new String[] { "flintPlate",
-            "quartzPlate", "obsidianPlate", "flamePlate", "enderPlate",
-            "dirtPlate", "grassPlate", "netherPlate", "tntPlate", "woodPlate" };
-    
     @Override
-    public String getUnlocalizedName(ItemStack par1ItemStack)
+    public IIcon getIconFromDamage(int par1)
     {
-        int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
-        return names[i];
+        return this.icons[par1];
     }
     
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubItems(Item par1, CreativeTabs par2CreativeTabs,
-            List par3List)
+    public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List)
     {
         for (int x = 0; x < names.length; x++)
         {
@@ -53,8 +52,12 @@ public class ItemPlate extends Item
         }
     }
     
-    @SideOnly(Side.CLIENT)
-    private IIcon[] icons;
+    @Override
+    public String getUnlocalizedName(ItemStack par1ItemStack)
+    {
+        int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
+        return names[i];
+    }
     
     @Override
     @SideOnly(Side.CLIENT)
@@ -64,14 +67,7 @@ public class ItemPlate extends Item
         
         for (int i = 0; i < this.icons.length; i++)
         {
-            this.icons[i] = par1IconRegister.registerIcon("core_moarmor:"
-                    + names[i]);
+            this.icons[i] = par1IconRegister.registerIcon("core_moarmor:" + names[i]);
         }
-    }
-    
-    @Override
-    public IIcon getIconFromDamage(int par1)
-    {
-        return this.icons[par1];
     }
 }

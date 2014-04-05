@@ -18,9 +18,7 @@ public class TntArmor extends ItemArmor
     /**
      * The TNT armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("TNT",
-                                                 18, new int[] { 3, 7, 5, 3 },
-                                                 9);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("TNT", 18, new int[] { 3, 7, 5, 3 }, 9);
     
     /**
      * @param type
@@ -33,8 +31,7 @@ public class TntArmor extends ItemArmor
     }
     
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/tnt_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/tnt_layer_2.png"; }
@@ -48,15 +45,13 @@ public class TntArmor extends ItemArmor
         {
             if (entity.isBurning())
             {
-                boolean[] armor = ArmorHelper.getArmorTypeSlots(
-                        entity.inventory.armorInventory, ArmorHelper.TntArmor);
+                boolean[] armor = ArmorHelper.getArmorTypeSlots(entity.inventory.armorInventory, ArmorHelper.TntArmor);
                 if (armor[0]) entity.inventory.armorInventory[3] = null;
                 if (armor[1]) entity.inventory.armorInventory[2] = null;
                 if (armor[2]) entity.inventory.armorInventory[1] = null;
                 if (armor[3]) entity.inventory.armorInventory[0] = null;
                 float f = 4.0F;
-                entity.worldObj.createExplosion(entity, entity.posX,
-                        entity.posY, entity.posZ, f, true);
+                entity.worldObj.createExplosion(entity, entity.posX, entity.posY, entity.posZ, f, true);
             }
         }
     }

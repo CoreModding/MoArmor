@@ -15,12 +15,7 @@ public class DirtArmor extends ItemArmor
     /**
      * The dirt armor material
      */
-    public static ArmorMaterial material = EnumHelper
-                                                 .addArmorMaterial(
-                                                         "DIRT",
-                                                         4,
-                                                         new int[] { 1, 1, 1, 1 },
-                                                         3);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("DIRT", 4, new int[] { 1, 1, 1, 1 }, 3);
     
     /**
      * @param type
@@ -33,8 +28,7 @@ public class DirtArmor extends ItemArmor
     }
     
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/dirt_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/dirt_layer_2.png"; }

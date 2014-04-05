@@ -15,9 +15,7 @@ public class ObsidianArmor extends ItemArmor
     /**
      * The obsidian armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial(
-                                                 "OBSIDIAN", 40, new int[] { 4,
-            10, 8, 4                            }, 3);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("OBSIDIAN", 40, new int[] { 4, 10, 8, 4 }, 3);
     
     /**
      * @param type
@@ -30,8 +28,7 @@ public class ObsidianArmor extends ItemArmor
     }
     
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/obsidian_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/obsidian_layer_2.png"; }

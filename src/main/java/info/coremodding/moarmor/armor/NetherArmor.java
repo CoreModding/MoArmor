@@ -15,9 +15,7 @@ public class NetherArmor extends ItemArmor
     /**
      * The nether brick armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial(
-                                                 "NETHER_BRICK", 18, new int[] {
-            2, 5, 4, 2                          }, 5);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("NETHER_BRICK", 18, new int[] { 2, 5, 4, 2 }, 5);
     
     /**
      * @param type
@@ -30,8 +28,7 @@ public class NetherArmor extends ItemArmor
     }
     
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/netherbrick_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/netherbrick_layer_2.png"; }

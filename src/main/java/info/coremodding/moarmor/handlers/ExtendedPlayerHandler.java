@@ -18,6 +18,17 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     public final static String EXT_PROP_NAME = "MoArmorAttributes";
     
     /**
+     * Registers the ExtendedEntityProperties handler for the specified player
+     * 
+     * @param player
+     *            Player to register
+     */
+    public static final void register(EntityPlayer player)
+    {
+        player.registerExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME, new ExtendedPlayerHandler(player));
+    }
+    
+    /**
      * Player for whom the extended properties are set
      */
     @SuppressWarnings("unused")
@@ -59,15 +70,50 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     }
     
     /**
-     * Registers the ExtendedEntityProperties handler for the specified player
+     * Gets the time until player should repair his armor
      * 
-     * @param player
-     *            Player to register
+     * @return Time in ticks until the player should repair his armor
      */
-    public static final void register(EntityPlayer player)
+    public int getTimeUntilRepair()
     {
-        player.registerExtendedProperties(ExtendedPlayerHandler.EXT_PROP_NAME,
-                new ExtendedPlayerHandler(player));
+        return this.timeUntilRepair;
+    }
+    
+    /**
+     * Gets the time until player will be intractable by mobs
+     * 
+     * @return Time in ticks until the player should be unseen
+     */
+    public int getTimeUntilUnseen()
+    {
+        return this.timeUntilUnseen;
+    }
+    
+    @Override
+    public void init(Entity entity, World world)
+    {
+        
+    }
+    
+    /**
+     * Check if the player can be seen by other mobs
+     * 
+     * @return True if the player can be seen
+     */
+    public boolean isPlayerTargetable()
+    {
+        return this.isSeen;
+    }
+    
+    @Override
+    public void loadNBTData(NBTTagCompound compound)
+    {
+        NBTTagCompound properties = (NBTTagCompound) compound.getTag(EXT_PROP_NAME);
+        
+        this.timeUntilUnseen = properties.getInteger("TimeUntilUnseen");
+        this.isSeen = properties.getBoolean("IsSeenByMobs");
+        this.timeUntilRepair = properties.getInteger("TimeUntilRepair");
+        this.shouldRepair = properties.getBoolean("ShouldRepairArmor");
     }
     
     @Override
@@ -81,38 +127,6 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
         properties.setBoolean("ShouldRepairArmor", this.shouldRepair);
         
         compound.setTag(EXT_PROP_NAME, properties);
-    }
-    
-    @Override
-    public void loadNBTData(NBTTagCompound compound)
-    {
-        NBTTagCompound properties = (NBTTagCompound) compound
-                .getTag(EXT_PROP_NAME);
-        
-        this.timeUntilUnseen = properties.getInteger("TimeUntilUnseen");
-        this.isSeen = properties.getBoolean("IsSeenByMobs");
-        this.timeUntilRepair = properties.getInteger("TimeUntilRepair");
-        this.shouldRepair = properties.getBoolean("ShouldRepairArmor");
-    }
-    
-    @Override
-    public void init(Entity entity, World world)
-    {
-        
-    }
-    
-    /**
-     * Sets the time for the player, set to 0 to make player intractable by
-     * mobs
-     * 
-     * @param time
-     *            Time in ticks until the player should be unseen
-     */
-    public void setTimeUntilUnseen(int time)
-    {
-        this.timeUntilUnseen = time;
-        if (time > 0) this.isSeen = true;
-        else this.isSeen = false;
     }
     
     /**
@@ -130,33 +144,17 @@ public class ExtendedPlayerHandler implements IExtendedEntityProperties
     }
     
     /**
-     * Gets the time until player will be intractable by mobs
+     * Sets the time for the player, set to 0 to make player intractable by
+     * mobs
      * 
-     * @return Time in ticks until the player should be unseen
+     * @param time
+     *            Time in ticks until the player should be unseen
      */
-    public int getTimeUntilUnseen()
+    public void setTimeUntilUnseen(int time)
     {
-        return this.timeUntilUnseen;
-    }
-    
-    /**
-     * Gets the time until player should repair his armor
-     * 
-     * @return Time in ticks until the player should repair his armor
-     */
-    public int getTimeUntilRepair()
-    {
-        return this.timeUntilRepair;
-    }
-    
-    /**
-     * Check if the player can be seen by other mobs
-     * 
-     * @return True if the player can be seen
-     */
-    public boolean isPlayerTargetable()
-    {
-        return this.isSeen;
+        this.timeUntilUnseen = time;
+        if (time > 0) this.isSeen = true;
+        else this.isSeen = false;
     }
     
     /**

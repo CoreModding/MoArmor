@@ -15,9 +15,7 @@ public class WheatArmor extends ItemArmor
     /**
      * The wheat armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
-                                                 5, new int[] { 1, 3, 2, 1 },
-                                                 15);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER", 5, new int[] { 1, 3, 2, 1 }, 15);
     
     /**
      * @param type
@@ -30,8 +28,7 @@ public class WheatArmor extends ItemArmor
     }
     
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
         if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/wheat_layer_1.png"; }
         if (slot == 2) { return "core_moarmor:textures/models/armor/wheat_layer_2.png"; }

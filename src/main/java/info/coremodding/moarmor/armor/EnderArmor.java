@@ -28,9 +28,7 @@ public class EnderArmor extends ItemArmor
     /**
      * The ender armor material
      */
-    public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER",
-                                                 20, new int[] { 2, 9, 7, 2 },
-                                                 15);
+    public static ArmorMaterial material = EnumHelper.addArmorMaterial("ENDER", 20, new int[] { 2, 9, 7, 2 }, 15);
     
     /**
      * @param type
@@ -43,10 +41,24 @@ public class EnderArmor extends ItemArmor
     }
     
     @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
+    {
+        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/ender_layer_1.png"; }
+        if (slot == 2) { return "core_moarmor:textures/models/armor/ender_layer_2.png"; }
+        return null;
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public EnumRarity getRarity(ItemStack par1ItemStack)
+    {
+        return EnumRarity.epic;
+    }
+    
+    @Override
     public void onArmorTick(World world, EntityPlayer entity, ItemStack item)
     {
-        if (ArmorHelper.isFullSet(entity.inventory.armorInventory,
-                ArmorHelper.EnderArmor))
+        if (ArmorHelper.isFullSet(entity.inventory.armorInventory, ArmorHelper.EnderArmor))
         {
             TeleportationHandler th = new TeleportationHandler(entity);
             if (tpdelay > 0) tpdelay--;
@@ -61,21 +73,5 @@ public class EnderArmor extends ItemArmor
                 tpdelay = 80;
             }
         }
-    }
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack par1ItemStack)
-    {
-        return EnumRarity.epic;
-    }
-    
-    @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            String type)
-    {
-        if (slot == 0 || slot == 1 || slot == 3) { return "core_moarmor:textures/models/armor/ender_layer_1.png"; }
-        if (slot == 2) { return "core_moarmor:textures/models/armor/ender_layer_2.png"; }
-        return null;
     }
 }

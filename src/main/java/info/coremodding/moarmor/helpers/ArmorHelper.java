@@ -47,6 +47,26 @@ public class ArmorHelper
     public static final int EnderArmor  = 6;
     
     /**
+     * Adds string key/value to specified itemstack
+     * 
+     * @param item
+     *            Itemstack to add string for
+     * @param key
+     *            Key
+     * @param value
+     *            Value
+     */
+    public static void addStringToNBT(ItemStack item, String key, String value)
+    {
+        if (item.stackTagCompound == null)
+        {
+            item.setTagCompound(new NBTTagCompound());
+        }
+        
+        item.stackTagCompound.setString(key, value);
+    }
+    
+    /**
      * 
      * @param armorInventory
      *            Player armor inventory itemstack
@@ -55,8 +75,7 @@ public class ArmorHelper
      * @return Array of booleans if theres armor of specified type where 0 =
      *         helmet, 1 = chestplate, 2 = leggings, 3 = boots
      */
-    public static boolean[] getArmorTypeSlots(ItemStack[] armorInventory,
-            int armorType)
+    public static boolean[] getArmorTypeSlots(ItemStack[] armorInventory, int armorType)
     {
         boolean[] returnBool = new boolean[4];
         switch (armorType)
@@ -128,12 +147,10 @@ public class ArmorHelper
                 if (armorInventory[3] != null)
                 {
                     Item helmet = armorInventory[3].getItem();
-                    if (helmet == RegistrationHandler.foodArmorHelmetPorkchop
-                            || helmet == RegistrationHandler.foodArmorHelmetCookie
-                            || helmet == RegistrationHandler.foodArmorHelmetApple
-                            || helmet == RegistrationHandler.foodArmorHelmetBread) returnBool[0] = true;
+                    if (helmet == RegistrationHandler.foodArmorHelmetPorkchop || helmet == RegistrationHandler.foodArmorHelmetCookie || helmet == RegistrationHandler.foodArmorHelmetApple || helmet == RegistrationHandler.foodArmorHelmetBread) returnBool[0] = true;
                     else returnBool[0] = false;
-                } else returnBool[0] = false;
+                }
+                else returnBool[0] = false;
                 break;
             case ArmorHelper.NetherArmor:
                 if (armorInventory[0] != null) if (armorInventory[0].getItem() == RegistrationHandler.netherArmorBoots) returnBool[3] = true;
@@ -196,41 +213,6 @@ public class ArmorHelper
     }
     
     /**
-     * @param armorInventory
-     *            The armor
-     * @param armorType
-     *            The armor type expected
-     * @return Is it a full set of armor
-     */
-    public static boolean isFullSet(ItemStack[] armorInventory, int armorType)
-    {
-        boolean[] armorBool = ArmorHelper.getArmorTypeSlots(armorInventory,
-                armorType);
-        if (armorBool[0] && armorBool[1] && armorBool[2] && armorBool[3]) return true;
-        return false;
-    }
-    
-    /**
-     * Adds string key/value to specified itemstack
-     * 
-     * @param item
-     *            Itemstack to add string for
-     * @param key
-     *            Key
-     * @param value
-     *            Value
-     */
-    public static void addStringToNBT(ItemStack item, String key, String value)
-    {
-        if (item.stackTagCompound == null)
-        {
-            item.setTagCompound(new NBTTagCompound());
-        }
-        
-        item.stackTagCompound.setString(key, value);
-    }
-    
-    /**
      * Gets string from itemstack's NBT Tag Compound
      * 
      * @param item
@@ -247,5 +229,19 @@ public class ArmorHelper
         }
         
         return item.stackTagCompound.getString(key);
+    }
+    
+    /**
+     * @param armorInventory
+     *            The armor
+     * @param armorType
+     *            The armor type expected
+     * @return Is it a full set of armor
+     */
+    public static boolean isFullSet(ItemStack[] armorInventory, int armorType)
+    {
+        boolean[] armorBool = ArmorHelper.getArmorTypeSlots(armorInventory, armorType);
+        if (armorBool[0] && armorBool[1] && armorBool[2] && armorBool[3]) return true;
+        return false;
     }
 }

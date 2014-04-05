@@ -75,7 +75,8 @@ public class TeleportationHandler
                 if (block.getMaterial().blocksMovement())
                 {
                     flag1 = true;
-                } else
+                }
+                else
                 {
                     --this.locY;
                     --j;
@@ -84,12 +85,9 @@ public class TeleportationHandler
             
             if (flag1)
             {
-                this.entity.setPositionAndUpdate(this.locX, this.locY + 3,
-                        this.locZ);
+                this.entity.setPositionAndUpdate(this.locX, this.locY + 3, this.locZ);
                 
-                if (this.worldObj.getCollidingBoundingBoxes(this.entity,
-                        this.entity.boundingBox).isEmpty()
-                        && !this.worldObj.isAnyLiquid(this.entity.boundingBox))
+                if (this.worldObj.getCollidingBoundingBoxes(this.entity, this.entity.boundingBox).isEmpty() && !this.worldObj.isAnyLiquid(this.entity.boundingBox))
                 {
                     flag = true;
                 }
@@ -109,19 +107,13 @@ public class TeleportationHandler
             float f = (this.rand.nextFloat() - 0.5F) * 0.2F;
             float f1 = (this.rand.nextFloat() - 0.5F) * 0.2F;
             float f2 = (this.rand.nextFloat() - 0.5F) * 0.2F;
-            double d7 = d3 + (this.locX - d3) * d6
-                    + (this.rand.nextDouble() - 0.5D) * this.entity.width
-                    * 2.0D;
-            double d8 = d4 + (this.locY - d4) * d6 + this.rand.nextDouble()
-                    * this.entity.height;
-            double d9 = d5 + (this.locZ - d5) * d6
-                    + (this.rand.nextDouble() - 0.5D) * this.entity.width
-                    * 2.0D;
+            double d7 = d3 + (this.locX - d3) * d6 + (this.rand.nextDouble() - 0.5D) * this.entity.width * 2.0D;
+            double d8 = d4 + (this.locY - d4) * d6 + this.rand.nextDouble() * this.entity.height;
+            double d9 = d5 + (this.locZ - d5) * d6 + (this.rand.nextDouble() - 0.5D) * this.entity.width * 2.0D;
             this.worldObj.spawnParticle("portal", d7, d8, d9, f, f1, f2);
         }
         
-        this.worldObj.playSoundEffect(d3, d4, d5, "mob.endermen.portal", 1.0F,
-                1.0F);
+        this.worldObj.playSoundEffect(d3, d4, d5, "mob.endermen.portal", 1.0F, 1.0F);
         this.entity.playSound("mob.endermen.portal", 1.0F, 1.0F);
         return true;
     }

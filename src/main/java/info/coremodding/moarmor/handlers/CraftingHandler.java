@@ -21,16 +21,11 @@ public class CraftingHandler
             if (craftMatrix.getStackInSlot(i) != null)
             {
                 ItemStack j = craftMatrix.getStackInSlot(i);
-                if (j.getItem() != null
-                        && (j.getItem() == RegistrationHandler.hammer || j
-                                .getItem() == RegistrationHandler.diamondHammer))
+                if (j.getItem() != null && (j.getItem() == RegistrationHandler.hammer || j.getItem() == RegistrationHandler.diamondHammer))
                 {
                     ItemStack k;
-                    if (j.getItem() == RegistrationHandler.hammer) k = new ItemStack(
-                            RegistrationHandler.hammer, 2,
-                            (j.getItemDamage() + 1));
-                    else k = new ItemStack(RegistrationHandler.diamondHammer,
-                            2, (j.getItemDamage() + 1));
+                    if (j.getItem() == RegistrationHandler.hammer) k = new ItemStack(RegistrationHandler.hammer, 2, (j.getItemDamage() + 1));
+                    else k = new ItemStack(RegistrationHandler.diamondHammer, 2, (j.getItemDamage() + 1));
                     if (k.getItemDamage() >= k.getMaxDamage())
                     {
                         k.stackSize--;
@@ -40,15 +35,10 @@ public class CraftingHandler
             }
         }
         
-        if (event.crafting.getItem() == RegistrationHandler.hammer) event.player
-                .triggerAchievement(RegistrationHandler.hammerAchievement);
-        if (event.crafting.getItem() == RegistrationHandler.diamondHammer) event.player
-                .triggerAchievement(RegistrationHandler.diamondHammerAchievement);
-        if (event.crafting.isItemEqual(RegistrationHandler.grassPlate)) event.player
-                .triggerAchievement(RegistrationHandler.ecoAchievement);
-        if (event.crafting.isItemEqual(RegistrationHandler.tntPlate)) event.player
-                .triggerAchievement(RegistrationHandler.suicideAchievement);
-        if (event.crafting.isItemEqual(RegistrationHandler.obsidianPlate)) event.player
-                .triggerAchievement(RegistrationHandler.betterAchievement);
+        if (event.crafting.getItem() == RegistrationHandler.hammer) event.player.triggerAchievement(RegistrationHandler.hammerAchievement);
+        if (event.crafting.getItem() == RegistrationHandler.diamondHammer) event.player.triggerAchievement(RegistrationHandler.diamondHammerAchievement);
+        if (event.crafting.isItemEqual(RegistrationHandler.grassPlate)) event.player.triggerAchievement(RegistrationHandler.ecoAchievement);
+        if (event.crafting.isItemEqual(RegistrationHandler.tntPlate)) event.player.triggerAchievement(RegistrationHandler.suicideAchievement);
+        if (event.crafting.isItemEqual(RegistrationHandler.obsidianPlate)) event.player.triggerAchievement(RegistrationHandler.betterAchievement);
     }
 }
