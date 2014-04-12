@@ -23,7 +23,7 @@ public class ItemPlate extends Item
     public static final String[] names = new String[] { "flintPlate", "quartzPlate", "obsidianPlate", "flamePlate", "enderPlate", "dirtPlate", "grassPlate", "netherPlate", "tntPlate", "woodPlate" };
     
     @SideOnly(Side.CLIENT)
-    private IIcon[] icons;
+    private IIcon[]              icons;
     
     /**
      * The item constructor
