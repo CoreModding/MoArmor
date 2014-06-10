@@ -193,6 +193,11 @@ public class RegistrationHandler
         GameRegistry.addRecipe(new ItemStack(woodArmorChest, 1), "O O", "OOO", "OOO", 'O', woodPlate);
         GameRegistry.addRecipe(new ItemStack(woodArmorLegs, 1), "OOO", "O O", "O O", 'O', woodPlate);
         GameRegistry.addRecipe(new ItemStack(woodArmorBoots, 1), "O O", "O O", 'O', woodPlate);
+        
+        GameRegistry.addRecipe(new ItemStack(enderArmorHelmet, 1), "OOO", "O O", 'O', enderPlate);
+        GameRegistry.addRecipe(new ItemStack(enderArmorChest, 1), "O O", "OOO", "OOO", 'O', enderPlate);
+        GameRegistry.addRecipe(new ItemStack(enderArmorLegs, 1), "OOO", "O O", "O O", 'O', enderPlate);
+        GameRegistry.addRecipe(new ItemStack(enderArmorBoots, 1), "O O", "O O", 'O', enderPlate);
     }
     
     private static void registerArmorSet(Item helmet, Item chestplate, Item leggings, Item boots)
