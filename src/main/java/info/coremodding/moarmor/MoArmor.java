@@ -12,7 +12,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 /**
  * The main mod class
  */
-@Mod(modid = "core_moarmor", name = "Mo' Armor", version = "1.0-ALPHA")
+@Mod(modid = "core_moarmor", name = "Mo' Armor", version = "0.9.2-PREALPHA")
 public class MoArmor
 {
     
