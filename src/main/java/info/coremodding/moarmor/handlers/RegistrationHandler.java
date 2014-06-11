@@ -90,7 +90,7 @@ public class RegistrationHandler
     public static final ItemStack   tntPlate                 = new ItemStack(plate, 1, 8);
     
     public static final Item        foodArmorBoots           = new FoodArmor(3, "").setUnlocalizedName("foodArmorBoots").setTextureName("core_moarmor:food_boots");
-    public static final Item        foodArmorChest           = new FoodArmor(1, "").setUnlocalizedNameg("foodArmorChest").setTextureName("core_moarmor:food_chestplate");
+    public static final Item        foodArmorChest           = new FoodArmor(1, "").setUnlocalizedName("foodArmorChest").setTextureName("core_moarmor:food_chestplate");
     public static final Item        foodArmorHelmetPorkchop  = new FoodArmor(0, "Automatically restores 4 hungerbars when hungry").setUnlocalizedName("foodArmorHelmetPork").setTextureName("core_moarmor:food_helmet");
     public static final Item        foodArmorHelmetCookie    = new FoodArmor(0, "Automatically restores 1 hungerbar when hungry").setUnlocalizedName("foodArmorHelmetCookie").setTextureName("core_moarmor:food_helmet");
     public static final Item        foodArmorHelmetBread     = new FoodArmor(0, "Automatically restores 2 and a half hungerbar when hungry").setUnlocalizedName("foodArmorHelmetBread").setTextureName("core_moarmor:food_helmet");
