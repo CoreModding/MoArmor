@@ -15,7 +15,7 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 /**
- * Handles forge events aside from init
+ * Handles forge subscribe events
  */
 @SuppressWarnings({ "static-method", "javadoc" })
 public class ForgeEventHandler
