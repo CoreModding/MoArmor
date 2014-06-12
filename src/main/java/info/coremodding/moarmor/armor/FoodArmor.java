@@ -20,8 +20,6 @@ public class FoodArmor extends ItemArmor
      */
     public static ArmorMaterial material = EnumHelper.addArmorMaterial("FOOD", 10, new int[] { 1, 5, 3, 1 }, 1);
     private final String        lore;
-    
-    @SuppressWarnings("hiding")
     private final int           armorType;
     
     /**

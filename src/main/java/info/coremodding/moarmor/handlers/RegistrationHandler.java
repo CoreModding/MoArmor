@@ -61,7 +61,7 @@ public class RegistrationHandler
     
     public static final Item        flameArmorChest          = new FlameArmor(1).setUnlocalizedName("flameArmorChest").setTextureName("core_moarmor:flame_chestplate");
     public static final Item        flameArmorHelmet         = new FlameArmor(0).setUnlocalizedName("flameArmorHelmet").setTextureName("core_moarmor:flame_helmet");
-    public static final Item        flameArmorLegs           = new FlameArmor(2).setUnlocalizedName("flameArmorLegs").setTextureName("core_moarmor:flame_legs");
+    public static final Item        flameArmorLegs           = new FlameArmor(2).setUnlocalizedName("flameArmorLegs").setTextureName("core_moarmor:flame_leggings");
     public static final ItemStack   flamePlate               = new ItemStack(plate, 1, 3);
     
     public static final Item        flintArmorBoots          = new FlintArmor(3).setUnlocalizedName("flintArmorBoots").setTextureName("core_moarmor:flint_boots");
